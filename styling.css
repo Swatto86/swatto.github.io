@@ -13,6 +13,24 @@ h1 {
     color: #bb86fc;
 }
 
+.utility h3 {
+    color: #03dac6;
+    margin-top: 20px;
+}
+
+.utility ol,
+.utility ul {
+    padding-left: 20px;
+}
+
+.utility li {
+    margin-bottom: 10px;
+}
+
+.utility strong {
+    color: #bb86fc;
+}
+
 .utility {
     background-color: #2d2d2d;
     padding: 15px;
@@ -37,4 +55,17 @@ h1 {
 
 .download-link:hover {
     background-color: #03dac6;
+}
+
+.security-note {
+    background-color: #2d2d2d;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 5px;
+    border-left: 5px solid #03dac6;
+}
+
+.security-note h3 {
+    color: #03dac6;
+    margin-top: 0;
 }

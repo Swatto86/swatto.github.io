@@ -1,29 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swatto's C# Utilities</title>
+    <title>Swatto's Useful Utilities</title>
     <link rel="stylesheet" href="styling.css">
 </head>
+
 <body>
     <header>
-        <h1>Welcome to Swatto's C# Utilities</h1>
-        <p>Here you can find and download useful C# utilities.</p>
+        <h1>Welcome to Swatto's Useful Utilities</h1>
+        <p>Here you can find and download useful utilities I have written to help me in my employment role.</p>
     </header>
 
     <main>
-        <div class="utility">
-            <h2>SwatLauncher</h2>
-            <p>Description of what this utility does and why it's useful.</p>
-            <a href="#" class="download-link">Download</a>
-        </div>
+        <section class="utility">
+            <h2>SwatLauncher: Streamlined Remote Desktop Connection Manager</h2>
+            <p>SwatLauncher is a sophisticated Windows application designed to simplify and enhance the management of
+                Remote Desktop Protocol (RDP) connections. Built with C# and WPF (Windows Presentation Foundation), this
+                tool offers a user-friendly interface for IT professionals and system administrators who frequently
+                access multiple remote Windows servers.</p>
 
-        <!-- Add more utility sections as needed -->
+            <h3>Key Features:</h3>
+            <ol>
+                <li><strong>Active Directory Integration:</strong> SwatLauncher can scan your Active Directory domain to
+                    automatically populate a list of Windows servers, complete with their Fully Qualified Domain Names
+                    (FQDNs) and descriptions.</li>
+                <li><strong>Efficient Server Management:</strong> Users can easily add, update, or delete server entries
+                    through an intuitive interface. The application stores server information in a local CSV file for
+                    quick access and easy portability.</li>
+                <li><strong>Quick Search Functionality:</strong> A responsive search feature allows users to quickly
+                    find and connect to the desired server by filtering through hostnames and descriptions.</li>
+                <li><strong>Secure Credential Management:</strong> SwatLauncher leverages Windows Credential Manager to
+                    securely store and manage RDP credentials, eliminating the need for repetitive login input.</li>
+                <li><strong>One-Click RDP Connections:</strong> Double-clicking a server in the list automatically
+                    launches an RDP session, streamlining the connection process.</li>
+                <li><strong>Custom RDP Settings:</strong> The application generates temporary RDP files with predefined
+                    settings, ensuring a consistent and optimized remote desktop experience.</li>
+                <li><strong>System Tray Integration:</strong> SwatLauncher can be minimized to the system tray, allowing
+                    for quick access while keeping your desktop clutter-free.</li>
+                <li><strong>Dark Theme Interface:</strong> A sleek, dark-themed UI reduces eye strain during extended
+                    use and provides a modern look and feel.</li>
+                <li><strong>Window Position Memory:</strong> The application remembers its last position and size,
+                    providing a consistent user experience across sessions.</li>
+                <li><strong>Customizable and Extensible:</strong> The codebase is well-organized and documented, making
+                    it easy for developers to customize or extend functionality as needed.</li>
+            </ol>
+
+            <h3>Technical Highlights:</h3>
+            <ul>
+                <li>Developed using C# and WPF, leveraging the power and flexibility of the .NET Framework.</li>
+                <li>Implements MVVM (Model-View-ViewModel) architecture for clean separation of concerns.</li>
+                <li>Utilizes Windows API calls for advanced functionality like window placement management.</li>
+                <li>Incorporates error handling and logging for improved reliability and troubleshooting.</li>
+                <li>Designed with modularity in mind, allowing for easy feature additions and maintenance.</li>
+            </ul>
+
+            <p>SwatLauncher is an indispensable tool for IT professionals managing multiple remote Windows servers. By
+                combining ease of use with powerful features, it significantly reduces the time and effort required for
+                remote server management tasks.</p>
+
+            <a href="downloads/SwatLauncher.exe" class="download-link" download>Download SwatLauncher</a>
+        </section>
+
+        <section class="security-note">
+            <h3>Security Note</h3>
+            <p>All applications provided here are guaranteed to be free from malware and viruses. However, for your
+                peace of mind, I recommend scanning any downloaded files with your preferred antivirus software before
+                running them.</p>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Swatto. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
