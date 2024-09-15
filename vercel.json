@@ -1,17 +1,3 @@
 {
-    "version": 2,
-    "routes": [
-        {
-            "src": "/api/get-download-count",
-            "dest": "/api/get-download-count.js"
-        },
-        {
-            "src": "/api/increment-download",
-            "dest": "/api/increment-download.js"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/$1"
-        }
-    ]
+    "version": 2
 }
