@@ -6,24 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swatto's Useful Utilities</title>
     <link rel="stylesheet" href="styling.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
-    <header>
+    <div>
         <h1>Welcome to Swatto's Useful Utilities</h1>
         <p>Here you can find and download useful utilities I have written to help me in my employment role.</p>
-    </header>
+    </div>
 
     <main>
         <section class="utility">
-            <h2>SwatLauncher: Streamlined Remote Desktop Connection Manager</h2>
+            <h2>SwatLauncher: Remote Desktop Connection Manager</h2>
             <p><strong>Version: 1.0.0</strong></p>
 
             <p>SwatLauncher is a Windows application designed to simplify and enhance the management of Remote Desktop
-                Protocol (RDP) connections. This tool offers a
-                user-friendly interface for IT professionals and system administrators who frequently access multiple
-                remote Windows servers.</p>
+                Protocol (RDP) connections. This tool offers a user-friendly interface for IT professionals and system
+                administrators who frequently access multiple remote Windows servers.</p>
 
             <h3>Key Features:</h3>
             <ol>
@@ -51,15 +49,11 @@
                 <li>Developed using C# and WPF, leveraging the power and flexibility of the .NET Framework.</li>
                 <li>Utilizes Windows API calls for advanced functionality like window placement management.</li>
                 <li>The application stores hostname information in a local CSV file under 'servers.csv' for quick access
-                    and easy portability.
-                </li>
+                    and easy portability.</li>
             </ul>
 
-            <p>SwatLauncher is an indispensable tool for IT professionals managing multiple remote Windows servers. It
-                significantly reduces the time and effort required for remote server management tasks.</p>
-
             <div class="useful-tips">
-                <h3><i class="fas fa-lightbulb"></i> Useful Tips</h3>
+                <h3>Useful Tips</h3>
                 <ul>
                     <li><span class="tip-description">Credential deletion:</span> Holding the shift key on the
                         Credential Input window allows you to delete your credentials from Windows Credential Manager.
@@ -71,9 +65,23 @@
                 </ul>
             </div>
 
+            <div class="screenshot-section">
+                <h3>Screenshots</h3>
+                <div class="screenshot-gallery">
+                    <img src="images/MainWindowWithContent.png" alt="SwatLauncher Main Interface"
+                        class="screenshot-thumbnail" onclick="openModal(this.src)">
+                    <img src="images/ManageHostsWithContent.png" alt="SwatLauncher Manage Hosts"
+                        class="screenshot-thumbnail" onclick="openModal(this.src)">
+                    <img src="images/CredsInput.png" alt="SwatLauncher Credential Management"
+                        class="screenshot-thumbnail" onclick="openModal(this.src)">
+                    <img src="images/ScanDomain.png" alt="SwatLauncher Domain Scanning" class="screenshot-thumbnail"
+                        onclick="openModal(this.src)">
+                </div>
+            </div>
+
             <div class="download-section">
                 <a href="downloads/SwatLauncher.exe" class="download-link" download>Download SwatLauncher</a>
-                <p class="sha256">SHA256: fbddc8891cd648e80942e8617d9ab94a5489f665dff73fbfea70b29a014f6214</p>
+                <p class="sha256-hash">SHA256: fbddc8891cd648e80942e8617d9ab94a5489f665dff73fbfea70b29a014f6214</p>
                 <p class="signature-note">Note: This executable is not digitally signed.</p>
                 <p class="future-plans">I'm considering obtaining a code signing certificate in the future to enhance
                     security. Your feedback and usage of the tool will help inform this decision!</p>
@@ -81,18 +89,37 @@
                         href="mailto:feedback@swatto.co.uk">feedback@swatto.co.uk</a></p>
             </div>
         </section>
-
-        <section class="security-note">
-            <h3>Security Note</h3>
-            <p>All applications provided here are guaranteed to be free from malware and viruses. However, for your
-                peace of mind, I recommend scanning any downloaded files with your preferred antivirus software before
-                running them.</p>
-        </section>
     </main>
+
+    <div class="security-note">
+        <h3>Security Note</h3>
+        <p>All applications provided here are guaranteed to be free from malware and viruses. However, for your peace of
+            mind, I recommend scanning any downloaded files with your preferred antivirus software before running them.
+        </p>
+    </div>
 
     <footer>
         <p>&copy; 2024 Swatto. All rights reserved.</p>
     </footer>
+
+    <div id="screenshotModal" class="screenshot-modal">
+        <span class="screenshot-modal-close" onclick="closeModal()">&times;</span>
+        <img class="screenshot-modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(imageSrc) {
+            var modal = document.getElementById("screenshotModal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("screenshotModal");
+            modal.style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
