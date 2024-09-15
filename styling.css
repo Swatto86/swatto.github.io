@@ -87,6 +87,7 @@ body {
     text-align: center;
 }
 
+/* Region: Utility Section Styles */
 .feature-list,
 .tech-highlights {
     list-style-type: none;
@@ -105,7 +106,8 @@ body {
 
 .feature-list li:hover,
 .tech-highlights li:hover {
-    transform: translateX(5px);
+    transform: scale(1.05);
+    /* Changed from translateX(5px) to scale(1.05) */
 }
 
 .feature-highlight {
