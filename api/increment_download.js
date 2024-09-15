@@ -2,6 +2,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 module.exports = async (req, res) => {
+    console.log('Increment download function called');
     const countFilePath = path.join(process.cwd(), 'download_count.json');
 
     try {
