@@ -6,11 +6,13 @@ module.exports = async (req, res) => {
     const countFilePath = path.join(process.cwd(), 'download_count.json');
 
     try {
+        console.log('Reading file:', countFilePath);
         let data = await fs.readFile(countFilePath, 'utf8');
+        console.log('File contents:', data);
         let count = JSON.parse(data).count;
         res.status(200).json({ count });
     } catch (error) {
-        console.error('Error reading download count:', error);
-        res.status(500).json({ error: 'Failed to get download count' });
+        console.error('Error in get-download-count:', error);
+        res.status(500).json({ error: 'Failed to get download count', details: error.message });
     }
 };
