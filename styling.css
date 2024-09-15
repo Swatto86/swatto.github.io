@@ -108,3 +108,8 @@ h1 {
     color: #03dac6;
     margin-top: 0;
 }
+
+.sha256-hash {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
