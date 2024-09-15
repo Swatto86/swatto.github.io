@@ -517,3 +517,15 @@ footer {
     font-size: 0.9em;
     color: #888;
 }
+
+.download-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#download-count-display {
+    font-size: 0.9em;
+    color: #888;
+}

@@ -76,8 +76,9 @@ window.addEventListener('resize', function () {
 async function incrementDownload(event) {
     event.preventDefault();
     try {
-        await fetch('https://swatto-github-io.vercel.app/api/increment-download', { method: 'POST' });
-        updateDownloadCount();
+        const response = await fetch('/api/increment-download', { method: 'POST' });
+        const data = await response.json();
+        updateDownloadCount(data.count);
         window.location.href = 'downloads/SwatLauncher.exe';
     } catch (error) {
         console.error('Failed to increment download count', error);
@@ -85,11 +86,16 @@ async function incrementDownload(event) {
 }
 
 // Function to update download count display
-async function updateDownloadCount() {
+async function updateDownloadCount(count) {
+    document.getElementById('download-count').textContent = count;
+}
+
+// Function to fetch initial download count
+async function fetchDownloadCount() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/Swatto86/swatto.github.io/main/download_count.json');
+        const response = await fetch('/api/get-download-count');
         const data = await response.json();
-        document.getElementById('download-count').textContent = data.count;
+        updateDownloadCount(data.count);
     } catch (error) {
         console.error('Failed to get download count', error);
     }
@@ -103,6 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
         downloadLink.addEventListener('click', incrementDownload);
     }
 
-    // Update download count on page load
-    updateDownloadCount();
+    // Fetch initial download count
+    fetchDownloadCount();
 });
