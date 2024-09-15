@@ -71,3 +71,38 @@ window.addEventListener('resize', function () {
         body.classList.remove('nav-open');
     }
 });
+
+// Function to increment download count
+async function incrementDownload(event) {
+    event.preventDefault();
+    try {
+        await fetch('https://your-vercel-url.vercel.app/api/increment-download', { method: 'POST' });
+        updateDownloadCount();
+        window.location.href = 'downloads/SwatLauncher.exe';
+    } catch (error) {
+        console.error('Failed to increment download count', error);
+    }
+}
+
+// Function to update download count display
+async function updateDownloadCount() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/Swatto86/swatto.github.io/main/download_count.json');
+        const data = await response.json();
+        document.getElementById('download-count').textContent = data.count;
+    } catch (error) {
+        console.error('Failed to get download count', error);
+    }
+}
+
+// DOMContentLoaded event handler
+document.addEventListener('DOMContentLoaded', function () {
+    // Add event listener to download link
+    const downloadLink = document.getElementById('download-link');
+    if (downloadLink) {
+        downloadLink.addEventListener('click', incrementDownload);
+    }
+
+    // Update download count on page load
+    updateDownloadCount();
+});
