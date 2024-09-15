@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swatto's Useful Utilities</title>
     <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
@@ -14,13 +15,15 @@
         <p>Here you can find and download useful utilities I have written to help me in my employment role.</p>
     </header>
 
-    <main role="main">
+    <main>
         <section class="utility">
             <h2>SwatLauncher: Streamlined Remote Desktop Connection Manager</h2>
-            <p>SwatLauncher is a sophisticated Windows application designed to simplify and enhance the management of
-                Remote Desktop Protocol (RDP) connections. Built with C# and WPF (Windows Presentation Foundation), this
-                tool offers a user-friendly interface for IT professionals and system administrators who frequently
-                access multiple remote Windows servers.</p>
+            <p><strong>Version: 1.0.0</strong></p>
+
+            <p>SwatLauncher is a Windows application designed to simplify and enhance the management of Remote Desktop
+                Protocol (RDP) connections. Built with C# and WPF (Windows Presentation Foundation), this tool offers a
+                user-friendly interface for IT professionals and system administrators who frequently access multiple
+                remote Windows servers.</p>
 
             <h3>Key Features:</h3>
             <ol>
@@ -51,25 +54,28 @@
                 <li>Utilizes Windows API calls for advanced functionality like window placement management.</li>
             </ul>
 
-            <p>SwatLauncher is an indispensable tool for IT professionals managing multiple remote Windows servers. By
-                combining ease of use with powerful features, it significantly reduces the time and effort required for
-                remote server management tasks.</p>
+            <p>SwatLauncher is an indispensable tool for IT professionals managing multiple remote Windows servers. It
+                significantly reduces the time and effort required for remote server management tasks.</p>
+
+            <div class="useful-tips">
+                <h3><i class="fas fa-lightbulb"></i> Useful Tips</h3>
+                <ul>
+                    <li><span class="tip-description">Credential deletion:</span> Holding the shift key on the
+                        Credential Input window allows you to delete your credentials from Windows Credential Manager.
+                    </li>
+                    <li><span class="tip-description">CSV file deletion:</span> Holding the shift key on the Manage
+                        Hosts window allows you to delete the CSV file entirely.</li>
+                </ul>
+            </div>
 
             <div class="download-section">
                 <a href="downloads/SwatLauncher.exe" class="download-link" download>Download SwatLauncher</a>
-
-                <p class="sha256-hash">
-                    SHA256: c79c68c4038c3e805d63144b3dc0fb38<wbr>fca961f1985922c0c99b3f2159506887
-                </p>
-
-                <p>Note: This executable is not digitally signed.</p>
-
-                <p>I'm considering obtaining a code signing certificate in the future to
-                    enhance security. Your feedback and usage of the tool will help inform
-                    this decision!</p>
-
-                <p>Have feedback? Email me at <a href="mailto:feedback@swatto.co.uk">feedback@swatto.co.uk</a></p>
-            </div>
+                <p class="sha256">SHA256: c79c68c4038c3e805d63144b3dc0fb38fca961f1985922c0c99b3f2159506887</p>
+                <p class="signature-note">Note: This executable is not digitally signed.</p>
+                <p class="future-plans">I'm considering obtaining a code signing certificate in the future to enhance
+                    security. Your feedback and usage of the tool will help inform this decision!</p>
+                <p class="feedback">Have feedback? Email me at <a
+                        href="mailto:feedback@swatto.co.uk">feedback@swatto.co.uk</a></p>
             </div>
         </section>
 

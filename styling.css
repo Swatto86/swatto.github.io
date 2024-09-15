@@ -1,3 +1,4 @@
+/* Region: General Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -11,6 +12,19 @@ body {
 
 h1 {
     color: #bb86fc;
+}
+
+/* Region: Utility Section Styles */
+.utility {
+    background-color: #2d2d2d;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.utility h2 {
+    margin-top: 0;
+    color: #03dac6;
 }
 
 .utility h3 {
@@ -31,18 +45,7 @@ h1 {
     color: #bb86fc;
 }
 
-.utility {
-    background-color: #2d2d2d;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-.utility h2 {
-    margin-top: 0;
-    color: #03dac6;
-}
-
+/* Region: Download Section Styles */
 .download-section {
     margin-top: 20px;
     background-color: #333;
@@ -96,6 +99,7 @@ h1 {
     text-decoration: underline;
 }
 
+/* Region: Security Note Styles */
 .security-note {
     background-color: #2d2d2d;
     padding: 15px;
@@ -109,7 +113,43 @@ h1 {
     margin-top: 0;
 }
 
+/* Region: Utility Styles */
 .sha256-hash {
     word-wrap: break-word;
     overflow-wrap: break-word;
+}
+
+/* Region: Useful Tips Styles */
+.useful-tips {
+    background-color: #3a3a3a;
+    border-left: 5px solid #ffd700;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.useful-tips h3 {
+    color: #ffd700;
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.useful-tips h3 i {
+    margin-right: 10px;
+}
+
+.useful-tips ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.useful-tips li {
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.tip-description {
+    font-style: normal;
+    font-weight: bold;
+    color: #03dac6;
 }
