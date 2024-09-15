@@ -76,7 +76,7 @@ window.addEventListener('resize', function () {
 async function incrementDownload(event) {
     event.preventDefault();
     try {
-        await fetch('https://your-vercel-url.vercel.app/api/increment-download', { method: 'POST' });
+        await fetch('https://swatto-github-io.vercel.app/api/increment-download', { method: 'POST' });
         updateDownloadCount();
         window.location.href = 'downloads/SwatLauncher.exe';
     } catch (error) {
