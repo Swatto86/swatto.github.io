@@ -49,6 +49,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .utility-title {
@@ -90,7 +91,7 @@ body {
 .tech-highlights {
     list-style-type: none;
     padding: 0;
-    text-align: left;
+    text-align: center;
 }
 
 .feature-list li,
