@@ -72,29 +72,36 @@ window.addEventListener('resize', function () {
     }
 });
 
-// Function to increment download count
+// Function to increment download count and trigger download
 async function incrementDownload(event) {
     event.preventDefault();
+    console.log('Download button clicked'); // Debug log
     try {
         const response = await fetch('/api/increment-download', { method: 'POST' });
+        console.log('API response:', response); // Debug log
         const data = await response.json();
+        console.log('API data:', data); // Debug log
         updateDownloadCount(data.count);
-        window.location.href = 'downloads/SwatLauncher.exe';
+        // Trigger the download
+        window.location.href = document.getElementById('download-link').href;
     } catch (error) {
         console.error('Failed to increment download count', error);
     }
 }
 
 // Function to update download count display
-async function updateDownloadCount(count) {
+function updateDownloadCount(count) {
     document.getElementById('download-count').textContent = count;
 }
 
 // Function to fetch initial download count
 async function fetchDownloadCount() {
+    console.log('Fetching download count'); // Debug log
     try {
         const response = await fetch('/api/get-download-count');
+        console.log('API response:', response); // Debug log
         const data = await response.json();
+        console.log('API data:', data); // Debug log
         updateDownloadCount(data.count);
     } catch (error) {
         console.error('Failed to get download count', error);
@@ -103,10 +110,14 @@ async function fetchDownloadCount() {
 
 // DOMContentLoaded event handler
 document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOM fully loaded'); // Debug log
     // Add event listener to download link
     const downloadLink = document.getElementById('download-link');
     if (downloadLink) {
+        console.log('Download link found'); // Debug log
         downloadLink.addEventListener('click', incrementDownload);
+    } else {
+        console.log('Download link not found'); // Debug log
     }
 
     // Fetch initial download count
