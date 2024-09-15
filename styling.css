@@ -347,3 +347,9 @@ footer {
 .sha256-copy-msg {
     color: #a0a0a0;
 }
+
+.note {
+    color: red;
+    font-weight: bold;
+    /* Optional: makes the 'Note:' stand out more */
+}
