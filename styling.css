@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+h1 {
+    color: #bb86fc;
+}
+
+.utility {
+    background-color: #2d2d2d;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.utility h2 {
+    margin-top: 0;
+    color: #03dac6;
+}
+
+.download-link {
+    display: inline-block;
+    background-color: #bb86fc;
+    color: #1e1e1e;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.download-link:hover {
+    background-color: #03dac6;
+}
