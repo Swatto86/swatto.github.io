@@ -14,7 +14,7 @@
         <p>Here you can find and download useful utilities I have written to help me in my employment role.</p>
     </header>
 
-    <main>
+    <main role="main">
         <section class="utility">
             <h2>SwatLauncher: Streamlined Remote Desktop Connection Manager</h2>
             <p>SwatLauncher is a sophisticated Windows application designed to simplify and enhance the management of
@@ -36,16 +36,12 @@
                     securely store and manage RDP credentials, eliminating the need for repetitive login input.</li>
                 <li><strong>One-Click RDP Connections:</strong> Double-clicking a server in the list automatically
                     launches an RDP session, streamlining the connection process.</li>
-                <li><strong>Custom RDP Settings:</strong> The application generates temporary RDP files with predefined
-                    settings, ensuring a consistent and optimized remote desktop experience.</li>
                 <li><strong>System Tray Integration:</strong> SwatLauncher can be minimized to the system tray, allowing
                     for quick access while keeping your desktop clutter-free.</li>
                 <li><strong>Dark Theme Interface:</strong> A sleek, dark-themed UI reduces eye strain during extended
                     use and provides a modern look and feel.</li>
                 <li><strong>Window Position Memory:</strong> The application remembers its last position and size,
                     providing a consistent user experience across sessions.</li>
-                <li><strong>Customizable and Extensible:</strong> The codebase is well-organized and documented, making
-                    it easy for developers to customize or extend functionality as needed.</li>
             </ol>
 
             <h3>Technical Highlights:</h3>
@@ -53,15 +49,21 @@
                 <li>Developed using C# and WPF, leveraging the power and flexibility of the .NET Framework.</li>
                 <li>Implements MVVM (Model-View-ViewModel) architecture for clean separation of concerns.</li>
                 <li>Utilizes Windows API calls for advanced functionality like window placement management.</li>
-                <li>Incorporates error handling and logging for improved reliability and troubleshooting.</li>
-                <li>Designed with modularity in mind, allowing for easy feature additions and maintenance.</li>
             </ul>
 
             <p>SwatLauncher is an indispensable tool for IT professionals managing multiple remote Windows servers. By
                 combining ease of use with powerful features, it significantly reduces the time and effort required for
                 remote server management tasks.</p>
 
-            <a href="downloads/SwatLauncher.exe" class="download-link" download>Download SwatLauncher</a>
+            <div class="download-section">
+                <a href="downloads/SwatLauncher.exe" class="download-link" download>Download SwatLauncher</a>
+                <p class="sha256">SHA256: c79c68c4038c3e805d63144b3dc0fb38fca961f1985922c0c99b3f2159506887</p>
+                <p class="signature-note">Note: This executable is currently not digitally signed.</p>
+                <p class="future-plans">I'm considering obtaining a code signing certificate in the future to enhance
+                    security. Your feedback and usage of the tool will help inform this decision!</p>
+                <p class="feedback">Have feedback? Email me at <a
+                        href="mailto:feedback@swatto.co.uk">feedback@swatto.co.uk</a></p>
+            </div>
         </section>
 
         <section class="security-note">

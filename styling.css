@@ -43,6 +43,13 @@ h1 {
     color: #03dac6;
 }
 
+.download-section {
+    margin-top: 20px;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+}
+
 .download-link {
     display: inline-block;
     background-color: #bb86fc;
@@ -55,6 +62,38 @@ h1 {
 
 .download-link:hover {
     background-color: #03dac6;
+}
+
+.sha256 {
+    font-family: monospace;
+    background-color: #444;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.signature-note {
+    font-style: italic;
+    color: #bb86fc;
+    margin-top: 5px;
+}
+
+.future-plans {
+    margin-top: 10px;
+    color: #03dac6;
+}
+
+.feedback {
+    margin-top: 10px;
+}
+
+.feedback a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+.feedback a:hover {
+    text-decoration: underline;
 }
 
 .security-note {
