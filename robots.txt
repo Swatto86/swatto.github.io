@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://swatto.co.uk/sitemap.xml
