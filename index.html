@@ -81,10 +81,17 @@
 
             <div class="download-section">
                 <a href="downloads/SwatLauncher.exe" class="download-link" download>Download SwatLauncher</a>
-                <p class="sha256-hash">SHA256: fbddc8891cd648e80942e8617d9ab94a5489f665dff73fbfea70b29a014f6214</p>
+                <div class="sha256-container">
+                    <h4 class="sha256-title">SHA256 Checksum:</h4>
+                    <div class="sha256-value" onclick="copyToClipboard(this.textContent)">
+                        fbddc8891cd648e80942e8617d9ab94a5489f665dff73fbfea70b29a014f6214
+                    </div>
+                    <div class="sha256-copy-msg">Click to copy</div>
+                </div>
                 <p class="signature-note">Note: This executable is not digitally signed.</p>
                 <p class="future-plans">I'm considering obtaining a code signing certificate in the future to enhance
-                    security. Your feedback and usage of the tool will help inform this decision!</p>
+                    security. Your
+                    feedback and usage of the tool will help inform this decision!</p>
                 <p class="feedback">Have feedback? Email me at <a
                         href="mailto:feedback@swatto.co.uk">feedback@swatto.co.uk</a></p>
             </div>
@@ -118,6 +125,17 @@
         function closeModal() {
             var modal = document.getElementById("screenshotModal");
             modal.style.display = "none";
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text.trim()).then(() => {
+                document.querySelector('.sha256-copy-msg').textContent = 'Copied!';
+                setTimeout(() => {
+                    document.querySelector('.sha256-copy-msg').textContent = 'Click to copy';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
         }
     </script>
 </body>

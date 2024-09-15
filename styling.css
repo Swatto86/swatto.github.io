@@ -146,7 +146,7 @@ h3 {
 .download-section {
     margin-top: 20px;
     background-color: #333;
-    padding: 15px;
+    padding: 20px;
     border-radius: 5px;
 }
 
@@ -158,10 +158,51 @@ h3 {
     text-decoration: none;
     border-radius: 3px;
     transition: background-color 0.3s ease;
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
 .download-link:hover {
     background-color: var(--secondary-accent);
+}
+
+/* Region: SHA256 Styles */
+.sha256-container {
+    background-color: var(--secondary-bg);
+    border: 2px solid var(--secondary-accent);
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sha256-title {
+    color: var(--secondary-accent);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.sha256-value {
+    font-family: monospace;
+    background-color: #444;
+    color: var(--primary-text);
+    padding: 10px;
+    border-radius: 3px;
+    word-break: break-all;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sha256-value:hover {
+    background-color: #555;
+}
+
+.sha256-copy-msg {
+    color: var(--secondary-accent);
+    font-size: 0.9em;
+    margin-top: 5px;
+    text-align: right;
 }
 
 /* Region: Security Note Styles */
@@ -219,4 +260,29 @@ footer {
     text-align: center;
     color: var(--primary-text);
     font-size: 0.9em;
+}
+
+/* Region: Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .download-link {
+        font-size: 1em;
+        padding: 8px 12px;
+    }
+
+    .sha256-container {
+        padding: 10px;
+    }
+
+    .sha256-title {
+        font-size: 1em;
+    }
+
+    .sha256-value {
+        font-size: 0.9em;
+        padding: 8px;
+    }
 }
