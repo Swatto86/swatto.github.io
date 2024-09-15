@@ -80,7 +80,10 @@
             </div>
 
             <div class="download-section">
-                <a href="downloads/SwatLauncher.exe" class="download-link" download>Download SwatLauncher</a>
+                <div class="download-button-container">
+                    <a href="downloads/SwatLauncher.exe" class="download-link" download>Download</a>
+                </div>
+
                 <div class="sha256-container">
                     <h4 class="sha256-title">SHA256 Checksum:</h4>
                     <div class="sha256-value" onclick="copyToClipboard(this.textContent)">
@@ -88,6 +91,7 @@
                     </div>
                     <div class="sha256-copy-msg">Click to copy</div>
                 </div>
+
                 <p class="signature-note">Note: This executable is not digitally signed.</p>
                 <p class="future-plans">I'm considering obtaining a code signing certificate in the future to enhance
                     security. Your
