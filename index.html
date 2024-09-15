@@ -4,33 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords"
-        content="SwatLauncher, Remote Desktop Connection Manager, Windows utilities, productivity tools">
     <title>Swatto's Useful Utilities</title>
     <link rel="stylesheet" href="styling.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
+    <nav id="utility-nav" class="utility-nav">
+        <ul>
+            <li><a href="#swatlauncher">SwatLauncher</a></li>
+        </ul>
+    </nav>
+
+    <button id="nav-toggle" class="nav-toggle">☰</button>
+
     <div class="container">
-        <header>
-            <h1 class="main-title">Swatto's Useful Utilities</h1>
-            <p class="subtitle">Enhancing your productivity with custom-built tools</p>
-        </header>
+        <div>
+            <h1 id="swattos-useful-utilities" class="main-title">Swatto's Useful Utilities</h1>
+            <p>Enhancing your productivity with custom-built tools</p>
+        </div>
 
         <main role="main">
-            <section class="utility">
+            <section class="utility" id="swatlauncher">
                 <h2 class="utility-title">SwatLauncher</h2>
-                <p class="utility-subtitle">Remote Desktop Connection Manager</p>
-                <p class="version"><strong>Version: 1.0.0</strong></p>
+                <p>Remote Desktop Connection Manager</p>
+                <p><strong>Version: 1.0.0</strong></p>
 
-                <p class="description">
-                    SwatLauncher is a Windows application designed to simplify and enhance
+                <p>SwatLauncher is a Windows application designed to simplify and enhance
                     the management of Remote Desktop Protocol (RDP) connections. This tool
                     offers a user-friendly interface for IT professionals and system
-                    administrators who frequently access multiple remote Windows servers.
-                </p>
-
+                    administrators who frequently access multiple remote Windows servers.</p>
 
                 <div class="download-section">
                     <a href="downloads/SwatLauncher.exe" class="download-link" download>Download</a>
@@ -40,12 +42,13 @@
                         <div class="sha256-value" onclick="copyToClipboard(this.textContent)">
                             f0b50c9ec5688c5ed6fc6743fb195e35
                         </div>
-                        <p class="sha256-copy-msg">Click to copy</p>
+                        <p>Click to copy</p>
                     </div>
 
                     <p><span class="note">Note:</span> This executable is not digitally signed (yet).</p>
-                    <p>I'm considering obtaining a code signing certificate in the future to enhance security. Your
-                        feedback and usage of the tool will help inform this decision!</p>
+                    <p>I'm considering obtaining a code signing certificate in the future to
+                        enhance security. Your feedback and usage of the tool will help inform
+                        this decision!</p>
                     <p>Have feedback? Email me at <a href="mailto:feedback@swatto.co.uk">feedback@swatto.co.uk</a></p>
                 </div>
 
@@ -90,8 +93,7 @@
                             window to delete credentials from Windows Credential Manager.</li>
                         <li><span class="tip-highlight">CSV file Deletion:</span> Hold shift on the Manage Hosts window
                             to delete the CSV file entirely.</li>
-                        <li><span class="tip-highlight">Close the Application:</span> Close/minimize the application
-                            and
+                        <li><span class="tip-highlight">Close the Application:</span> Close/minimize the application and
                             right-click the system tray icon to exit.</li>
                     </ul>
                 </div>
@@ -102,48 +104,28 @@
                     <li>Utilizes Windows API calls for advanced functionality.</li>
                     <li>Stores hostname information in a local 'servers.csv' file for quick access and portability.</li>
                 </ul>
-
             </section>
+
+            <div class="security-note">
+                <h3 class="section-title">Security Note</h3>
+                <p>All applications provided here are guaranteed to be free from malware
+                    and viruses. However, for your peace of mind, I recommend scanning any
+                    downloaded files with your preferred antivirus software/service before
+                    running them.</p>
+            </div>
         </main>
 
-        <div class="security-note">
-            <h3 class="section-title">Security Note</h3>
-            <p>All applications provided here are guaranteed to be free from malware and viruses. However, for your
-                peace of mind, I recommend scanning any downloaded files with your preferred antivirus software/service
-                before running them.</p>
-        </div>
-
         <footer>
-            <p>&copy; 2024 Swatto. All rights reserved.</p>
+            <p>© 2024 Swatto. All rights reserved.</p>
         </footer>
     </div>
 
     <div id="screenshotModal" class="screenshot-modal">
-        <span class="screenshot-modal-close" onclick="closeModal()">&times;</span>
-        <img class="screenshot-modal-content" id="screenshotModalImg">
+        <span class="screenshot-modal-close" onclick="closeModal()">×</span>
+        <img id="modalImage" class="screenshot-modal-content">
     </div>
 
-    <script>
-        function openModal(imgSrc) {
-            var modal = document.getElementById("screenshotModal");
-            var modalImg = document.getElementById("screenshotModalImg");
-            modal.style.display = "block";
-            modalImg.src = imgSrc;
-        }
-
-        function closeModal() {
-            var modal = document.getElementById("screenshotModal");
-            modal.style.display = "none";
-        }
-
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function () {
-                alert("SHA256 checksum copied to clipboard!");
-            }, function (err) {
-                console.error('Could not copy text: ', err);
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

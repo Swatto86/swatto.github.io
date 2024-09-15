@@ -27,6 +27,70 @@ body {
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+    transition: margin-left 0.3s ease;
+}
+
+/* Region: Navigation Styles */
+.utility-nav {
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    background-color: var(--secondary-bg);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.utility-nav.open {
+    left: 0;
+}
+
+.utility-nav ul {
+    padding-top: 60px;
+    transition: padding-top 0.3s ease;
+}
+
+.utility-nav ul li:first-child {
+    margin-top: 50px;
+}
+
+.utility-nav ul li {
+    margin-top: 0;
+}
+
+.utility-nav li {
+    margin-bottom: 15px;
+}
+
+.utility-nav a {
+    color: var(--primary-text);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.utility-nav a:hover {
+    color: var(--primary-accent);
+}
+
+.nav-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav-open .container {
+    margin-left: 200px;
 }
 
 /* Region: Header Styles */
@@ -326,6 +390,40 @@ footer {
     .screenshot-thumbnail {
         height: 120px;
     }
+
+    .nav-open .container {
+        margin-left: 0;
+    }
+
+    .utility-nav {
+        width: 100%;
+    }
+}
+
+/* Region: Accessibility Improvements */
+.download-link:focus,
+.sha256-value:focus,
+.screenshot-thumbnail:focus,
+.nav-toggle:focus {
+    outline: 3px solid var(--highlight);
+    outline-offset: 2px;
+}
+
+.screenshot-modal-close:focus {
+    outline: 2px solid var(--primary-text);
+    outline-offset: 2px;
+}
+
+/* Improve contrast for better readability */
+.subtitle,
+.version,
+.sha256-copy-msg {
+    color: #a0a0a0;
+}
+
+.note {
+    color: red;
+    font-weight: bold;
 }
 
 /* Region: Accessibility Improvements */
@@ -352,4 +450,64 @@ footer {
     color: red;
     font-weight: bold;
     /* Optional: makes the 'Note:' stand out more */
+}
+
+/* Navigation Styles */
+.utility-nav {
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    background-color: var(--secondary-bg);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.utility-nav.open {
+    left: 0;
+}
+
+.utility-nav ul {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.utility-nav li {
+    margin-bottom: 15px;
+}
+
+.utility-nav a {
+    color: var(--primary-text);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.utility-nav a:hover {
+    color: var(--primary-accent);
+}
+
+.nav-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Adjust main content when nav is open */
+.container {
+    transition: margin-left 0.3s ease;
+}
+
+.nav-open .container {
+    margin-left: 200px;
 }
