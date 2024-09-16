@@ -33,3 +33,25 @@ function copyToClipboard(text) {
         console.error('Could not copy text: ', err);
     });
 }
+
+document.addEventListener("DOMContentLoaded", async () => {
+    // Fetch and display the current download count
+    try {
+        const response = await fetch('/api/get-download-count');
+        const data = await response.json();
+        document.getElementById('download-count').textContent = data.count || 0;
+    } catch (error) {
+        console.error('Failed to fetch download count:', error);
+    }
+});
+
+// Attach the increment function to the download button click event
+document.querySelector('.download-link').addEventListener('click', async () => {
+    try {
+        const response = await fetch('/api/increment-download', { method: 'POST' });
+        const data = await response.json();
+        document.getElementById('download-count').textContent = data.count || 0;
+    } catch (error) {
+        console.error('Failed to increment download count:', error);
+    }
+});
