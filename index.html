@@ -9,50 +9,47 @@
 </head>
 
 <body>
-    <nav id="utility-nav" class="utility-nav">
-        <ul>
-            <li><a href="#swatlauncher">SwatLauncher</a></li>
-        </ul>
+    <nav id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="#swatlauncher">SwatLauncher</a>
+        <!-- Add more utility links here as needed -->
     </nav>
 
-    <button id="nav-toggle" class="nav-toggle">☰</button>
-
-    <div class="container">
-        <div>
-            <h1 id="swattos-useful-utilities" class="main-title">Swatto's Useful Utilities</h1>
+    <div class="content">
+        <header>
+            <span class="open-nav" onclick="openNav()">☰</span>
+            <h1 class="main-title">Swatto's Useful Utilities</h1>
             <p>Enhancing your productivity with custom-built tools</p>
-        </div>
+        </header>
 
-        <main role="main">
-            <section class="utility" id="swatlauncher">
+        <main>
+            <section id="swatlauncher" class="utility">
                 <h2 class="utility-title">SwatLauncher</h2>
                 <p class="utility-subtitle">Remote Desktop Connection Manager</p>
-                <p><strong>Version: 1.1.0</strong></p>
-
-                <p>SwatLauncher is a Windows application designed for system administrators to simplify connecting to
-                    multiple RDP hosts (with the same set of credentials).
-                    It enables you to save and search a list of hosts and associated descriptions for easy RDP
-                    connection.</p>
+                <p class="version">Version: 1.1.0</p>
+                <p class="description">
+                    SwatLauncher is a Windows application designed for system administrators
+                    to simplify connecting to multiple RDP hosts (with the same set of
+                    credentials). It enables you to save and search a list of hosts and
+                    associated descriptions for easy RDP connection.
+                </p>
 
                 <div class="download-section">
-                    <a href="downloads/SwatLauncher.exe" id="download-link" class="download-link"
-                        download="">Download</a>
-                    <div id="download-count-display">Downloads: <span id="download-count">0</span></div>
-
+                    <a href="downloads/SwatLauncher.exe" class="download-link" download>Download</a>
+                    <p id="download-count-display">Downloads: <span id="download-count">0</span></p>
                     <div class="sha256-container">
                         <h4 class="sha256-title">SHA256 Checksum:</h4>
-                        <div class="sha256-value" onclick="copyToClipboard(this.textContent)">
+                        <p class="sha256-value" onclick="copyToClipboard(this.textContent)">
                             2d05d71434705e32ae1ae99cb56e8b643be5b856ecd7f5ef03a83c7219fd661e
-                        </div>
-                        <p>Click to copy</p>
+                        </p>
+                        <p class="copy-instruction">Click to copy</p>
                     </div>
-
-                    <p><span class="note">Note:</span> This executable is not digitally signed (yet).</p>
+                    <p class="note">Note: This executable is not digitally signed (yet).</p>
                 </div>
 
-                <h3 class="section-title">Changelog</h3>
                 <div class="changelog-section">
-                    <ul class="changelog-list">
+                    <h3>Changelog</h3>
+                    <ul>
                         <li>
                             <strong>Version 1.1.0</strong> (Current)
                             <ul>
@@ -71,7 +68,7 @@
                 </div>
 
                 <div class="screenshot-section">
-                    <h3 class="section-title">Screenshots</h3>
+                    <h3>Screenshots</h3>
                     <div class="screenshot-gallery">
                         <img src="images/MainWindowWithContent.png" alt="SwatLauncher Main Interface"
                             class="screenshot-thumbnail" onclick="openModal(this.src)">
@@ -84,72 +81,67 @@
                     </div>
                 </div>
 
-                <h3 class="section-title">Key Features</h3>
-                <ul class="feature-list">
-                    <li><span class="feature-highlight">Secure Credential Management</span> Leverages Windows
-                        Credential Manager for secure RDP credentials storage.</li>
-                    <li><span class="feature-highlight">Active Directory Scanning</span>
-                        Can scan a specified Active Directory domain to populate a list of servers and descriptions.
-                    </li>
-                    <li><span class="feature-highlight">Hostname and Description Updates</span> Easy addition,
-                        updating, and
-                        deletion of hostname and description entries.</li>
-                    <li><span class="feature-highlight">Search Functionality</span> Allows searching of hostnames and
-                        descriptions.</li>
-                    <li><span class="feature-highlight">Double-Click RDP Connections</span> Instant RDP session launch
-                        with a double-click of a hostname entry.</li>
-                    <li><span class="feature-highlight">System Tray Integration</span> Minimizes/Closes to the system
-                        tray for
-                        clutter-free desktop access.</li>
-                </ul>
-
-                <h3 class="section-title">Useful Tips</h3>
-                <div class="useful-tips">
-
+                <div class="key-features">
+                    <h3>Key Features</h3>
                     <ul>
-                        <li><span class="tip-highlight">Credential Deletion</span> Hold shift for 1 second on the
-                            Credential Input window to delete your stored 'SwatLauncher' credentials from Windows
-                            Credential Manager.</li>
-                        <li><span class="tip-highlight">CSV file Deletion</span> Hold shift for 1 second on the Manage
-                            Hosts window
-                            to delete the CSV file entirely.</li>
-                        <li><span class="tip-highlight">Close the Application</span> Minimize/Close the application and
-                            right-click the system tray icon to exit.</li>
+                        <li><span class="feature-highlight">Secure Credential Management:</span> Leverages Windows
+                            Credential Manager for secure RDP credentials storage.</li>
+                        <li><span class="feature-highlight">Active Directory Scanning:</span> Can scan a specified
+                            Active Directory domain to populate a list of servers and descriptions.</li>
+                        <li><span class="feature-highlight">Hostname and Description Updates:</span> Easy addition,
+                            updating, and deletion of hostname and description entries.</li>
+                        <li><span class="feature-highlight">Search Functionality:</span> Allows searching of hostnames
+                            and descriptions.</li>
+                        <li><span class="feature-highlight">Double-Click RDP Connections:</span> Instant RDP session
+                            launch with a double-click of a hostname entry.</li>
+                        <li><span class="feature-highlight">System Tray Integration:</span> Minimizes/Closes to the
+                            system tray for clutter-free desktop access.</li>
                     </ul>
                 </div>
 
-                <h3 class="section-title">Technical Highlights</h3>
-                <ul class="tech-highlights">
-                    <li>Stores hostname information in a local 'servers.csv' file for quick access and portability.</li>
-                </ul>
+                <div class="useful-tips">
+                    <h3>Useful Tips</h3>
+                    <ul>
+                        <li><span class="tip-highlight">Credential Deletion:</span> Hold shift for 1 second on the
+                            Credential Input window to delete your stored 'SwatLauncher' credentials from Windows
+                            Credential Manager.</li>
+                        <li><span class="tip-highlight">CSV file Deletion:</span> Hold shift for 1 second on the Manage
+                            Hosts window to delete the CSV file entirely.</li>
+                        <li><span class="tip-highlight">Close the Application:</span> Minimize/Close the application and
+                            right-click the system tray icon to exit.</li>
+                    </ul>
+                </div>
             </section>
 
-            <div class="security-note">
-                <h3 class="section-title">Security Note</h3>
-                <p>All applications provided here are guaranteed to be free from malware
-                    and viruses. However, for your peace of mind, I recommend scanning any
-                    downloaded files with your preferred antivirus software/service before
-                    running them.</p>
-            </div>
+            <!-- Add more utility sections here as needed -->
         </main>
 
         <footer>
-            <p>I'm considering obtaining a code signing certificate in the future to
-                enhance security.</p>
-            <p>Your feedback and usage of the tools will help inform
-                this decision!</p>
+            <div class="security-note">
+                <h3>Security Note</h3>
+                <p>
+                    All applications provided here are guaranteed to be free from malware
+                    and viruses. However, for your peace of mind, I recommend scanning any
+                    downloaded files with your preferred antivirus software/service before
+                    running them.
+                </p>
+            </div>
+            <p>
+                I'm considering obtaining a code signing certificate in the future to
+                enhance security. Your feedback and usage of the tools will help inform
+                this decision!
+            </p>
             <p><a href="mailto:feedback@swatto.co.uk">feedback@swatto.co.uk</a></p>
-            <p>© 2024 Swatto. All rights reserved.</p>
+            <p>&copy; 2024 Swatto. All rights reserved.</p>
         </footer>
     </div>
 
     <div id="screenshotModal" class="screenshot-modal">
-        <span class="screenshot-modal-close" onclick="closeModal()">X</span>
-        <img id="modalImage" class="screenshot-modal-content">
+        <span class="screenshot-modal-close" onclick="closeModal()">&times;</span>
+        <img class="screenshot-modal-content" id="modalImage">
     </div>
 
     <script src="script.js"></script>
-    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 
 </html>
