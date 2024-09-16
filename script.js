@@ -35,16 +35,54 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error('Download link not found.');
     }
 
-    // Simplified event listener to copy SHA256 value to clipboard
+    // Screenshot modal functions
+    function openModal(imgSrc) {
+        const modal = document.getElementById("screenshotModal");
+        const modalImg = document.getElementById("modalImage");
+        if (modal && modalImg) {
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+        } else {
+            console.error('Modal elements not found.');
+        }
+    }
+
+    function closeModal() {
+        const modal = document.getElementById("screenshotModal");
+        if (modal) {
+            modal.style.display = "none";
+        } else {
+            console.error('Modal element not found.');
+        }
+    }
+
+    // Add event listeners to screenshots to open modal
+    const thumbnails = document.querySelectorAll('.screenshot-thumbnail');
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', () => openModal(thumbnail.src));
+    });
+
+    // Event listener to close the modal
+    const closeModalButton = document.querySelector('.screenshot-modal-close');
+    if (closeModalButton) {
+        closeModalButton.addEventListener('click', closeModal);
+    } else {
+        console.error('Close modal button not found.');
+    }
+
+    // Copy to clipboard function
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Checksum copied to clipboard!");
+        }).catch(err => {
+            console.error('Could not copy text:', err);
+        });
+    }
+
+    // Add event listener to SHA256 value for copy to clipboard functionality
     const sha256Value = document.querySelector('.sha256-value');
     if (sha256Value) {
-        sha256Value.addEventListener('click', () => {
-            navigator.clipboard.writeText(sha256Value.textContent).then(() => {
-                alert("Checksum copied to clipboard!");
-            }).catch(err => {
-                console.error('Could not copy text:', err);
-            });
-        });
+        sha256Value.addEventListener('click', () => copyToClipboard(sha256Value.textContent));
     } else {
         console.error('SHA256 value element not found.');
     }
