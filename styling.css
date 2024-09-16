@@ -34,50 +34,34 @@ body {
     padding: 20px;
 }
 
-/* Navigation Styles */
-.side-nav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
+/* Navbar Styles */
+.top-nav {
+    position: sticky;
     top: 0;
-    left: 0;
+    width: 100%;
     background-color: var(--secondary-bg);
-    overflow-x: hidden;
-    transition: 0.3s;
-    padding-top: 60px;
-    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
 }
 
-.side-nav a {
-    padding: 8px 8px 8px 32px;
+.nav-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.nav-link {
+    margin: 0 15px;
+    color: var(--secondary-text);
     text-decoration: none;
     font-size: 18px;
-    color: var(--secondary-text);
-    display: block;
-    transition: 0.3s;
+    transition: color 0.3s, border-bottom 0.3s;
 }
 
-.side-nav a:hover {
+.nav-link:hover,
+.nav-link:focus {
     color: var(--primary-accent);
-}
-
-.side-nav .close-btn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-.open-nav {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: var(--secondary-bg);
-    color: var(--primary-text);
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
+    border-bottom: 2px solid var(--primary-accent);
 }
 
 /* Header Styles */
