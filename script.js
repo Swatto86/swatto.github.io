@@ -27,9 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Attach the increment function to the download button click event
     const downloadLink = document.querySelector('.download-link');
     if (downloadLink) {
-        downloadLink.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent default link action during testing
+        downloadLink.addEventListener('click', () => {
             incrementDownloadCount();
+            // Removed event.preventDefault() to allow file download
         });
     } else {
         console.error('Download link not found.');
