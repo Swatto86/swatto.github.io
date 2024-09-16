@@ -26,13 +26,13 @@
         <main role="main">
             <section class="utility" id="swatlauncher">
                 <h2 class="utility-title">SwatLauncher</h2>
-                <p>Remote Desktop Connection Manager</p>
-                <p><strong>Version: 1.0.0</strong></p>
+                <p class="utility-subtitle">Remote Desktop Connection Manager</p>
+                <p><strong>Version: 1.1.0</strong></p>
 
-                <p>SwatLauncher is a Windows application designed to simplify and enhance
-                    the management of Remote Desktop Protocol (RDP) connections. This tool
-                    offers a user-friendly interface for IT professionals and system
-                    administrators who frequently access multiple remote Windows servers.</p>
+                <p>SwatLauncher is a Windows application designed for system administrators to simplify connecting to
+                    multiple RDP hosts (with the same set of credentials).
+                    It enables you to save and search a list of hosts and associated descriptions for easy RDP
+                    connection.</p>
 
                 <div class="download-section">
                     <a href="downloads/SwatLauncher.exe" id="download-link" class="download-link"
@@ -42,16 +42,32 @@
                     <div class="sha256-container">
                         <h4 class="sha256-title">SHA256 Checksum:</h4>
                         <div class="sha256-value" onclick="copyToClipboard(this.textContent)">
-                            f0b50c9ec5688c5ed6fc6743fb195e35
+                            2d05d71434705e32ae1ae99cb56e8b643be5b856ecd7f5ef03a83c7219fd661e
                         </div>
                         <p>Click to copy</p>
                     </div>
 
                     <p><span class="note">Note:</span> This executable is not digitally signed (yet).</p>
-                    <p>I'm considering obtaining a code signing certificate in the future to
-                        enhance security. Your feedback and usage of the tool will help inform
-                        this decision!</p>
-                    <p>Have feedback? Email me at <a href="mailto:feedback@swatto.co.uk">feedback@swatto.co.uk</a></p>
+                </div>
+
+                <h3 class="section-title">Changelog</h3>
+                <div class="changelog-section">
+                    <ul class="changelog-list">
+                        <li>
+                            <strong>Version 1.1.0</strong> (Current)
+                            <ul>
+                                <li>Removed window animations.</li>
+                                <li>Added 1 second timer to shift-key press to prevent accidental deletions.</li>
+                                <li>Various bug fixes and performance improvements.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Version 1.0.0</strong>
+                            <ul>
+                                <li>Initial release of SwatLauncher.</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="screenshot-section">
@@ -70,40 +86,40 @@
 
                 <h3 class="section-title">Key Features</h3>
                 <ul class="feature-list">
-                    <li><span class="feature-highlight">Secure Credential Management:</span> Leverages Windows
+                    <li><span class="feature-highlight">Secure Credential Management</span> Leverages Windows
                         Credential Manager for secure RDP credentials storage.</li>
-                    <li><span class="feature-highlight">Active Directory Integration:</span> Automatically populates
-                        Windows servers list with FQDNs and descriptions.</li>
-                    <li><span class="feature-highlight">Efficient Server Management:</span> Easy addition, updating, and
-                        deletion of server entries.</li>
-                    <li><span class="feature-highlight">Quick Search Functionality:</span> Rapid server location through
-                        hostname and description filtering.</li>
-                    <li><span class="feature-highlight">One-Click RDP Connections:</span> Instant RDP session launch
-                        with a double-click.</li>
-                    <li><span class="feature-highlight">System Tray Integration:</span> Minimizes to system tray for
+                    <li><span class="feature-highlight">Active Directory Scanning</span>
+                        Can scan a specified Active Directory domain to populate a list of servers and descriptions.
+                    </li>
+                    <li><span class="feature-highlight">Hostname and Description Updates</span> Easy addition,
+                        updating, and
+                        deletion of hostname and description entries.</li>
+                    <li><span class="feature-highlight">Search Functionality</span> Allows searching of hostnames and
+                        descriptions.</li>
+                    <li><span class="feature-highlight">Double-Click RDP Connections</span> Instant RDP session launch
+                        with a double-click of a hostname entry.</li>
+                    <li><span class="feature-highlight">System Tray Integration</span> Minimizes/Closes to the system
+                        tray for
                         clutter-free desktop access.</li>
-                    <li><span class="feature-highlight">Dark Theme Interface:</span> Reduces eye strain with a modern,
-                        sleek UI.</li>
-                    <li><span class="feature-highlight">Window Position Memory:</span> Remembers last position and size
-                        for consistent user experience.</li>
                 </ul>
 
+                <h3 class="section-title">Useful Tips</h3>
                 <div class="useful-tips">
-                    <h3 class="section-title">Useful Tips</h3>
+
                     <ul>
-                        <li><span class="tip-highlight">Credential Deletion:</span> Hold shift on the Credential Input
-                            window to delete credentials from Windows Credential Manager.</li>
-                        <li><span class="tip-highlight">CSV file Deletion:</span> Hold shift on the Manage Hosts window
+                        <li><span class="tip-highlight">Credential Deletion</span> Hold shift for 1 second on the
+                            Credential Input window to delete your stored 'SwatLauncher' credentials from Windows
+                            Credential Manager.</li>
+                        <li><span class="tip-highlight">CSV file Deletion</span> Hold shift for 1 second on the Manage
+                            Hosts window
                             to delete the CSV file entirely.</li>
-                        <li><span class="tip-highlight">Close the Application:</span> Close/minimize the application and
+                        <li><span class="tip-highlight">Close the Application</span> Minimize/Close the application and
                             right-click the system tray icon to exit.</li>
                     </ul>
                 </div>
 
                 <h3 class="section-title">Technical Highlights</h3>
                 <ul class="tech-highlights">
-                    <li>Developed using C# and WPF on the .NET Framework.</li>
-                    <li>Utilizes Windows API calls for advanced functionality.</li>
                     <li>Stores hostname information in a local 'servers.csv' file for quick access and portability.</li>
                 </ul>
             </section>
@@ -118,6 +134,11 @@
         </main>
 
         <footer>
+            <p>I'm considering obtaining a code signing certificate in the future to
+                enhance security.</p>
+            <p>Your feedback and usage of the tools will help inform
+                this decision!</p>
+            <p><a href="mailto:feedback@swatto.co.uk">feedback@swatto.co.uk</a></p>
             <p>© 2024 Swatto. All rights reserved.</p>
         </footer>
     </div>

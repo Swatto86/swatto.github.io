@@ -320,7 +320,7 @@ body {
     word-break: break-all;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 1.1em;
+    font-size: 1.0em;
     letter-spacing: 1px;
     border: 1px solid var(--primary-accent);
 }
@@ -426,106 +426,43 @@ footer {
     font-weight: bold;
 }
 
-/* Region: Accessibility Improvements */
-.download-link:focus,
-.sha256-value:focus,
-.screenshot-thumbnail:focus {
-    outline: 3px solid var(--highlight);
-    outline-offset: 2px;
-}
-
-.screenshot-modal-close:focus {
-    outline: 2px solid var(--primary-text);
-    outline-offset: 2px;
-}
-
-/* Improve contrast for better readability */
-.subtitle,
-.version,
-.sha256-copy-msg {
-    color: #a0a0a0;
-}
-
-.note {
-    color: red;
-    font-weight: bold;
-    /* Optional: makes the 'Note:' stand out more */
-}
-
-/* Navigation Styles */
-.utility-nav {
-    position: fixed;
-    top: 0;
-    left: -200px;
-    width: 200px;
-    height: 100%;
-    background-color: var(--secondary-bg);
-    transition: left 0.3s ease;
-    z-index: 1000;
-    overflow-y: auto;
-}
-
-.utility-nav.open {
-    left: 0;
-}
-
-.utility-nav ul {
-    list-style-type: none;
+/* Region: Changelog Styles */
+.changelog-section {
+    background-color: var(--tertiary-bg);
+    border: 2px solid var(--primary-accent);
+    border-radius: 10px;
     padding: 20px;
+    margin: 30px 0;
+    text-align: left;
 }
 
-.utility-nav li {
-    margin-bottom: 15px;
+.changelog-list {
+    list-style-type: none;
+    padding: 0;
 }
 
-.utility-nav a {
-    color: var(--primary-text);
-    text-decoration: none;
+.changelog-list>li {
+    margin-bottom: 20px;
+}
+
+.changelog-list>li>strong {
+    color: var(--secondary-accent);
     font-size: 1.1em;
-    transition: color 0.3s ease;
 }
 
-.utility-nav a:hover {
+.changelog-list>li>ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.changelog-list>li>ul>li {
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.changelog-list>li>ul>li::before {
+    content: "•";
     color: var(--primary-accent);
-}
-
-.nav-toggle {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    background-color: var(--secondary-bg);
-    color: var(--primary-text);
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
-    z-index: 1001;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-/* Adjust main content when nav is open */
-.container {
-    transition: margin-left 0.3s ease;
-}
-
-.nav-open .container {
-    margin-left: 200px;
-}
-
-#download-count-display {
-    margin-left: 10px;
-    font-size: 0.9em;
-    color: #888;
-}
-
-.download-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-#download-count-display {
-    font-size: 0.9em;
-    color: #888;
+    position: absolute;
+    left: -15px;
 }
