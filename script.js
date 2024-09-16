@@ -43,15 +43,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) {
         console.error('Failed to fetch download count:', error);
     }
-});
 
-// Attach the increment function to the download button click event
-document.querySelector('.download-link').addEventListener('click', async () => {
-    try {
-        const response = await fetch('/api/increment-download', { method: 'POST' });
-        const data = await response.json();
-        document.getElementById('download-count').textContent = data.count || 0;
-    } catch (error) {
-        console.error('Failed to increment download count:', error);
+    // Attach the increment function to the download button click event
+    const downloadLink = document.querySelector('.download-link');
+    if (downloadLink) {
+        downloadLink.addEventListener('click', async () => {
+            try {
+                const response = await fetch('/api/increment-download', { method: 'POST' });
+                const data = await response.json();
+                document.getElementById('download-count').textContent = data.count || 0;
+            } catch (error) {
+                console.error('Failed to increment download count:', error);
+            }
+        });
+    } else {
+        console.error('Download link not found.');
     }
 });
