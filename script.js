@@ -89,10 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Add event listener to SHA256 value for copy to clipboard functionality
-    const sha256Value = document.querySelector('.sha256-value');
-    if (sha256Value) {
-        sha256Value.addEventListener('click', () => copyToClipboard(sha256Value.textContent));
-    } else {
-        console.error('SHA256 value element not found.');
-    }
+    const sha256Values = document.querySelectorAll('.sha256-value');
+    sha256Values.forEach(value => {
+        value.addEventListener('click', () => copyToClipboard(value.textContent.trim()));
+    });
+
 });
