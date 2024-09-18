@@ -136,7 +136,7 @@
                     <div class="sha256-container">
                         <h4 class="sha256-title">SHA256 Checksum:</h4>
                         <p class="sha256-value" onclick="copyToClipboard(this.textContent)">
-                            7fd8ffc8b255bf7271989d3cf452df0182da7ea4f68455696a894417db31f399</p>
+                            d6a2ea23d38ec22d8240e9937a3b1eca72ff66f5754c9fb31866c3ef8e7c11b6</p>
                         <p class="copy-instruction">Click to copy</p>
                     </div>
 
@@ -146,7 +146,16 @@
                 <div class="changelog-section">
                     <h3>Changelog</h3>
                     <ul>
-                        <li><strong>Version 1.0.0</strong> (Current)
+                        <li>
+                            <strong>Version 1.1.0</strong> (Current)
+                            <ul>
+                                <li>Adjusted application layout.</li>
+                                <li>Added sorting capabilities to the ListView headers.</li>
+                                <li>Detection of Admin and Standard User run modes (affects searching capability).</li>
+                                <li>Added Event ID searching.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Version 1.0.0</strong>
                             <ul>
                                 <li>Initial release of SwatLogSweep.</li>
                             </ul>
@@ -168,20 +177,21 @@
                     <ul>
                         <li><span class="feature-highlight">Comprehensive Log Search:</span> Search across all Windows
                             event
-                            logs for specific keywords.</li>
+                            logs (if running in admin mode) for specific keywords.</li>
                         <li><span class="feature-highlight">Efficient Results Display:</span> Clearly presented search
                             results for quick analysis.</li>
+                        <li><span class="feature-highlight">Event ID Searches:</span> Allows for specific eventID
+                            searches.</li>
                     </ul>
                 </div>
 
                 <div class="useful-tips">
                     <h3>Useful Tips</h3>
                     <ul>
-                        <li><span class="tip-highlight">Admin Rights Required:</span> SwatLogSweep requires admin rights
-                            to
-                            run; to search across all Windows Event Logs</li>
-                        <li><span class="tip-highlight">Keyword Search:</span>Search will highlight where the keyword
-                            was found within the event description.</li>
+                        <li><span class="tip-highlight">Run As Administrator:</span> Full event log searches require
+                            administration rights.</li>
+                        <li><span class="tip-highlight">Keyword Search:</span>Selecting an event will highlight where
+                            the keyword was found within the event description.</li>
                     </ul>
                 </div>
                 <!-- END -->
