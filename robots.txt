@@ -1,6 +1,8 @@
 User-agent: *
 Disallow: /downloads/
 Disallow: /styling.css
+Disallow: /script.js
 Disallow: /favicon.ico
+Disallow: /api/
 
 Sitemap: https://swatto.co.uk/sitemap.xml
