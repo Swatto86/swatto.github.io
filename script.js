@@ -1,39 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Fetch and display the current download count
-    async function fetchDownloadCount() {
+    // Fetch and display the current download count for a specific utility
+    async function fetchDownloadCount(utility) {
         try {
-            const response = await fetch('/api/get-download-count');
+            const response = await fetch(`/api/get-download-count?utility=${utility}`);
             const data = await response.json();
-            document.getElementById('download-count').textContent = data.count || 0;
+            document.getElementById(`${utility}-download-count`).textContent = data.count || 0;
         } catch (error) {
-            console.error('Failed to fetch download count:', error);
+            console.error(`Failed to fetch download count for ${utility}:`, error);
         }
     }
 
     // Increment download count when download link is clicked
-    async function incrementDownloadCount() {
+    async function incrementDownloadCount(utility) {
         try {
-            const response = await fetch('/api/increment-download', { method: 'POST' });
+            const response = await fetch('/api/increment-download', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ utility }),
+            });
             const data = await response.json();
-            document.getElementById('download-count').textContent = data.count || 0;
+            document.getElementById(`${utility}-download-count`).textContent = data.count || 0;
         } catch (error) {
-            console.error('Failed to increment download count:', error);
+            console.error(`Failed to increment download count for ${utility}:`, error);
         }
     }
 
-    // Fetch the current download count on page load
-    fetchDownloadCount();
+    // Fetch the current download count for each utility on page load
+    fetchDownloadCount('SwatLauncher');
+    fetchDownloadCount('SwatLogSweep');
 
-    // Attach the increment function to the download button click event
-    const downloadLink = document.querySelector('.download-link');
-    if (downloadLink) {
-        downloadLink.addEventListener('click', () => {
-            incrementDownloadCount();
-            // Removed event.preventDefault() to allow file download
-        });
-    } else {
-        console.error('Download link not found.');
-    }
+    // Attach the increment function to each download button click event
+    const downloadLinks = document.querySelectorAll('.download-link');
+    downloadLinks.forEach(link => {
+        const utility = link.getAttribute('data-utility');
+        if (utility) {
+            link.addEventListener('click', () => {
+                incrementDownloadCount(utility);
+            });
+        } else {
+            console.error('Download link missing data-utility attribute.');
+        }
+    });
 
     // Screenshot modal functions
     function openModal(imgSrc) {

@@ -2,11 +2,17 @@ import { kv } from '@vercel/kv';
 
 export default async function handler(req, res) {
     console.log('Increment download function called');
+    const { utility } = req.body;
+
+    if (!utility) {
+        return res.status(400).json({ error: 'Utility name is required' });
+    }
+
     try {
-        let count = await kv.get('downloadCount') || 0;
+        let count = await kv.get(`downloadCount:${utility}`) || 0;
         count++;
-        console.log('New count:', count);
-        await kv.set('downloadCount', count);
+        console.log(`New count for ${utility}:`, count);
+        await kv.set(`downloadCount:${utility}`, count);
         console.log('Count updated successfully');
         res.status(200).json({ count });
     } catch (error) {

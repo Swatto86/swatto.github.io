@@ -9,11 +9,10 @@
 </head>
 
 <body>
-    <!-- Updated Navbar -->
     <nav class="top-nav">
         <div class="nav-container">
             <a href="#swatlauncher" class="nav-link">SwatLauncher</a>
-            <!-- Add more links as needed -->
+            <a href="#swatlogsweep" class="nav-link">SwatLogSweep</a>
         </div>
     </nav>
 
@@ -23,6 +22,7 @@
     </header>
 
     <main>
+        <!-- SWATLAUNCHER -->
         <section id="swatlauncher" class="utility">
             <h2 class="utility-title">SwatLauncher</h2>
             <p class="utility-subtitle">Remote Desktop Connection Manager</p>
@@ -35,8 +35,9 @@
             </p>
 
             <div class="download-section">
-                <a href="downloads/SwatLauncher.exe" class="download-link" download>Download</a>
-                <p id="download-count-display">Downloads: <span id="download-count">0</span></p>
+                <a href="downloads/SwatLauncher.exe" class="download-link" data-utility="SwatLauncher"
+                    download>Download</a>
+                <p id="download-count-display">Downloads: <span id="SwatLauncher-download-count">0</span></p>
                 <div class="sha256-container">
                     <h4 class="sha256-title">SHA256 Checksum:</h4>
                     <p class="sha256-value" onclick="copyToClipboard(this.textContent)">
@@ -111,9 +112,78 @@
                         right-click the system tray icon to exit.</li>
                 </ul>
             </div>
-        </section>
+            <!-- END -->
+            <!-- SWATLOGSWEEP -->
+            <div id="swatlogsweep" class="section utility">
+                <h2 class="utility-title">SwatLogSweep</h2>
+                <p class="utility-subtitle">Event Log Search Utility</p>
+                <p class="version">Version: 1.0.0</p>
 
-        <!-- Add more utility sections here as needed -->
+                <p class="description">
+                    SwatLogSweep is a Windows application designed for efficient searching of Windows event logs. It
+                    provides a
+                    user-friendly interface to search the entire event log for specific keywords and presents the
+                    results in
+                    an
+                    easy-to-read format.
+                </p>
+
+                <div class="download-section">
+                    <a href="downloads/SwatLogSweep.exe" class="download-link" data-utility="SwatLogSweep"
+                        download>Download</a>
+                    <p>Downloads: <span id="SwatLogSweep-download-count">0</span></p>
+
+                    <div class="sha256-container">
+                        <h4 class="sha256-title">SHA256 Checksum:</h4>
+                        <p class="sha256-value">afedb031be5d37c9f2f5aac7a3203c1c76ec7d8bab209a87aaf7757db5853ed0</p>
+                        <p class="copy-instruction">Click to copy</p>
+                    </div>
+
+                    <p class="note">Note: This executable is not digitally signed (yet).</p>
+                </div>
+
+                <div class="changelog-section">
+                    <h3>Changelog</h3>
+                    <ul>
+                        <li><strong>Version 1.0.0</strong> (Current)
+                            <ul>
+                                <li>Initial release of SwatLogSweep.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="screenshot-section">
+                    <h3>Screenshots</h3>
+                    <div class="screenshot-gallery">
+                        <img src="images/SwatLogSweep_Main.png" alt="SwatLogSweep Main Interface"
+                            class="screenshot-thumbnail" onclick="openModal(this.src)">
+                        <img src="images/SwatLogSweep_Main_Search.png" alt="SwatLogSweep Main Interface Search"
+                            class="screenshot-thumbnail" onclick="openModal(this.src)">
+                    </div>
+                </div>
+
+                <div class="key-features">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li><span class="feature-highlight">Comprehensive Log Search:</span> Search across all Windows
+                            event
+                            logs for specific keywords.</li>
+                        <li><span class="feature-highlight">Efficient Results Display:</span> Clearly presented search
+                            results for quick analysis.</li>
+                    </ul>
+                </div>
+
+                <div class="useful-tips">
+                    <h3>Useful Tips</h3>
+                    <ul>
+                        <li><span class="tip-highlight">Admin Rights Required:</span> SwatLogSweep requires admin rights
+                            to
+                            run, to search across all Windows Event Logs</li>
+                        <li><span class="tip-highlight">Keyword Selection:</span> Use specific and relevant keywords to
+                            narrow down your search results.</li>
+                    </ul>
+                </div>
+                <!-- END -->
     </main>
     <footer>
         <div class="security-note">
