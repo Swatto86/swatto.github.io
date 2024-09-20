@@ -6,47 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swatto's Useful Utilities</title>
     <link rel="stylesheet" href="styling.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <!-- Navigation Section -->
+    <!-- Navigation -->
     <nav class="top-nav">
         <div class="nav-container">
             <a href="#swatlauncher" class="nav-link">SwatLauncher</a>
             <a href="#swatlogsweep" class="nav-link">SwatLogSweep</a>
+            <a href="#github-discussions" class="nav-link">Discussions</a>
         </div>
     </nav>
 
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
         <h1 class="main-title">Swatto's Useful Utilities</h1>
         <p>Enhancing your productivity with custom-built tools</p>
     </header>
 
-    <!-- Main Content Section -->
-    <main>
-        <!-- SWATLAUNCHER Section -->
+    <!-- Main Content -->
+    <main role="main">
+        <!-- SwatLauncher Section -->
         <section id="swatlauncher" class="utility">
             <h2 class="utility-title">SwatLauncher</h2>
             <p class="utility-subtitle">Remote Desktop Connection Manager</p>
             <p class="version">Version: 1.1.0</p>
-            <p class="description">
-                SwatLauncher is a Windows application designed for system administrators
-                to simplify connecting to multiple RDP hosts (with the same set of
-                credentials). It enables you to save and search a list of hosts and
-                associated descriptions for easy RDP connection.
-            </p>
+            <p class="description">SwatLauncher is a Windows application designed for system administrators to simplify
+                connecting to multiple RDP hosts (with the same set of credentials). It enables you to save and search a
+                list of hosts and associated descriptions for easy RDP connection.</p>
 
             <!-- Download Section -->
             <div class="download-section">
                 <a href="downloads/SwatLauncher.exe" class="download-link" data-utility="SwatLauncher"
                     download>Download</a>
-                <p id="download-count-display">Downloads: <span id="SwatLauncher-download-count">0</span></p>
+                <p>Downloads: <span id="SwatLauncher-download-count">0</span></p>
                 <div class="sha256-container">
                     <h4 class="sha256-title">SHA256 Checksum:</h4>
-                    <p class="sha256-value" onclick="copyToClipboard(this.textContent)">
-                        9402e17bdce6b3c00422cc5f9660ef6bb78efd43a48a2d3bc11ae29b39e6dbed
-                    </p>
+                    <p class="sha256-value">9402e17bdce6b3c00422cc5f9660ef6bb78efd43a48a2d3bc11ae29b39e6dbed</p>
                     <p class="copy-instruction">Click to copy</p>
                 </div>
                 <p class="note">Note: This executable is not digitally signed (yet).</p>
@@ -56,16 +53,14 @@
             <div class="changelog-section">
                 <h3>Changelog</h3>
                 <ul>
-                    <li>
-                        <strong>Version 1.1.0</strong> (Current)
+                    <li><strong>Version 1.1.0</strong> (Current)
                         <ul>
                             <li>Removed window animations.</li>
                             <li>Added 1 second timer to shift-key press to prevent accidental deletions.</li>
                             <li>Various bug fixes and performance improvements.</li>
                         </ul>
                     </li>
-                    <li>
-                        <strong>Version 1.0.0</strong>
+                    <li><strong>Version 1.0.0</strong>
                         <ul>
                             <li>Initial release of SwatLauncher.</li>
                         </ul>
@@ -73,7 +68,7 @@
                 </ul>
             </div>
 
-            <!-- Screenshot Section -->
+            <!-- Screenshots Section -->
             <div class="screenshot-section">
                 <h3>Screenshots</h3>
                 <div class="screenshot-gallery">
@@ -120,19 +115,27 @@
                         right-click the system tray icon to exit.</li>
                 </ul>
             </div>
-        </section>
-        <!-- END SWATLAUNCHER Section -->
 
-        <!-- SWATLOGSWEEP Section -->
+            <!-- Technical Highlights Section -->
+            <div class="technical-highlights">
+                <h3>Technical Highlights</h3>
+                <ul>
+                    <li>Built with C# and WPF for a responsive and modern UI.</li>
+                    <li>Utilizes Windows Credential Manager API for secure credential storage.</li>
+                    <li>Implements Active Directory querying for efficient domain scanning.</li>
+                    <li>Employs CSV file handling for persistent data storage.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SwatLogSweep Section -->
         <section id="swatlogsweep" class="utility">
             <h2 class="utility-title">SwatLogSweep</h2>
             <p class="utility-subtitle">Event Log Search Utility</p>
             <p class="version">Version: 1.2.0</p>
-            <p class="description">
-                SwatLogSweep is a Windows application designed for efficient searching of Windows event logs. It
-                provides a user-friendly interface to search the entire event log for specific keywords and presents the
-                results in an easy-to-read format.
-            </p>
+            <p class="description">SwatLogSweep is a Windows application designed for efficient searching of Windows
+                event logs. It provides a user-friendly interface to search the entire event log for specific keywords
+                and presents the results in an easy-to-read format.</p>
 
             <!-- Download Section -->
             <div class="download-section">
@@ -141,9 +144,7 @@
                 <p>Downloads: <span id="SwatLogSweep-download-count">0</span></p>
                 <div class="sha256-container">
                     <h4 class="sha256-title">SHA256 Checksum:</h4>
-                    <p class="sha256-value" onclick="copyToClipboard(this.textContent)">
-                        5b96acb06d484ee365b815e3f02e68ae94a649c38d587a9eaf4b7f3d29f7cac1
-                    </p>
+                    <p class="sha256-value">5b96acb06d484ee365b815e3f02e68ae94a649c38d587a9eaf4b7f3d29f7cac1</p>
                     <p class="copy-instruction">Click to copy</p>
                 </div>
                 <p class="note">Note: This executable is not digitally signed (yet).</p>
@@ -153,15 +154,13 @@
             <div class="changelog-section">
                 <h3>Changelog</h3>
                 <ul>
-                    <li>
-                        <strong>Version 1.2.0</strong> (Current)
+                    <li><strong>Version 1.2.0</strong> (Current)
                         <ul>
                             <li>Added export to CSV functionality.</li>
                             <li>Improved searching algorithm.</li>
                         </ul>
                     </li>
-                    <li>
-                        <strong>Version 1.1.0</strong>
+                    <li><strong>Version 1.1.0</strong>
                         <ul>
                             <li>Adjusted application layout.</li>
                             <li>Added sorting capabilities to the ListView headers.</li>
@@ -169,8 +168,7 @@
                             <li>Added Event ID searching.</li>
                         </ul>
                     </li>
-                    <li>
-                        <strong>Version 1.0.0</strong>
+                    <li><strong>Version 1.0.0</strong>
                         <ul>
                             <li>Initial release of SwatLogSweep.</li>
                         </ul>
@@ -178,7 +176,7 @@
                 </ul>
             </div>
 
-            <!-- Screenshot Section -->
+            <!-- Screenshots Section -->
             <div class="screenshot-section">
                 <h3>Screenshots</h3>
                 <div class="screenshot-gallery">
@@ -213,24 +211,37 @@
                 </ul>
             </div>
         </section>
-        <!-- END SWATLOGSWEEP Section -->
+
+        <!-- GitHub Discussions Section -->
+        <section id="github-discussions" class="utility github-discussions">
+            <h2 class="utility-title">GitHub Discussions</h2>
+            <p class="description">Ask questions and share your suggestions on the GitHub Discussions page.</p>
+            <a href="https://github.com/Swatto86/swatto.github.io/discussions" class="download-link" target="_blank"
+                rel="noopener noreferrer">Visit GitHub Discussions</a>
+            <div class="discussion-features">
+                <h3>Why Participate?</h3>
+                <ul>
+                    <li><span class="feature-highlight">Get Support:</span> Ask questions and get help directly from me.
+                    </li>
+                    <li><span class="feature-highlight">Share Ideas:</span> Suggest new features or improvements for the
+                        utilities.</li>
+                    <li><span class="feature-highlight">Connect:</span> Engage with other users.</li>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
         <div class="security-note">
             <h3>Security Note</h3>
-            <p>
-                All applications provided here are guaranteed to be free from malware
-                and viruses. However, for your peace of mind, I recommend scanning any
-                downloaded files with your preferred antivirus software/service before
-                running them.
-            </p>
+            <p>All applications provided here are guaranteed to be free from malware and viruses. However, for your
+                peace of mind, I recommend scanning any downloaded files with your preferred antivirus software/service
+                before running them.</p>
         </div>
-        <p>
-            I'm considering obtaining a code signing certificate in the future to shrink-wrap some trust into the
-            utilities I provide. Your feedback and usage of the tools will help inform this decision!
-        </p>
+        <p>I'm considering obtaining a code signing certificate in the future to shrink-wrap some trust into the
+            utilities I provide. Your feedback and usage of the tools will help inform this decision!</p>
         <p><a href="mailto:feedback@swatto.co.uk">feedback@swatto.co.uk</a></p>
         <p>&copy; 2024 Swatto. All rights reserved.</p>
     </footer>
@@ -240,12 +251,6 @@
         <span class="screenshot-modal-close" onclick="closeModal()">&times;</span>
         <img class="screenshot-modal-content" id="modalImage">
     </div>
-
-    <!-- Scripts -->
-    <script src="script.js"></script>
-    <!-- Required for vercel analytics -->
-    <script defer src="/_vercel/insights/script.js"></script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 
 </html>

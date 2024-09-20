@@ -17,6 +17,7 @@
     --useful-tips-color: #da70d6;
     --technical-color: #ff69b4;
     --security-color: #ff6347;
+    --github-discussions-color: #d80505;
 }
 
 body {
@@ -304,7 +305,8 @@ header {
     border-color: var(--key-features-color);
 }
 
-.key-features h3 {
+.key-features h3,
+.key-features .feature-highlight {
     color: var(--key-features-color);
 }
 
@@ -380,6 +382,49 @@ header {
     background-color: var(--secondary-bg);
     padding: 10px;
     border-radius: 5px;
+}
+
+/* GitHub Discussions Section Styles */
+.github-discussions {
+    border-color: var(--github-discussions-color);
+}
+
+.github-discussions h2,
+.github-discussions h3 {
+    color: var(--github-discussions-color);
+}
+
+.discussion-features {
+    background-color: var(--tertiary-bg);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px 0;
+    border: 2px solid var(--github-discussions-color);
+}
+
+.discussion-features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.discussion-features li {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+    background-color: var(--secondary-bg);
+}
+
+.discussion-features li:hover {
+    transform: translateY(-5px);
+}
+
+.discussion-features .feature-highlight {
+    color: var(--github-discussions-color);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
 }
 
 /* Footer Styles */
