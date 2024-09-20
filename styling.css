@@ -130,6 +130,7 @@ header {
     transform: scale(1.05);
 }
 
+
 /* SHA256 Styles */
 .sha256-container {
     background-color: var(--tertiary-bg);
