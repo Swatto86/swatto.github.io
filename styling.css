@@ -30,11 +30,6 @@ body {
     text-align: center;
 }
 
-.content {
-    transition: margin-left 0.3s;
-    padding: 20px;
-}
-
 /* Navbar Styles */
 .top-nav {
     position: sticky;
@@ -394,6 +389,14 @@ header {
     color: var(--github-discussions-color);
 }
 
+.github-discussions a {
+    color: var(--github-discussions-color);
+}
+
+.github-discussions a:hover {
+    text-decoration: underline;
+}
+
 .discussion-features {
     background-color: var(--tertiary-bg);
     border-radius: 10px;
@@ -466,10 +469,6 @@ footer a:hover {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .content {
-        padding: 10px;
-    }
-
     .main-title {
         font-size: 2.5em;
     }
@@ -491,23 +490,12 @@ footer a:hover {
     .screenshot-gallery {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
-
-    .side-nav {
-        padding-top: 15px;
-    }
-
-    .side-nav a {
-        font-size: 18px;
-    }
 }
 
 /* Accessibility Improvements */
 .download-link:focus,
 .sha256-value:focus,
-.screenshot-thumbnail:focus,
-.open-nav:focus,
-.side-nav a:focus,
-.side-nav .close-btn:focus {
+.screenshot-thumbnail:focus {
     outline: 3px solid var(--highlight);
     outline-offset: 2px;
 }
