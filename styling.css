@@ -2,8 +2,8 @@
     --primary-bg: #1e1e1e;
     --secondary-bg: #2d2d2d;
     --tertiary-bg: #3a3a3a;
-    --primary-text: #e0e0e0;
-    --secondary-text: #b0b0b0;
+    --primary-text: #ffffff;  /* Changed to white for better contrast */
+    --secondary-text: #d0d0d0;  /* Lightened for better visibility */
     --accent: #0073e6;
     --highlight: #ffd700;
 }
@@ -36,7 +36,7 @@ body {
 
 .nav-link {
     margin: 0 15px;
-    color: var(--secondary-text);
+    color: var(--primary-text);  /* Changed to primary text color */
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s, border-bottom 0.3s;
@@ -90,6 +90,7 @@ header {
 .description {
     margin-bottom: 30px;
     font-size: 1.1em;
+    color: var(--primary-text);  /* Ensured primary text color */
 }
 
 /* Download Section Styles */
@@ -290,6 +291,7 @@ header {
     display: block;
     margin-bottom: 5px;
     font-size: 1.1em;
+    color: var(--primary-text);  /* Ensured primary text color */
 }
 
 /* Useful Tips Styles */
@@ -309,6 +311,7 @@ header {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
+    color: var(--primary-text);  /* Ensured primary text color */
 }
 
 /* Technical Highlights Styles */
@@ -322,6 +325,7 @@ header {
     background-color: var(--secondary-bg);
     padding: 10px;
     border-radius: 5px;
+    color: var(--primary-text);  /* Ensured primary text color */
 }
 
 /* GitHub Discussions Section Styles */
@@ -355,6 +359,7 @@ header {
     display: block;
     margin-bottom: 5px;
     font-size: 1.1em;
+    color: var(--primary-text);  /* Ensured primary text color */
 }
 
 /* Footer Styles */
