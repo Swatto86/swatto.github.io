@@ -4,20 +4,8 @@
     --tertiary-bg: #3a3a3a;
     --primary-text: #e0e0e0;
     --secondary-text: #b0b0b0;
-    --primary-accent: #bb86fc;
-    --secondary-accent: #03dac6;
+    --accent: #0073e6;
     --highlight: #ffd700;
-    --danger: #cf6679;
-    --success: #00c853;
-
-    /* Section-specific colors */
-    --changelog-color: #ff7f50;
-    --screenshots-color: #4169e1;
-    --key-features-color: #32cd32;
-    --useful-tips-color: #da70d6;
-    --technical-color: #ff69b4;
-    --security-color: #ff6347;
-    --github-discussions-color: #d80505;
 }
 
 body {
@@ -56,8 +44,8 @@ body {
 
 .nav-link:hover,
 .nav-link:focus {
-    color: var(--primary-accent);
-    border-bottom: 2px solid var(--primary-accent);
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
 }
 
 /* Header Styles */
@@ -68,7 +56,7 @@ header {
 
 .main-title {
     font-size: 3em;
-    color: var(--primary-accent);
+    color: var(--accent);
     margin-bottom: 10px;
 }
 
@@ -83,7 +71,7 @@ header {
 
 .utility-title {
     font-size: 2.5em;
-    color: var(--secondary-accent);
+    color: var(--accent);
     margin-bottom: 5px;
 }
 
@@ -114,7 +102,7 @@ header {
 
 .download-link {
     display: inline-block;
-    background-color: var(--success);
+    background-color: var(--accent);
     color: var(--primary-bg);
     padding: 15px 30px;
     text-decoration: none;
@@ -126,7 +114,7 @@ header {
 }
 
 .download-link:hover {
-    background-color: #00e676;
+    background-color: lighten(var(--accent), 10%);
     transform: scale(1.05);
 }
 
@@ -182,7 +170,7 @@ header {
     border-radius: 10px;
     padding: 20px;
     margin: 30px 0;
-    border: 2px solid;
+    border: 2px solid var(--accent);
 }
 
 .changelog-section h3,
@@ -193,17 +181,10 @@ header {
 .security-note h3 {
     margin-top: 0;
     font-size: 1.8em;
+    color: var(--accent);
 }
 
 /* Changelog Styles */
-.changelog-section {
-    border-color: var(--changelog-color);
-}
-
-.changelog-section h3 {
-    color: var(--changelog-color);
-}
-
 .changelog-section ul {
     list-style-type: none;
     padding: 0;
@@ -214,7 +195,6 @@ header {
 }
 
 .changelog-section > ul > li > strong {
-    color: var(--changelog-color);
     font-size: 1.1em;
 }
 
@@ -228,14 +208,6 @@ header {
 }
 
 /* Screenshot Section Styles */
-.screenshot-section {
-    border-color: var(--screenshots-color);
-}
-
-.screenshot-section h3 {
-    color: var(--screenshots-color);
-}
-
 .screenshot-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -296,15 +268,6 @@ header {
 }
 
 /* Key Features Section Styles */
-.key-features {
-    border-color: var(--key-features-color);
-}
-
-.key-features h3,
-.key-features .feature-highlight {
-    color: var(--key-features-color);
-}
-
 .key-features ul {
     list-style-type: none;
     padding: 0;
@@ -323,7 +286,6 @@ header {
 }
 
 .feature-highlight {
-    color: var(--key-features-color);
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
@@ -331,14 +293,6 @@ header {
 }
 
 /* Useful Tips Styles */
-.useful-tips {
-    border-color: var(--useful-tips-color);
-}
-
-.useful-tips h3 {
-    color: var(--useful-tips-color);
-}
-
 .useful-tips ul {
     list-style-type: none;
     padding: 0;
@@ -352,21 +306,12 @@ header {
 }
 
 .tip-highlight {
-    color: var(--useful-tips-color);
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
 }
 
 /* Technical Highlights Styles */
-.technical-highlights {
-    border-color: var(--technical-color);
-}
-
-.technical-highlights h3 {
-    color: var(--technical-color);
-}
-
 .technical-highlights ul {
     list-style-type: none;
     padding: 0;
@@ -380,29 +325,12 @@ header {
 }
 
 /* GitHub Discussions Section Styles */
-.github-discussions {
-    border-color: var(--github-discussions-color);
-}
-
-.github-discussions h2,
-.github-discussions h3 {
-    color: var(--github-discussions-color);
-}
-
 .github-discussions a {
-    color: var(--github-discussions-color);
+    color: var(--accent);
 }
 
 .github-discussions a:hover {
     text-decoration: underline;
-}
-
-.discussion-features {
-    background-color: var(--tertiary-bg);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 30px 0;
-    border: 2px solid var(--github-discussions-color);
 }
 
 .discussion-features ul {
@@ -423,7 +351,6 @@ header {
 }
 
 .discussion-features .feature-highlight {
-    color: var(--github-discussions-color);
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
@@ -440,7 +367,7 @@ footer {
 }
 
 footer a {
-    color: var(--primary-accent);
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -451,16 +378,10 @@ footer a:hover {
 /* Security Note Styles (now in footer) */
 .security-note {
     background-color: var(--tertiary-bg);
-    border: 2px solid var(--security-color);
+    border: 2px solid var(--accent);
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
-}
-
-.security-note h3 {
-    color: var(--security-color);
-    margin-top: 0;
-    font-size: 1.4em;
 }
 
 .security-note p {
@@ -507,7 +428,7 @@ footer a:hover {
 
 /* Additional styles for better readability */
 .note {
-    color: var(--danger);
+    color: var(--accent);
     font-weight: bold;
 }
 
