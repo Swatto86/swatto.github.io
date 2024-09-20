@@ -130,7 +130,6 @@ header {
     transform: scale(1.05);
 }
 
-
 /* SHA256 Styles */
 .sha256-container {
     background-color: var(--tertiary-bg);
@@ -210,21 +209,21 @@ header {
     padding: 0;
 }
 
-.changelog-section>ul>li {
+.changelog-section > ul > li {
     margin-bottom: 20px;
 }
 
-.changelog-section>ul>li>strong {
+.changelog-section > ul > li > strong {
     color: var(--changelog-color);
     font-size: 1.1em;
 }
 
-.changelog-section>ul>li>ul {
+.changelog-section > ul > li > ul {
     margin-top: 10px;
     padding-left: 20px;
 }
 
-.changelog-section>ul>li>ul>li {
+.changelog-section > ul > li > ul > li {
     margin-bottom: 5px;
 }
 
