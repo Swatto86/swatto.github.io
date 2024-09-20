@@ -32,18 +32,15 @@
             <h2 class="utility-title">SwatLauncher</h2>
             <p class="utility-subtitle">Remote Desktop Connection Manager</p>
             <p class="version">Version: 1.1.0</p>
-            <p class="description">SwatLauncher is a Windows application designed for system administrators to simplify
-                connecting to multiple RDP hosts (with the same set of credentials). It enables you to save and search a
-                list of hosts and associated descriptions for easy RDP connection.</p>
+            <p class="description">SwatLauncher is a Windows application designed for system administrators to simplify connecting to multiple RDP hosts (with the same set of credentials). It enables you to save and search a list of hosts and associated descriptions for easy RDP connection.</p>
 
             <!-- Download Section -->
             <div class="download-section">
-                <a href="downloads/SwatLauncher.exe" class="download-link" data-utility="SwatLauncher"
-                    download>Download</a>
+                <a href="downloads/SwatLauncher.exe" class="download-link" data-utility="SwatLauncher" download>Download</a>
                 <p>Downloads: <span id="SwatLauncher-download-count">0</span></p>
                 <div class="sha256-container">
                     <h4 class="sha256-title">SHA256 Checksum:</h4>
-                    <p class="sha256-value">9402e17bdce6b3c00422cc5f9660ef6bb78efd43a48a2d3bc11ae29b39e6dbed</p>
+                    <p class="sha256-value" onclick="copyToClipboard(this)">9402e17bdce6b3c00422cc5f9660ef6bb78efd43a48a2d3bc11ae29b39e6dbed</p>
                     <p class="copy-instruction">Click to copy</p>
                 </div>
                 <p class="note">Note: This executable is not digitally signed (yet).</p>
@@ -72,14 +69,10 @@
             <div class="screenshot-section">
                 <h3>Screenshots</h3>
                 <div class="screenshot-gallery">
-                    <img src="images/MainWindowWithContent.png" alt="SwatLauncher Main Interface"
-                        class="screenshot-thumbnail" onclick="openModal(this.src)">
-                    <img src="images/ManageHostsWithContent.png" alt="SwatLauncher Manage Hosts"
-                        class="screenshot-thumbnail" onclick="openModal(this.src)">
-                    <img src="images/CredsInput.png" alt="SwatLauncher Credential Management"
-                        class="screenshot-thumbnail" onclick="openModal(this.src)">
-                    <img src="images/ScanDomain.png" alt="SwatLauncher Domain Scanning" class="screenshot-thumbnail"
-                        onclick="openModal(this.src)">
+                    <img src="images/MainWindowWithContent.png" alt="SwatLauncher Main Interface" class="screenshot-thumbnail" onclick="openModal(this.src)">
+                    <img src="images/ManageHostsWithContent.png" alt="SwatLauncher Manage Hosts" class="screenshot-thumbnail" onclick="openModal(this.src)">
+                    <img src="images/CredsInput.png" alt="SwatLauncher Credential Management" class="screenshot-thumbnail" onclick="openModal(this.src)">
+                    <img src="images/ScanDomain.png" alt="SwatLauncher Domain Scanning" class="screenshot-thumbnail" onclick="openModal(this.src)">
                 </div>
             </div>
 
@@ -87,18 +80,12 @@
             <div class="key-features">
                 <h3>Key Features</h3>
                 <ul>
-                    <li><span class="feature-highlight">Secure Credential Management:</span> Leverages Windows
-                        Credential Manager for secure RDP credentials storage.</li>
-                    <li><span class="feature-highlight">Active Directory Scanning:</span> Can scan a specified Active
-                        Directory domain to populate a list of servers and descriptions.</li>
-                    <li><span class="feature-highlight">Hostname and Description Updates:</span> Easy addition,
-                        updating, and deletion of hostname and description entries.</li>
-                    <li><span class="feature-highlight">Search Functionality:</span> Allows searching of hostnames and
-                        descriptions.</li>
-                    <li><span class="feature-highlight">Double-Click RDP Connections:</span> Instant RDP session launch
-                        with a double-click of a hostname entry.</li>
-                    <li><span class="feature-highlight">System Tray Integration:</span> Minimizes/Closes to the system
-                        tray for clutter-free desktop access.</li>
+                    <li><span class="feature-highlight">Secure Credential Management:</span> Leverages Windows Credential Manager for secure RDP credentials storage.</li>
+                    <li><span class="feature-highlight">Active Directory Scanning:</span> Can scan a specified Active Directory domain to populate a list of servers and descriptions.</li>
+                    <li><span class="feature-highlight">Hostname and Description Updates:</span> Easy addition, updating, and deletion of hostname and description entries.</li>
+                    <li><span class="feature-highlight">Search Functionality:</span> Allows searching of hostnames and descriptions.</li>
+                    <li><span class="feature-highlight">Double-Click RDP Connections:</span> Instant RDP session launch with a double-click of a hostname entry.</li>
+                    <li><span class="feature-highlight">System Tray Integration:</span> Minimizes/Closes to the system tray for clutter-free desktop access.</li>
                 </ul>
             </div>
 
@@ -106,13 +93,9 @@
             <div class="useful-tips">
                 <h3>Useful Tips</h3>
                 <ul>
-                    <li><span class="tip-highlight">Credential Deletion:</span> Hold shift for 1 second on the
-                        Credential Input window to delete your stored 'SwatLauncher' credentials from Windows Credential
-                        Manager.</li>
-                    <li><span class="tip-highlight">CSV file Deletion:</span> Hold shift for 1 second on the Manage
-                        Hosts window to delete the CSV file entirely.</li>
-                    <li><span class="tip-highlight">Close the Application:</span> Minimize/Close the application and
-                        right-click the system tray icon to exit.</li>
+                    <li><span class="tip-highlight">Credential Deletion:</span> Hold shift for 1 second on the Credential Input window to delete your stored 'SwatLauncher' credentials from Windows Credential Manager.</li>
+                    <li><span class="tip-highlight">CSV file Deletion:</span> Hold shift for 1 second on the Manage Hosts window to delete the CSV file entirely.</li>
+                    <li><span class="tip-highlight">Close the Application:</span> Minimize/Close the application and right-click the system tray icon to exit.</li>
                 </ul>
             </div>
 
@@ -133,18 +116,15 @@
             <h2 class="utility-title">SwatLogSweep</h2>
             <p class="utility-subtitle">Event Log Search Utility</p>
             <p class="version">Version: 1.2.0</p>
-            <p class="description">SwatLogSweep is a Windows application designed for efficient searching of Windows
-                event logs. It provides a user-friendly interface to search the entire event log for specific keywords
-                and presents the results in an easy-to-read format.</p>
+            <p class="description">SwatLogSweep is a Windows application designed for efficient searching of Windows event logs. It provides a user-friendly interface to search the entire event log for specific keywords and presents the results in an easy-to-read format.</p>
 
             <!-- Download Section -->
             <div class="download-section">
-                <a href="downloads/SwatLogSweep.exe" class="download-link" data-utility="SwatLogSweep"
-                    download>Download</a>
+                <a href="downloads/SwatLogSweep.exe" class="download-link" data-utility="SwatLogSweep" download>Download</a>
                 <p>Downloads: <span id="SwatLogSweep-download-count">0</span></p>
                 <div class="sha256-container">
                     <h4 class="sha256-title">SHA256 Checksum:</h4>
-                    <p class="sha256-value">5b96acb06d484ee365b815e3f02e68ae94a649c38d587a9eaf4b7f3d29f7cac1</p>
+                    <p class="sha256-value" onclick="copyToClipboard(this)">5b96acb06d484ee365b815e3f02e68ae94a649c38d587a9eaf4b7f3d29f7cac1</p>
                     <p class="copy-instruction">Click to copy</p>
                 </div>
                 <p class="note">Note: This executable is not digitally signed (yet).</p>
@@ -180,10 +160,8 @@
             <div class="screenshot-section">
                 <h3>Screenshots</h3>
                 <div class="screenshot-gallery">
-                    <img src="images/SwatLogSweep_Main.png" alt="SwatLogSweep Main Interface"
-                        class="screenshot-thumbnail" onclick="openModal(this.src)">
-                    <img src="images/SwatLogSweep_Main_Search.png" alt="SwatLogSweep Main Interface Search"
-                        class="screenshot-thumbnail" onclick="openModal(this.src)">
+                    <img src="images/SwatLogSweep_Main.png" alt="SwatLogSweep Main Interface" class="screenshot-thumbnail" onclick="openModal(this.src)">
+                    <img src="images/SwatLogSweep_Main_Search.png" alt="SwatLogSweep Main Interface Search" class="screenshot-thumbnail" onclick="openModal(this.src)">
                 </div>
             </div>
 
@@ -191,12 +169,9 @@
             <div class="key-features">
                 <h3>Key Features</h3>
                 <ul>
-                    <li><span class="feature-highlight">Comprehensive Log Search:</span> Search across all Windows event
-                        logs (if running in admin mode) for specific keywords.</li>
-                    <li><span class="feature-highlight">Efficient Results Display:</span> Clearly presented search
-                        results for quick analysis.</li>
-                    <li><span class="feature-highlight">Event ID Searches:</span> Allows for specific eventID searches.
-                    </li>
+                    <li><span class="feature-highlight">Comprehensive Log Search:</span> Search across all Windows event logs (if running in admin mode) for specific keywords.</li>
+                    <li><span class="feature-highlight">Efficient Results Display:</span> Clearly presented search results for quick analysis.</li>
+                    <li><span class="feature-highlight">Event ID Searches:</span> Allows for specific eventID searches.</li>
                 </ul>
             </div>
 
@@ -204,10 +179,8 @@
             <div class="useful-tips">
                 <h3>Useful Tips</h3>
                 <ul>
-                    <li><span class="tip-highlight">Run As Administrator:</span> Full event log searches require
-                        administration rights.</li>
-                    <li><span class="tip-highlight">Keyword Search:</span> Selecting an event will highlight where the
-                        keyword was found within the event description.</li>
+                    <li><span class="tip-highlight">Run As Administrator:</span> Full event log searches require administration rights.</li>
+                    <li><span class="tip-highlight">Keyword Search:</span> Selecting an event will highlight where the keyword was found within the event description.</li>
                 </ul>
             </div>
         </section>
@@ -216,17 +189,13 @@
         <section id="github-discussions" class="utility github-discussions">
             <h2 class="utility-title">GitHub Discussions</h2>
             <p class="description">Ask questions and share your suggestions on the GitHub Discussions page.</p>
-            <a href="https://github.com/Swatto86/swatto.github.io/discussions" class="url-link" target="_blank"
-                rel="noopener noreferrer">Visit GitHub Discussions</a>
+            <a href="https://github.com/Swatto86/swatto.github.io/discussions" class="url-link" target="_blank" rel="noopener noreferrer">Visit GitHub Discussions</a>
             <div class="discussion-features">
                 <h3>Why Participate?</h3>
                 <ul>
-                    <li><span class="feature-highlight">Get Support:</span> Ask questions and get help directly from me.
-                    </li>
-                    <li><span class="feature-highlight">Share Ideas:</span> Suggest new features or improvements for the
-                        utilities.</li>
+                    <li><span class="feature-highlight">Get Support:</span> Ask questions and get help directly from me.</li>
+                    <li><span class="feature-highlight">Share Ideas:</span> Suggest new features or improvements for the utilities.</li>
                     <li><span class="feature-highlight">Connect:</span> Engage with other users.</li>
-                    </li>
                 </ul>
             </div>
         </section>
@@ -236,12 +205,9 @@
     <footer>
         <div class="security-note">
             <h3>Security Note</h3>
-            <p>All applications provided here are guaranteed to be free from malware and viruses. However, for your
-                peace of mind, I recommend scanning any downloaded files with your preferred antivirus software/service
-                before running them.</p>
+            <p>All applications provided here are guaranteed to be free from malware and viruses. However, for your peace of mind, I recommend scanning any downloaded files with your preferred antivirus software/service before running them.</p>
         </div>
-        <p>I'm considering obtaining a code signing certificate in the future to shrink-wrap some trust into the
-            utilities I provide. Your feedback and usage of the tools will help inform this decision!</p>
+        <p>I'm considering obtaining a code signing certificate in the future to shrink-wrap some trust into the utilities I provide. Your feedback and usage of the tools will help inform this decision!</p>
         <p><a href="mailto:feedback@swatto.co.uk">feedback@swatto.co.uk</a></p>
         <p>&copy; 2024 Swatto. All rights reserved.</p>
     </footer>
