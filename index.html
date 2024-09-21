@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swatto's Useful Utilities</title>
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .top-nav {
+            background-color: #333;
+            padding: 1rem;
+        }
+
+        .top-nav .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .top-nav .nav-link {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+
+        .top-nav .nav-link:hover {
+            color: #f4f4f4;
+            text-decoration: underline;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #0073e6;
+            color: #fff;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .utility {
+            background-color: #fff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .utility-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #0073e6;
+        }
+
+        .download-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #0073e6;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .download-link:hover {
+            background-color: #005bb5;
+        }
+
+        .screenshot-gallery {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .screenshot-thumbnail {
+            width: 100%;
+            max-width: 200px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .screenshot-thumbnail:hover {
+            transform: scale(1.05);
+        }
+
+        .key-features, .useful-tips, .technical-highlights {
+            margin-bottom: 1rem;
+        }
+
+        .key-features ul, .useful-tips ul, .technical-highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .key-features li, .useful-tips li, .technical-highlights li {
+            margin: 0.5rem 0;
+        }
+
+        .feature-highlight, .tip-highlight {
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .screenshot-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .screenshot-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .screenshot-modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation: zoom 0.6s;
+        }
+
+        @keyframes zoom {
+            from { transform: scale(0) }
+            to { transform: scale(1) }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="#swatlauncher" class="nav-link">SwatLauncher</a>
+            <a href="#swatlogsweep" class="nav-link">SwatLogSweep</a>
+            <a href="#github-discussions" class="nav-link">Discussions</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1 class="main-title">Swatto's Useful Utilities</h1>
+        <p>Enhancing your productivity with custom-built tools</p>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main">
+        <!-- SwatLauncher Section -->
+        <section id="swatlauncher" class="utility">
+            <h2 class="utility-title">SwatLauncher</h2>
+            <p class="utility-subtitle">Remote Desktop Connection Manager</p>
+            <p class="version">Version: 1.1.0</p>
+            <p class="description">SwatLauncher is a Windows application designed for system administrators to simplify connecting to multiple RDP hosts (with the same set of credentials). It enables you to save and search a list of hosts and associated descriptions for easy RDP connection.</p>
+
+            <!-- Download Section -->
+            <div class="download-section">
+                <a href="downloads/SwatLauncher.exe" class="download-link" data-utility="SwatLauncher" download>Download</a>
+                <p>Downloads: <span id="SwatLauncher-download-count">0</span></p>
+                <div class="sha256-container">
+                    <h4 class="sha256-title">SHA256 Checksum:</h4>
+                    <p class="sha256-value" onclick="copyToClipboard(this)">9402e17bdce6b3c00422cc5f9660ef6bb78efd43a48a2d3bc11ae29b39e6dbed</p>
+                    <p class="copy-instruction">Click to copy</p>
+                </div>
+                <p class="note">Note: This executable is not digitally signed (yet).</p>
+            </div>
+
+            <!-- Changelog Section -->
+            <div class="changelog-section">
+                <h3>Changelog</h3>
+                <ul>
+                    <li><strong>Version 1.1.0</strong> (Current)
+                        <ul>
+                            <li>Removed window animations.</li>
+                            <li>Added 1 second timer to shift-key press to prevent accidental deletions.</li>
+                            <li>Various bug fixes and performance improvements.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Version 1.0.0</strong>
+                        <ul>
+                            <li>Initial release of SwatLauncher.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Screenshots Section -->
+            <div class="screenshot-section">
+                <h3>Screenshots</h3>
+                <div class="screenshot-gallery">
+                    <img src="images/MainWindowWithContent.png" alt="SwatLauncher Main Interface" class="screenshot-thumbnail" onclick="openModal(this.src)">
+                    <img src="images/ManageHostsWithContent.png" alt="SwatLauncher Manage Hosts" class="screenshot-thumbnail" onclick="openModal(this.src)">
+                    <img src="images/CredsInput.png" alt="SwatLauncher Credential Management" class="screenshot-thumbnail" onclick="openModal(this.src)">
+                    <img src="images/ScanDomain.png" alt="SwatLauncher Domain Scanning" class="screenshot-thumbnail" onclick="openModal(this.src)">
+                </div>
+            </div>
+
+            <!-- Key Features Section -->
+            <div class="key-features">
+                <h3>Key Features</h3>
+                <ul>
+                    <li><span class="feature-highlight">Secure Credential Management:</span> Leverages Windows Credential Manager for secure RDP credentials storage.</li>
+                    <li><span class="feature-highlight">Active Directory Scanning:</span> Can scan a specified Active Directory domain to populate a list of servers and descriptions.</li>
+                    <li><span class="feature-highlight">Hostname and Description Updates:</span> Easy addition, updating, and deletion of hostname and description entries.</li>
+                    <li><span class="feature-highlight">Search Functionality:</span> Allows searching of hostnames and descriptions.</li>
+                    <li><span class="feature-highlight">Double-Click RDP Connections:</span> Instant RDP session launch with a double-click of a hostname entry.</li>
+                    <li><span class="feature-highlight">System Tray Integration:</span> Minimizes/Closes to the system tray for clutter-free desktop access.</li>
+                </ul>
+            </div>
+
+            <!-- Useful Tips Section -->
+            <div class="useful-tips">
+                <h3>Useful Tips</h3>
+                <ul>
+                    <li><span class="tip-highlight">Credential Deletion:</span> Hold shift for 1 second on the Credential Input window to delete your stored 'SwatLauncher' credentials from Windows Credential Manager.</li>
+                    <li><span class="tip-highlight">CSV file Deletion:</span> Hold shift for 1 second on the Manage Hosts window to delete the CSV file entirely.</li>
+                    <li><span class="tip-highlight">Close the Application:</span> Minimize/Close the application and right-click the system tray icon to exit.</li>
+                </ul>
+            </div>
+
+            <!-- Technical Highlights Section -->
+            <div class="technical-highlights">
+                <h3>Technical Highlights</h3>
+                <ul>
+                    <li>Built with C# and WPF for a responsive and modern UI.</li>
+                    <li>Utilizes Windows Credential Manager API for secure credential storage.</li>
+                    <li>Implements Active Directory querying for efficient domain scanning.</li>
+                    <li>Employs CSV file handling for persistent data storage.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SwatLogSweep Section -->
+        <section id="swatlogsweep" class="utility">
+            <h2 class="utility-title">SwatLogSweep</h2>
+            <p class="utility-subtitle">Event Log Search Utility</p>
+            <p class="version">Version: 1.2.0</p>
+            <p class="description">SwatLogSweep is a Windows application designed for efficient searching of Windows event logs. It provides a user-friendly interface to search the entire event log for specific keywords and presents the results in an easy-to-read format.</p>
+
+            <!-- Download Section -->
+            <div class="download-section">
+                <a href="downloads/SwatLogSweep.exe" class="download-link" data-utility="SwatLogSweep" download>Download</a>
+                <p>Downloads: <span id="SwatLogSweep-download-count">0</span></p>
+                <div class="sha256-container">
+                    <h4 class="sha256-title">SHA256 Checksum:</h4>
+                    <p class="sha256-value" onclick="copyToClipboard(this)">5b96acb06d484ee365b815e3f02e68ae94a649c38d587a9eaf4b7f3d29f7cac1</p>
+                    <p class="copy-instruction">Click to copy</p>
+                </div>
+                <p class="note">Note: This executable is not digitally signed (yet).</p>
+            </div>
+
+            <!-- Changelog Section -->
+            <div class="changelog-section">
+                <h3>Changelog</h3>
+                <ul>
+                    <li><strong>Version 1.2.0</strong> (Current)
+                        <ul>
+                            <li>Added export to CSV functionality.</li>
+                            <li>Improved searching algorithm.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Version 1.1.0</strong>
+                        <ul>
+                            <li>Adjusted application layout.</li>
+                            <li>Added sorting capabilities to the ListView headers.</li>
+                            <li>Detection of Admin and Standard User run modes (affects searching capability).</li>
+                            <li>Added Event ID searching.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Version 1.0.0</strong>
+                        <ul>
+                            <li>Initial release of SwatLogSweep.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Screenshots Section -->
+            <div class="screenshot-section">
+                <h3>Screenshots</h3>
+                <div class="screenshot-gallery">
+                    <img src="images/SwatLogSweep_Main.png" alt="SwatLogSweep Main Interface" class="screenshot-thumbnail" onclick="openModal(this.src)">
+                    <img src="images/SwatLogSweep_Main_Search.png" alt="SwatLogSweep Main Interface Search" class="screenshot-thumbnail" onclick="openModal(this.src)">
+                </div>
+            </div>
+
+            <!-- Key Features Section -->
+            <div class="key-features">
+                <h3>Key Features</h3>
+                <ul>
+                    <li><span class="feature-highlight">Comprehensive Log Search:</span> Search across all Windows event logs (if running in admin mode) for specific keywords.</li>
+                    <li><span class="feature-highlight">Efficient Results Display:</span> Clearly presented search results for quick analysis.</li>
+                    <li><span class="feature-highlight">Event ID Searches:</span> Allows for specific eventID searches.</li>
+                </ul>
+            </div>
+
+            <!-- Useful Tips Section -->
+            <div class="useful-tips">
+                <h3>Useful Tips</h3>
+                <ul>
+                    <li><span class="tip-highlight">Run As Administrator:</span> Full event log searches require administration rights.</li>
+                    <li><span class="tip-highlight">Keyword Search:</span> Selecting an event will highlight where the keyword was found within the event description.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- GitHub Discussions Section -->
+        <section id="github-discussions" class="utility github-discussions">
+            <h2 class="utility-title">GitHub Discussions</h2>
+            <p class="description">Ask questions and share your suggestions on the GitHub Discussions page.</p>
+            <a href="https://github.com/Swatto86/swatto.github.io/discussions" class="url-link" target="_blank" rel="noopener noreferrer">Visit GitHub Discussions</a>
+            <div class="discussion-features">
+                <h3>Why Participate?</h3>
+                <ul>
+                    <li><span class="feature-highlight">Get Support:</span> Ask questions and get help directly from me.</li>
+                    <li><span class="feature-highlight">Share Ideas:</span> Suggest new features or improvements for the utilities.</li>
+                    <li><span class="feature-highlight">Connect:</span> Engage with other users.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="security-note">
+            <h3>Security Note</h3>
+            <p>All applications provided here are guaranteed to be free from malware and viruses. However, for your peace of mind, I recommend scanning any downloaded files with your preferred antivirus software/service before running them.</p>
+        </div>
+        <p>I'm considering obtaining a code signing certificate in the future to shrink-wrap some trust into the utilities I provide. Your feedback and usage of the tools will help inform this decision!</p>
+        <p><a href="mailto:feedback@swatto.co.uk">feedback@swatto.co.uk</a></p>
+        <p>&copy; 2024 Swatto. All rights reserved.</p>
+    </footer>
+
+    <!-- Screenshot Modal -->
+    <div id="screenshotModal" class="screenshot-modal">
+        <span class="screenshot-modal-close" onclick="closeModal()">&times;</span>
+        <img class="screenshot-modal-content" id="modalImage">
+    </div>
+</body>
+
+</html>
