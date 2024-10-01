@@ -27,10 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Fetch the current download count for each utility on page load
-    fetchDownloadCount('SwatLauncher');
-    fetchDownloadCount('SwatLogSweep');
-
     // Attach the increment function to each download button click event
     const downloadLinks = document.querySelectorAll('.download-link');
     downloadLinks.forEach(link => {
@@ -95,3 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+// Fetch the current download count for each utility on page load
+fetchDownloadCount('SwatLauncher');
+fetchDownloadCount('SwatLogSweep');
+fetchDownloadCount('PSTInsight');
