@@ -208,19 +208,16 @@ header {
 .key-features,
 .useful-tips,
 .technical-highlights,
+.github-discussions,
 .security-note {
     background-color: var(--tertiary-bg);
-    border: 2px solid var(--security-color);
     border-radius: 10px;
     padding: 20px;
-    margin: 20px auto;
-    /* Ensure it has the same margin as other sections */
+    margin: 40px auto; /* Increase and standardize the margin */
     width: 100%;
     max-width: 800px;
-    /* Ensure it has the same max-width as other sections */
     box-sizing: border-box;
     text-align: center;
-    /* Center the content within the section */
 }
 
 .changelog-section h3,
@@ -477,7 +474,7 @@ header {
 
 /* Footer Styles */
 footer {
-    margin-top: 20px;
+    margin-top: 40px; /* Consistent top margin */
     padding: 20px;
     background-color: var(--secondary-bg);
     color: var(--secondary-text);
@@ -501,7 +498,7 @@ footer a:hover {
     border: 2px solid var(--security-color);
     border-radius: 10px;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 40px; /* Consistent with other sections */
 }
 
 .security-note h3 {
