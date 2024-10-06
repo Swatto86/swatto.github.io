@@ -54,4 +54,22 @@
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
+    <url>
+        <loc>https://swatto.co.uk/downloads/PSTInsight.exe</loc>
+        <lastmod>2024-10-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://swatto.co.uk/images/pstinsight_main_interface-contents.png</loc>
+        <lastmod>2024-10-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://swatto.co.uk/images/pstinsight_main_interface.png</loc>
+        <lastmod>2024-10-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
 </urlset>
