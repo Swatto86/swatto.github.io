@@ -110,6 +110,8 @@ header {
     border-radius: 10px;
     margin-bottom: 40px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+    /* Add this new rule to create spacing above the first section */
 }
 
 .utility-title {
@@ -414,7 +416,7 @@ header {
     margin-bottom: 15px;
     padding: 15px;
     border-radius: 5px;
-    background-color: var (--secondary-bg);
+    background-color: var(--secondary-bg);
 }
 
 .technical-highlight {
