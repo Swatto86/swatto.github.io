@@ -18,6 +18,7 @@
     --technical-color: #ff69b4;
     --security-color: #ff6347;
     --github-discussions-color: #d80505;
+    --security-news-color: #d80505;
 }
 
 body {
@@ -779,4 +780,79 @@ footer a {
 .github-discussions li:hover { /* Added GitHub Discussions */
     transform: scale(1.05); /* Zoom in effect */
     transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* RSS Feed Styles */
+.rss-feed {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--secondary-bg);
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.rss-feed h2 {
+    color: var(--security-news-color);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--security-news-color);
+    padding-bottom: 10px;
+}
+
+.rss-item {
+    background-color: var(--tertiary-bg);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--secondary-accent);
+    transition: transform 0.2s ease;
+}
+
+.rss-item:hover {
+    transform: translateX(-5px);
+}
+
+.rss-item h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.rss-item a {
+    color: var(--highlight);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.rss-item a:hover {
+    color: var(--secondary-accent);
+    text-decoration: underline;
+}
+
+.rss-item p {
+    font-size: 0.9em;
+    color: var(--secondary-text);
+    margin-top: 5px;
+}
+
+/* Adjust main content to accommodate the RSS feed */
+main {
+    margin-right: 300px; /* Width of the RSS feed */
+    width: calc(100% - 500px); /* 200px for left nav + 300px for right RSS feed */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .rss-feed {
+        display: none; /* Hide RSS feed on smaller screens */
+    }
+    main {
+        margin-right: 0;
+        width: calc(100% - 200px); /* Only account for left nav */
+    }
 }

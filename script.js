@@ -94,4 +94,39 @@ document.addEventListener("DOMContentLoaded", () => {
     sha256Values.forEach(value => {
         value.addEventListener('click', () => copyToClipboard(value.textContent.trim()));
     });
+
+    // Function to fetch and display RSS feed
+    function fetchRSSFeed() {
+        // TheHackerNews RSS feed URL
+        const rssUrl = 'https://feeds.feedburner.com/TheHackersNews';
+        
+        // Use a CORS proxy to avoid cross-origin issues
+        const corsProxy = 'https://api.rss2json.com/v1/api.json?rss_url=';
+        
+        fetch(corsProxy + encodeURIComponent(rssUrl))
+            .then(response => response.json())
+            .then(data => {
+                const feedContent = document.getElementById('rss-feed-content');
+                let html = '';
+                
+                // Loop through the first 10 items (or less if there are fewer)
+                data.items.slice(0, 10).forEach(item => {
+                    html += `
+                        <div class="rss-item">
+                            <h3><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a></h3>
+                            <p>${item.pubDate}</p>
+                        </div>
+                    `;
+                });
+                
+                feedContent.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error fetching RSS feed:', error);
+                document.getElementById('rss-feed-content').innerHTML = '<p>Failed to load RSS feed. Please try again later.</p>';
+            });
+    }
+
+    // Call the RSS feed function
+    fetchRSSFeed();
 });
