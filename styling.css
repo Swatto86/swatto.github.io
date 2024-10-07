@@ -547,6 +547,14 @@ footer a:hover {
         margin-left: 0;
         width: 100%;
         padding: 10px;
+        box-sizing: border-box;
+    }
+
+    header, .utility, .changelog-section, .screenshot-section, .key-features, .useful-tips, .github-discussions, footer {
+        width: 100%;
+        max-width: none;
+        padding: 15px;
+        box-sizing: border-box;
     }
 
     .main-title {
@@ -576,15 +584,6 @@ footer a:hover {
         width: 100%;
         height: auto;
         margin-top: 20px;
-    }
-
-    main {
-        margin-right: 0;
-        width: 100%;
-    }
-
-    .utility, .changelog-section, .screenshot-section, .key-features, .useful-tips, .github-discussions, footer {
-        padding: 15px;
     }
 
     p, li {
