@@ -2,408 +2,509 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swatto's Useful Utilities</title>
-    <meta name="description"
-        content="Swatto's Useful Utilities offers custom-built tools for system administrators, including SwatLauncher, SwatLogSweep, and PSTInsight.">
-    <meta name="keywords"
-        content="Swatto, utilities, SwatLauncher, SwatLogSweep, PSTInsight, RDP, event logs, PST files, Windows applications">
-    <meta name="author" content="Swatto">
-    <link rel="stylesheet" href="styling.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swatto's Useful Utilities</title>
+  <meta name="description"
+    content="Swatto's Useful Utilities offers custom-built tools for system administrators, including SwatLauncher, SwatLogSweep, and PSTInsight." />
+  <meta name="keywords"
+    content="Swatto, utilities, SwatLauncher, SwatLogSweep, PSTInsight, RDP, event logs, PST files, Windows applications" />
+  <meta name="author" content="Swatto" />
+  <link rel="stylesheet" href="styling.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
-    <nav class="top-nav">
-        <div class="nav-container">
-            <a href="#pstinsight" class="nav-link" aria-label="Go to PSTInsight">PSTInsight</a>
-            <a href="#swatlauncher" class="nav-link" aria-label="Go to SwatLauncher">SwatLauncher</a>
-            <a href="#swatlogsweep" class="nav-link" aria-label="Go to SwatLogSweep">SwatLogSweep</a>
-            <a href="#github-discussions" class="nav-link" aria-label="Go to Discussions">Discussions</a>
+  <nav class="top-nav">
+    <div class="nav-container">
+      <a href="#pstinsight" class="nav-link" aria-label="Go to PSTInsight">PSTInsight</a>
+      <a href="#swatlauncher" class="nav-link" aria-label="Go to SwatLauncher">SwatLauncher</a>
+      <a href="#swatlogsweep" class="nav-link" aria-label="Go to SwatLogSweep">SwatLogSweep</a>
+      <a href="#github-discussions" class="nav-link" aria-label="Go to Discussions">Discussions</a>
+    </div>
+  </nav>
+  <main>
+    <header>
+      <h1 id="swattos-useful-utilities" class="main-title">
+        Swatto's Useful Utilities
+      </h1>
+      <p>Enhancing your productivity with custom-built tools</p>
+    </header>
+    <section id="pstinsight" class="section utility">
+      <h2 class="utility-title">PSTInsight</h2>
+      <p class="utility-subtitle">PST File Viewer and Export Utility</p>
+      <p class="version">Version: 1.3.0</p>
+      <p class="description">
+        PSTInsight is designed to view, search, and export items from PST
+        (Personal Storage Table) files. It provides an intuitive interface for
+        efficiently managing and extracting data from Outlook PST files.
+      </p>
+
+      <div class="download-section">
+        <a href="downloads/PSTInsight/PSTInsight.exe" class="download-link" data-utility="PSTInsight"
+          download>Download</a>
+        <p>
+          Downloads: <span id="PSTInsight-download-count">Loading...</span>
+        </p>
+
+        <div class="sha256-container">
+          <h4 class="sha256-title">SHA256 Checksum:</h4>
+          <p class="sha256-value">
+            42ee6f42c0875d5d25762f13ec85db947f3d101fdde6e604aef417cfbd00bcf7
+          </p>
+          <p class="copy-instruction">Click to copy</p>
         </div>
-    </nav>
-    <main>
-        <header>
-            <h1 id="swattos-useful-utilities" class="main-title">Swatto's Useful Utilities</h1>
-            <p>Enhancing your productivity with custom-built tools</p>
-        </header>
-        <section id="pstinsight" class="section utility">
-            <h2 class="utility-title">PSTInsight</h2>
-            <p class="utility-subtitle">PST File Viewer and Export Utility</p>
-            <p class="version">Version: 1.2.0</p>
-            <p class="description">PSTInsight is designed to view, search, and export
-                items from PST (Personal Storage Table) files. It provides an intuitive interface for
-                efficiently
-                managing and extracting data from Outlook PST files.</p>
+        <p class="note">
+          Note: This executable is not digitally signed (yet).
+        </p>
+        <p class="note">
+          Note: Requires Outlook to be installed as it uses the Interop
+          library provided by Microsoft.
+        </p>
+      </div>
 
-            <div class="download-section">
-                <a href="downloads/PSTInsight/PSTInsight.exe" class="download-link" data-utility="PSTInsight"
-                    download>Download</a>
-                <p>Downloads: <span id="PSTInsight-download-count">Loading...</span></p>
+      <div class="changelog-section">
+        <h3>Changelog</h3>
+        <ul>
+          <li>
+            <strong>Version 1.3.0</strong> (Current)
+            <ul>
+              <li>Minor styling adjustments for improved user interface.</li>
+              <li>Emails are now exported as single .msg files to a folder of your choice.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Version 1.2.0</strong>
+            <ul>
+              <li>Complete UI overhaul.</li>
+              <li>Uses WebView2 for email body display.</li>
+              <li>
+                Installs under the current user profile (No admin rights
+                required).
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Version 1.1.0</strong>
+            <ul>
+              <li>
+                Added drag and drop support for loading multiple PST files.
+              </li>
+              <li>Implemented multiple PST file management.</li>
+              <li>
+                Enhanced email search functionality with real-time filtering.
+              </li>
+              <li>Added support for viewing and saving email attachments.</li>
+              <li>Improved UI responsiveness and performance.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Version 1.0.0</strong>
+            <ul>
+              <li>Initial release of PSTInsight.</li>
+              <li>Basic PST file loading and viewing capabilities.</li>
+              <li>Email export functionality.</li>
+              <li>Simple search feature for emails.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
 
-                <div class="sha256-container">
-                    <h4 class="sha256-title">SHA256 Checksum:</h4>
-                    <p class="sha256-value">c3244f7ac73114263aaf01665ceb5e567e80a4da80616984e6ca23b65050fab1</p>
-                    <p class="copy-instruction">Click to copy</p>
-                </div>
-                <p class="note">Note: This executable is not digitally signed (yet).</p>
-                <p class="note">Note: Requires Outlook to be installed as it uses the Interop library provided
-                    by
-                    Microsoft.</p>
-            </div>
-
-            <div class="changelog-section">
-                <h3>Changelog</h3>
-                <ul>
-                    <li><strong>Version 1.2.0</strong> (Current)
-                        <ul>
-                            <li>Complete UI overhaul.</li>
-                            <li>Uses WebView2 for email body display.</li>
-                            <li>Installs under the current user profile (No admin rights required).</li>
-                        </ul>
-                    </li>
-                    <li><strong>Version 1.1.0</strong>
-                        <ul>
-                            <li>Added drag and drop support for loading multiple PST files.</li>
-                            <li>Implemented multiple PST file management.</li>
-                            <li>Enhanced email search functionality with real-time filtering.</li>
-                            <li>Added support for viewing and saving email attachments.</li>
-                            <li>Improved UI responsiveness and performance.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Version 1.0.0</strong>
-                        <ul>
-                            <li>Initial release of PSTInsight.</li>
-                            <li>Basic PST file loading and viewing capabilities.</li>
-                            <li>Email export functionality.</li>
-                            <li>Simple search feature for emails.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="screenshot-section">
-                <h3>Screenshots</h3>
-                <div class="screenshot-gallery">
-                    <img src="images/pstinsight_main_interface.png" alt="PSTInsight Main Interface"
-                        class="screenshot-thumbnail" onclick="openModal(this.src)">
-                    <img src="images/pstinsight_main_interface-contents.png"
-                        alt="PSTInsight Main Interface (with Contents)" class="screenshot-thumbnail"
-                        onclick="openModal(this.src)">
-                </div>
-            </div>
-
-            <div class="key-features">
-                <h3>Key Features</h3>
-                <ul>
-                    <li><span class="feature-highlight">Application Memory:</span> PSTInsight will remember the last PST files loaded when being reopened.</li>
-                    <li><span class="feature-highlight">Multiple PST File Support:</span> Load and manage
-                        multiple
-                        PST
-                        files
-                        simultaneously, with drag-and-drop loading capability.</li>
-                    <li><span class="feature-highlight">Intuitive Folder Navigation:</span> Easy-to-use tree
-                        view
-                        for
-                        navigating PST
-                        folder structures.</li>
-                    <li><span class="feature-highlight">Advanced Search Functionality:</span> Quickly find
-                        emails
-                        using
-                        real-time
-                        filtering and search.</li>
-                    <li><span class="feature-highlight">Selective Email Export:</span> Choose specific emails
-                        for
-                        export
-                        using
-                        checkboxes.</li>
-                    <li><span class="feature-highlight">Attachment Management:</span> View and save email
-                        attachments
-                        directly from
-                        the interface.</li>
-                    <li><span class="feature-highlight">Email Preview:</span> Built-in viewer for email content,
-                        including HTML
-                        formatting.</li>
-                </ul>
-            </div>
-
-            <div class="useful-tips">
-                <h3>Useful Tips</h3>
-                <ul>
-                    <li><span class="tip-highlight">Drag and Drop PST Loading:</span> Simply drag PST files into
-                        the
-                        application
-                        window to load them quickly.</li>
-                    <li><span class="tip-highlight">Efficient Navigation:</span> Use the folder tree view on the
-                        left to
-                        quickly
-                        navigate through PST file contents.</li>
-                    <li><span class="tip-highlight">Quick Search:</span> Utilize the search box to find specific
-                        emails
-                        by subject
-                        or sender in real-time.</li>
-                    <li><span class="tip-highlight">Attachment Handling:</span> Click on attachment names to
-                        save
-                        them
-                        individually
-                        without exporting the entire email.</li>
-                    <li><span class="tip-highlight">Multiple PST Management:</span> Switch between loaded PST
-                        files
-                        easily using the
-                        dropdown menu.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="swatlauncher" class="section utility">
-            <h2 class="utility-title">SwatLauncher</h2>
-            <p class="utility-subtitle">Remote Desktop Connection Manager</p>
-            <p class="version">Version: 1.2.0</p>
-            <p class="description">SwatLauncher is a Windows application designed for system administrators to
-                simplify
-                connecting to multiple RDP hosts. It enables you to save and search a
-                list of hosts and associated descriptions for easy RDP connection.</p>
-
-            <div class="download-section">
-                <a href="downloads/SwatLauncher/SwatLauncher.exe" class="download-link" data-utility="SwatLauncher"
-                    download>Download</a>
-                <p>Downloads: <span id="SwatLauncher-download-count">Loading...</span></p>
-
-                <div class="sha256-container">
-                    <h4 class="sha256-title">SHA256 Checksum:</h4>
-                    <p class="sha256-value">0335ab2028d1db17f16a0473c3534b92199959246a6b870d128d524b572171b4</p>
-                    <p class="copy-instruction">Click to copy</p>
-                </div>
-                <p class="note">Note: This executable is not digitally signed (yet).</p>
-            </div>
-
-            <div class="changelog-section">
-                <h3>Changelog</h3>
-                <ul>
-                    <li><strong>Version 1.2.0</strong> (Current)
-                        <ul>
-                            <li>Added ability to add/modify credentials for individual hosts where required.
-                            </li>
-                        </ul>
-                    </li>
-                    <li><strong>Version 1.1.0</strong>
-                        <ul>
-                            <li>Removed window animations.</li>
-                            <li>Added 1 second timer to shift-key press to prevent accidental deletions.</li>
-                            <li>Various bug fixes and performance improvements.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Version 1.0.0</strong>
-                        <ul>
-                            <li>Initial release of SwatLauncher.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="screenshot-section">
-                <h3>Screenshots</h3>
-                <div class="screenshot-gallery">
-                    <img src="images/MainWindowWithContent.png" alt="SwatLauncher Main Interface"
-                        class="screenshot-thumbnail" onclick="openModal(this.src)">
-                    <img src="images/ManageHostsWithContent.png" alt="SwatLauncher Manage Hosts"
-                        class="screenshot-thumbnail" onclick="openModal(this.src)">
-                    <img src="images/CredsInput.png" alt="SwatLauncher Credential Management"
-                        class="screenshot-thumbnail" onclick="openModal(this.src)">
-                    <img src="images/ScanDomain.png" alt="SwatLauncher Domain Scanning" class="screenshot-thumbnail"
-                        onclick="openModal(this.src)">
-                </div>
-            </div>
-
-            <div class="key-features">
-                <h3>Key Features</h3>
-                <ul>
-                    <li><span class="feature-highlight">Secure Credential Management:</span> Leverages Windows
-                        Credential Manager for secure RDP credentials storage.</li>
-                    <li><span class="feature-highlight">Active Directory Scanning:</span> Can scan a specified
-                        Active
-                        Directory domain to populate a list of servers and descriptions.</li>
-                    <li><span class="feature-highlight">Hostname and Description Updates:</span> Easy addition,
-                        updating, and deletion of hostname and description entries.</li>
-                    <li><span class="feature-highlight">Search Functionality:</span> Allows searching of
-                        hostnames
-                        and
-                        descriptions.</li>
-                    <li><span class="feature-highlight">Double-Click RDP Connections:</span> Instant RDP session
-                        launch
-                        with a double-click of a hostname entry.</li>
-                    <li><span class="feature-highlight">System Tray Integration:</span> Minimizes/Closes to the
-                        system
-                        tray for clutter-free desktop access.</li>
-                </ul>
-            </div>
-
-            <div class="useful-tips">
-                <h3>Useful Tips</h3>
-                <ul>
-                    <li><span class="tip-highlight">Credential Deletion:</span> Hold shift for 1 second on the
-                        Credential Input window to delete your stored 'SwatLauncher' credentials from Windows
-                        Credential
-                        Manager.</li>
-                    <li><span class="tip-highlight">CSV file Deletion:</span> Hold shift for 1 second on the
-                        Manage
-                        Hosts window to delete the CSV file entirely.</li>
-                    <li><span class="tip-highlight">Close the Application:</span> Minimize/Close the application
-                        and
-                        right-click the system tray icon to exit.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="swatlogsweep" class="section utility">
-            <h2 class="utility-title">SwatLogSweep</h2>
-            <p class="utility-subtitle">Event Log Search Utility</p>
-            <p class="version">Version: 1.2.0</p>
-            <p class="description">SwatLogSweep is a Windows application designed for efficient searching of
-                Windows
-                event logs. It provides a user-friendly interface to search the entire event log for specific
-                keywords
-                and presents the results in an easy-to-read format.</p>
-
-            <div class="download-section">
-                <a href="downloads/SwatLogSweep/SwatLogSweep.exe" class="download-link" data-utility="SwatLogSweep"
-                    download>Download</a>
-                <p>Downloads: <span id="SwatLogSweep-download-count">Loading...</span></p>
-
-                <div class="sha256-container">
-                    <h4 class="sha256-title">SHA256 Checksum:</h4>
-                    <p class="sha256-value">5b96acb06d484ee365b815e3f02e68ae94a649c38d587a9eaf4b7f3d29f7cac1</p>
-                    <p class="copy-instruction">Click to copy</p>
-                </div>
-                <p class="note">Note: This executable is not digitally signed (yet).</p>
-            </div>
-
-            <div class="changelog-section">
-                <h3>Changelog</h3>
-                <ul>
-                    <li><strong>Version 1.2.0</strong> (Current)
-                        <ul>
-                            <li>Added export to CSV functionality.</li>
-                            <li>Improved searching algorithm.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Version 1.1.0</strong>
-                        <ul>
-                            <li>Adjusted application layout.</li>
-                            <li>Added sorting capabilities to the ListView headers.</li>
-                            <li>Detection of Admin and Standard User run modes (affects searching capability).
-                            </li>
-                            <li>Added Event ID searching.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Version 1.0.0</strong>
-                        <ul>
-                            <li>Initial release of SwatLogSweep.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="screenshot-section">
-                <h3>Screenshots</h3>
-                <div class="screenshot-gallery">
-                    <img src="images/SwatLogSweep_Main.png" alt="SwatLogSweep Main Interface"
-                        class="screenshot-thumbnail" onclick="openModal(this.src)">
-                    <img src="images/SwatLogSweep_Main_Search.png" alt="SwatLogSweep Main Interface Search"
-                        class="screenshot-thumbnail" onclick="openModal(this.src)">
-                </div>
-            </div>
-
-            <div class="key-features">
-                <h3>Key Features</h3>
-                <ul>
-                    <li><span class="feature-highlight">Comprehensive Log Search:</span> Search across all
-                        Windows
-                        event
-                        logs (if running in admin mode) for specific keywords.</li>
-                    <li><span class="feature-highlight">Efficient Results Display:</span> Clearly presented
-                        search
-                        results for quick analysis.</li>
-                    <li><span class="feature-highlight">Event ID Searches:</span> Allows for specific eventID
-                        searches.
-                    </li>
-                </ul>
-            </div>
-
-            <div class="useful-tips">
-                <h3>Useful Tips</h3>
-                <ul>
-                    <li><span class="tip-highlight">Run As Administrator:</span> Full event log searches require
-                        administration rights.</li>
-                    <li><span class="tip-highlight">Keyword Search:</span> Selecting an event will highlight
-                        where
-                        the
-                        keyword was found within the event description.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="github-discussions" class="section utility github-discussions">
-            <h2 class="utility-title">GitHub Discussions</h2>
-            <p>Ask questions and share your suggestions on the GitHub Discussions page.</p>
-            <a href="https://github.com/Swatto86/swatto.github.io/discussions" class="url-link" target="_blank"
-                rel="noopener noreferrer">Visit GitHub Discussions</a>
-
-            <div class="discussion-features">
-                <h3>Why Participate?</h3>
-                <ul>
-                    <li><span class="feature-highlight">Submit Bugs:</span> Report bugs you have found with the
-                        utilities.</li>
-                    <li><span class="feature-highlight">Get Support:</span> Ask questions and get help from me
-                        directly.
-                    </li>
-                    <li><span class="feature-highlight">Share Ideas:</span> Suggest new features or improvements
-                        for
-                        the
-                        utilities.</li>
-                    <li><span class="feature-highlight">Connect:</span> Engage with other users.</li>
-                </ul>
-            </div>
-        </section>
-
-        <footer>
-            <div class="security-note">
-                <h3>Security Note</h3>
-                <p>All applications provided here are guaranteed to be free from malware and viruses. However, for
-                    your
-                    peace of
-                    mind, I recommend scanning any downloaded files with your preferred antivirus software/service
-                    before
-                    running them.</p>
-            </div>
-            <p>I'm considering obtaining a code signing certificate in the future to shrink-wrap some trust into the
-                utilities I
-                provide. Your feedback and usage of the tools will help inform this decision!</p>
-            <p><a href="mailto:feedback@swatto.co.uk">feedback@swatto.co.uk</a></p>
-            <p>&copy; 2024 Swatto. All rights reserved.</p>
-        </footer>
-
-        <div id="screenshotModal" class="screenshot-modal">
-            <span class="screenshot-modal-close" onclick="closeModal()">&times;</span>
-            <img class="screenshot-modal-content" id="modalImage">
+      <div class="screenshot-section">
+        <h3>Screenshots</h3>
+        <div class="screenshot-gallery">
+          <img src="images/pstinsight_main_interface.png" alt="PSTInsight Main Interface" class="screenshot-thumbnail"
+            onclick="openModal(this.src)" />
+          <img src="images/pstinsight_main_interface-contents.png" alt="PSTInsight Main Interface (with Contents)"
+            class="screenshot-thumbnail" onclick="openModal(this.src)" />
         </div>
+      </div>
 
-        <script>
-            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-            window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-        </script>
-        <script defer src="/_vercel/insights/script.js"></script>
-        <script defer src="/_vercel/speed-insights/script.js"></script>
-        <script src="script.js"></script>
-    </main>
-    <!-- Add this new section for the RSS feed -->
-    <aside class="rss-feed">
-        <h2>Latest Computer Security News</h2>
-        <div id="rss-feed-content">
-            <!-- RSS feed items will be inserted here by JavaScript -->
+      <div class="key-features">
+        <h3>Key Features</h3>
+        <ul>
+          <li>
+            <span class="feature-highlight">Application Memory:</span>
+            PSTInsight will remember the last PST files loaded when being
+            reopened.
+          </li>
+          <li>
+            <span class="feature-highlight">Multiple PST File Support:</span>
+            Load and manage multiple PST files simultaneously, with
+            drag-and-drop loading capability.
+          </li>
+          <li>
+            <span class="feature-highlight">Intuitive Folder Navigation:</span>
+            Easy-to-use tree view for navigating PST folder structures.
+          </li>
+          <li>
+            <span class="feature-highlight">Advanced Search Functionality:</span>
+            Quickly find emails using real-time filtering and search.
+          </li>
+          <li>
+            <span class="feature-highlight">Selective Email Export:</span>
+            Choose specific emails for export using checkboxes.
+          </li>
+          <li>
+            <span class="feature-highlight">Attachment Management:</span> View
+            and save email attachments directly from the interface.
+          </li>
+          <li>
+            <span class="feature-highlight">Email Preview:</span> Built-in
+            viewer for email content, including HTML formatting.
+          </li>
+        </ul>
+      </div>
+
+      <div class="useful-tips">
+        <h3>Useful Tips</h3>
+        <ul>
+          <li>
+            <span class="tip-highlight">Drag and Drop PST Loading:</span>
+            Simply drag PST files into the application window to load them
+            quickly.
+          </li>
+          <li>
+            <span class="tip-highlight">Efficient Navigation:</span> Use the
+            folder tree view on the left to quickly navigate through PST file
+            contents.
+          </li>
+          <li>
+            <span class="tip-highlight">Quick Search:</span> Utilize the
+            search box to find specific emails by subject or sender in
+            real-time.
+          </li>
+          <li>
+            <span class="tip-highlight">Attachment Handling:</span> Click on
+            attachment names to save them individually without exporting the
+            entire email.
+          </li>
+          <li>
+            <span class="tip-highlight">Multiple PST Management:</span> Switch
+            between loaded PST files easily using the dropdown menu.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="swatlauncher" class="section utility">
+      <h2 class="utility-title">SwatLauncher</h2>
+      <p class="utility-subtitle">Remote Desktop Connection Manager</p>
+      <p class="version">Version: 1.2.0</p>
+      <p class="description">
+        SwatLauncher is a Windows application designed for system
+        administrators to simplify connecting to multiple RDP hosts. It
+        enables you to save and search a list of hosts and associated
+        descriptions for easy RDP connection.
+      </p>
+
+      <div class="download-section">
+        <a href="downloads/SwatLauncher/SwatLauncher.exe" class="download-link" data-utility="SwatLauncher"
+          download>Download</a>
+        <p>
+          Downloads: <span id="SwatLauncher-download-count">Loading...</span>
+        </p>
+
+        <div class="sha256-container">
+          <h4 class="sha256-title">SHA256 Checksum:</h4>
+          <p class="sha256-value">
+            0335ab2028d1db17f16a0473c3534b92199959246a6b870d128d524b572171b4
+          </p>
+          <p class="copy-instruction">Click to copy</p>
         </div>
-    </aside>
+        <p class="note">
+          Note: This executable is not digitally signed (yet).
+        </p>
+      </div>
+
+      <div class="changelog-section">
+        <h3>Changelog</h3>
+        <ul>
+          <li>
+            <strong>Version 1.2.0</strong> (Current)
+            <ul>
+              <li>
+                Added ability to add/modify credentials for individual hosts
+                where required.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Version 1.1.0</strong>
+            <ul>
+              <li>Removed window animations.</li>
+              <li>
+                Added 1 second timer to shift-key press to prevent accidental
+                deletions.
+              </li>
+              <li>Various bug fixes and performance improvements.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Version 1.0.0</strong>
+            <ul>
+              <li>Initial release of SwatLauncher.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="screenshot-section">
+        <h3>Screenshots</h3>
+        <div class="screenshot-gallery">
+          <img src="images/MainWindowWithContent.png" alt="SwatLauncher Main Interface" class="screenshot-thumbnail"
+            onclick="openModal(this.src)" />
+          <img src="images/ManageHostsWithContent.png" alt="SwatLauncher Manage Hosts" class="screenshot-thumbnail"
+            onclick="openModal(this.src)" />
+          <img src="images/CredsInput.png" alt="SwatLauncher Credential Management" class="screenshot-thumbnail"
+            onclick="openModal(this.src)" />
+          <img src="images/ScanDomain.png" alt="SwatLauncher Domain Scanning" class="screenshot-thumbnail"
+            onclick="openModal(this.src)" />
+        </div>
+      </div>
+
+      <div class="key-features">
+        <h3>Key Features</h3>
+        <ul>
+          <li>
+            <span class="feature-highlight">Secure Credential Management:</span>
+            Leverages Windows Credential Manager for secure RDP credentials
+            storage.
+          </li>
+          <li>
+            <span class="feature-highlight">Active Directory Scanning:</span>
+            Can scan a specified Active Directory domain to populate a list of
+            servers and descriptions.
+          </li>
+          <li>
+            <span class="feature-highlight">Hostname and Description Updates:</span>
+            Easy addition, updating, and deletion of hostname and description
+            entries.
+          </li>
+          <li>
+            <span class="feature-highlight">Search Functionality:</span>
+            Allows searching of hostnames and descriptions.
+          </li>
+          <li>
+            <span class="feature-highlight">Double-Click RDP Connections:</span>
+            Instant RDP session launch with a double-click of a hostname
+            entry.
+          </li>
+          <li>
+            <span class="feature-highlight">System Tray Integration:</span>
+            Minimizes/Closes to the system tray for clutter-free desktop
+            access.
+          </li>
+        </ul>
+      </div>
+
+      <div class="useful-tips">
+        <h3>Useful Tips</h3>
+        <ul>
+          <li>
+            <span class="tip-highlight">Credential Deletion:</span> Hold shift
+            for 1 second on the Credential Input window to delete your stored
+            'SwatLauncher' credentials from Windows Credential Manager.
+          </li>
+          <li>
+            <span class="tip-highlight">CSV file Deletion:</span> Hold shift
+            for 1 second on the Manage Hosts window to delete the CSV file
+            entirely.
+          </li>
+          <li>
+            <span class="tip-highlight">Close the Application:</span>
+            Minimize/Close the application and right-click the system tray
+            icon to exit.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="swatlogsweep" class="section utility">
+      <h2 class="utility-title">SwatLogSweep</h2>
+      <p class="utility-subtitle">Event Log Search Utility</p>
+      <p class="version">Version: 1.2.0</p>
+      <p class="description">
+        SwatLogSweep is a Windows application designed for efficient searching
+        of Windows event logs. It provides a user-friendly interface to search
+        the entire event log for specific keywords and presents the results in
+        an easy-to-read format.
+      </p>
+
+      <div class="download-section">
+        <a href="downloads/SwatLogSweep/SwatLogSweep.exe" class="download-link" data-utility="SwatLogSweep"
+          download>Download</a>
+        <p>
+          Downloads: <span id="SwatLogSweep-download-count">Loading...</span>
+        </p>
+
+        <div class="sha256-container">
+          <h4 class="sha256-title">SHA256 Checksum:</h4>
+          <p class="sha256-value">
+            5b96acb06d484ee365b815e3f02e68ae94a649c38d587a9eaf4b7f3d29f7cac1
+          </p>
+          <p class="copy-instruction">Click to copy</p>
+        </div>
+        <p class="note">
+          Note: This executable is not digitally signed (yet).
+        </p>
+      </div>
+
+      <div class="changelog-section">
+        <h3>Changelog</h3>
+        <ul>
+          <li>
+            <strong>Version 1.2.0</strong> (Current)
+            <ul>
+              <li>Added export to CSV functionality.</li>
+              <li>Improved searching algorithm.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Version 1.1.0</strong>
+            <ul>
+              <li>Adjusted application layout.</li>
+              <li>Added sorting capabilities to the ListView headers.</li>
+              <li>
+                Detection of Admin and Standard User run modes (affects
+                searching capability).
+              </li>
+              <li>Added Event ID searching.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Version 1.0.0</strong>
+            <ul>
+              <li>Initial release of SwatLogSweep.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="screenshot-section">
+        <h3>Screenshots</h3>
+        <div class="screenshot-gallery">
+          <img src="images/SwatLogSweep_Main.png" alt="SwatLogSweep Main Interface" class="screenshot-thumbnail"
+            onclick="openModal(this.src)" />
+          <img src="images/SwatLogSweep_Main_Search.png" alt="SwatLogSweep Main Interface Search"
+            class="screenshot-thumbnail" onclick="openModal(this.src)" />
+        </div>
+      </div>
+
+      <div class="key-features">
+        <h3>Key Features</h3>
+        <ul>
+          <li>
+            <span class="feature-highlight">Comprehensive Log Search:</span>
+            Search across all Windows event logs (if running in admin mode)
+            for specific keywords.
+          </li>
+          <li>
+            <span class="feature-highlight">Efficient Results Display:</span>
+            Clearly presented search results for quick analysis.
+          </li>
+          <li>
+            <span class="feature-highlight">Event ID Searches:</span> Allows
+            for specific eventID searches.
+          </li>
+        </ul>
+      </div>
+
+      <div class="useful-tips">
+        <h3>Useful Tips</h3>
+        <ul>
+          <li>
+            <span class="tip-highlight">Run As Administrator:</span> Full
+            event log searches require administration rights.
+          </li>
+          <li>
+            <span class="tip-highlight">Keyword Search:</span> Selecting an
+            event will highlight where the keyword was found within the event
+            description.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="github-discussions" class="section utility github-discussions">
+      <h2 class="utility-title">GitHub Discussions</h2>
+      <p>
+        Ask questions and share your suggestions on the GitHub Discussions
+        page.
+      </p>
+      <a href="https://github.com/Swatto86/swatto.github.io/discussions" class="url-link" target="_blank"
+        rel="noopener noreferrer">Visit GitHub Discussions</a>
+
+      <div class="discussion-features">
+        <h3>Why Participate?</h3>
+        <ul>
+          <li>
+            <span class="feature-highlight">Submit Bugs:</span> Report bugs
+            you have found with the utilities.
+          </li>
+          <li>
+            <span class="feature-highlight">Get Support:</span> Ask questions
+            and get help from me directly.
+          </li>
+          <li>
+            <span class="feature-highlight">Share Ideas:</span> Suggest new
+            features or improvements for the utilities.
+          </li>
+          <li>
+            <span class="feature-highlight">Connect:</span> Engage with other
+            users.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="security-note">
+        <h3>Security Note</h3>
+        <p>
+          All applications provided here are guaranteed to be free from
+          malware and viruses. However, for your peace of mind, I recommend
+          scanning any downloaded files with your preferred antivirus
+          software/service before running them.
+        </p>
+      </div>
+      <p>
+        I'm considering obtaining a code signing certificate in the future to
+        shrink-wrap some trust into the utilities I provide. Your feedback and
+        usage of the tools will help inform this decision!
+      </p>
+      <p><a href="mailto:feedback@swatto.co.uk">feedback@swatto.co.uk</a></p>
+      <p>&copy; 2024 Swatto. All rights reserved.</p>
+    </footer>
+
+    <div id="screenshotModal" class="screenshot-modal">
+      <span class="screenshot-modal-close" onclick="closeModal()">&times;</span>
+      <img class="screenshot-modal-content" id="modalImage" />
+    </div>
+
+    <script>
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+      window.si =
+        window.si ||
+        function () {
+          (window.siq = window.siq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+    <script src="script.js"></script>
+  </main>
+  <!-- Add this new section for the RSS feed -->
+  <aside class="rss-feed">
+    <h2>Latest Computer Security News</h2>
+    <div id="rss-feed-content">
+      <!-- RSS feed items will be inserted here by JavaScript -->
+    </div>
+  </aside>
 </body>
 
 </html>
