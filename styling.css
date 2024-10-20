@@ -510,7 +510,7 @@ header {
     padding: 15px;
     border-radius: 5px;
     transition: transform 0.2s ease;
-    background-color: var(--tertiary-bg);
+    background-color: var(--secondary-bg);
 }
 
 .acknowledgments li:hover {
