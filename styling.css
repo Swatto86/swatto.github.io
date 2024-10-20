@@ -514,7 +514,7 @@ header {
 }
 
 .acknowledgments li:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
 }
 
 .acknowledgments a {
@@ -883,7 +883,8 @@ footer a {
 .key-features li:hover,
 .useful-tips li:hover,
 .technical-highlights li:hover,
-.github-discussions li:hover { /* Added GitHub Discussions */
+.github-discussions li:hover,
+.acknowledgments li:hover { /* Added acknowledgments */
     transform: scale(1.05); /* Zoom in effect */
     transition: transform 0.3s ease; /* Smooth transition */
 }
