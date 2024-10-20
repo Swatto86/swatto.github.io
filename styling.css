@@ -479,7 +479,7 @@ header {
 }
 
 .acknowledgments {
-    background-color: var(--secondary-bg);
+    background-color: var(--tertiary-bg);
     border-radius: 10px;
     padding: 20px;
     margin: 20px auto;
