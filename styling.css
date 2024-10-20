@@ -478,6 +478,56 @@ header {
     font-size: 1.1em;
 }
 
+.acknowledgments {
+    background-color: var(--secondary-bg);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 2px solid var(--primary-accent);
+}
+
+.acknowledgments h3 {
+    color: var(--primary-accent);
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+.acknowledgments p {
+    margin-bottom: 15px;
+}
+
+.acknowledgments ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.acknowledgments li {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+    background-color: var(--tertiary-bg);
+}
+
+.acknowledgments li:hover {
+    transform: translateY(-5px);
+}
+
+.acknowledgments a {
+    color: var(--secondary-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.acknowledgments a:hover {
+    color: var(--highlight);
+    text-decoration: underline;
+}
+
 /* Footer Styles */
 footer {
     margin-top: 20px;
