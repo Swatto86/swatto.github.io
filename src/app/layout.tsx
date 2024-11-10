@@ -36,22 +36,21 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={cn(
-          "min-h-screen font-sans antialiased",
-          inter.variable
-        )}
+        className={cn("min-h-screen font-sans antialiased", inter.variable)}
       >
         <ErrorBoundary>
           <ThemeProvider
             attribute="data-theme"
-            defaultTheme="dark"
+            defaultTheme="colourful"
             enableSystem={false}
             storageKey="swatto-theme"
             themes={["light", "dark", "colourful"]}
           >
             <MainNav />
             <main className="lg:pl-64 bg-transparent">
-              <div className="container mx-auto px-4 py-8 bg-transparent">{children}</div>
+              <div className="container mx-auto px-4 py-8 bg-transparent">
+                {children}
+              </div>
             </main>
             <Toaster />
           </ThemeProvider>

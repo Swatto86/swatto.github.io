@@ -35,9 +35,9 @@ const ThemePicker: React.FC = () => {
   const isColourful = theme === "colourful";
 
   const themeItems = [
+    { value: "colourful", label: "Colourful", icon: Sparkles },
     { value: "dark", label: "Dark", icon: Monitor },
     { value: "light", label: "Light", icon: Sun },
-    { value: "colourful", label: "Colourful", icon: Sparkles },
   ] as const;
 
   return (
