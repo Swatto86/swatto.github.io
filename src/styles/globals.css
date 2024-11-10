@@ -50,11 +50,11 @@
   }
 
   [data-theme="colourful"] {
-    --background: 280 50% 5%;
+    --background: 280 80% 8%;
     --foreground: 60 100% 70%;
-    --card: 280 50% 5%;
+    --card: 280 80% 8%;
     --card-foreground: 120 100% 70%;
-    --popover: 320 50% 5%;
+    --popover: 320 90% 15%;
     --popover-foreground: 180 100% 70%;
     --primary: 0 100% 60%;
     --primary-foreground: 0 0% 100%;
@@ -231,14 +231,14 @@
 [data-theme="colourful"] body {
   background: linear-gradient(
     -45deg,
-    hsl(280, 70%, 5%),
-    hsl(320, 70%, 10%),
-    hsl(260, 70%, 12%),
-    hsl(300, 70%, 10%),
-    hsl(280, 70%, 5%)
+    hsl(280, 80%, 8%),
+    hsl(320, 90%, 15%),
+    hsl(260, 85%, 18%),
+    hsl(300, 90%, 15%),
+    hsl(280, 80%, 8%)
   );
-  background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
+  background-size: 300% 300%;
+  animation: gradient 8s ease infinite;
   min-height: 100vh;
 }
 
