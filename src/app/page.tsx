@@ -29,6 +29,10 @@ interface DownloadCounts {
 
 type UtilityName = keyof DownloadCounts;
 
+const isValidUtility = (utility: string): utility is UtilityName => {
+  return ['PSTInsight', 'SwatLauncher', 'SwatLogSweep', 'ChecksumCheck', 'SimpleGit'].includes(utility);
+};
+
 export default function Home() {
   const { toast } = useToast();
   const [downloadCounts, setDownloadCounts] = useState<DownloadCounts>({
@@ -97,8 +101,12 @@ export default function Home() {
     fetchCounts();
   }, []);
 
-  // Modify the handleDownload function to handle KV errors
   const handleDownload = async (utility: UtilityName) => {
+    if (!isValidUtility(utility)) {
+      console.error(`Invalid utility name: ${utility}`);
+      return;
+    }
+
     try {
       const response = await fetch("/api/downloads", {
         method: "POST",
@@ -125,7 +133,6 @@ export default function Home() {
       }
 
       if (data.success) {
-        // Ensure count is a valid number before updating state
         const newCount = typeof data.count === 'number' ? data.count : 0;
         setDownloadCounts((prev) => ({
           ...prev,
@@ -138,8 +145,6 @@ export default function Home() {
           duration: 5000,
         });
       }
-
-      return Promise.resolve();
     } catch (error) {
       console.error("Failed to increment download count:", error);
       toast({
@@ -147,7 +152,6 @@ export default function Home() {
         description: "Download tracking failed, but your download should start shortly.",
         duration: 5000,
       });
-      return Promise.resolve();
     }
   };
 
