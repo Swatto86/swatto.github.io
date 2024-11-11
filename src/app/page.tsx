@@ -40,37 +40,35 @@ export default function Home() {
   });
 
   useEffect(() => {
-    let pollInterval: NodeJS.Timeout | null = null;
-    let isPolling = true;
-    let errorCount = 0;
-    const maxErrorCount = 3;
-    const baseInterval = 60000; // 60 seconds
-    const maxInterval = 300000; // 5 minutes
-
-    const calculateInterval = () => {
-      // Exponential backoff if there are errors
-      return Math.min(baseInterval * Math.pow(2, errorCount), maxInterval);
-    };
-
     const fetchCounts = async () => {
-      if (!isPolling) return;
-
       try {
         const utilities: UtilityName[] = [
           "PSTInsight",
           "SwatLauncher",
           "SwatLogSweep",
           "ChecksumCheck",
+          "SimpleGit"
         ];
+
         const counts = await Promise.all(
           utilities.map(async (utility) => {
             try {
               const response = await fetch(`/api/downloads?utility=${utility}`);
-              if (!response.ok) {
-                throw new Error(await response.text());
-              }
               const data = await response.json();
-              return { utility, count: data.count ?? 0 };
+              
+              // Handle KV environment variable errors gracefully
+              if (data.error?.includes('@vercel/kv')) {
+                console.warn(`KV storage not configured for ${utility}, using fallback count`);
+                return { utility, count: 0 };
+              }
+
+              if (!response.ok) {
+                throw new Error(data.details || 'Failed to fetch download count');
+              }
+
+              // Ensure count is a valid number
+              const count = typeof data.count === 'number' ? data.count : 0;
+              return { utility, count };
             } catch (error) {
               console.error(`Error processing ${utility}:`, error);
               return { utility, count: 0 };
@@ -86,54 +84,20 @@ export default function Home() {
           {} as DownloadCounts
         );
 
-        setDownloadCounts(newCounts);
+        setDownloadCounts(prev => ({
+          ...prev,
+          ...newCounts
+        }));
 
-        // Reset error count on successful fetch
-        errorCount = 0;
       } catch (error) {
         console.error("Failed to fetch download counts:", error);
-        errorCount = Math.min(errorCount + 1, maxErrorCount);
-      }
-
-      // Schedule next poll if still active
-      if (isPolling) {
-        pollInterval = setTimeout(fetchCounts, calculateInterval());
-      }
-    };
-
-    const startPolling = () => {
-      isPolling = true;
-      fetchCounts();
-    };
-
-    const stopPolling = () => {
-      isPolling = false;
-      if (pollInterval) {
-        clearTimeout(pollInterval);
-        pollInterval = null;
-      }
-    };
-
-    // Handle visibility change
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        stopPolling();
-      } else {
-        startPolling();
       }
     };
 
     fetchCounts();
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-
-    // Cleanup
-    return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-      stopPolling();
-    };
   }, []);
 
+  // Modify the handleDownload function to handle KV errors
   const handleDownload = async (utility: UtilityName) => {
     try {
       const response = await fetch("/api/downloads", {
@@ -144,19 +108,28 @@ export default function Home() {
         body: JSON.stringify({ utility }),
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(
-          errorData.details || "Failed to increment download count"
-        );
-      }
-
       const data = await response.json();
 
+      // Handle KV environment variable errors gracefully
+      if (data.error?.includes('@vercel/kv')) {
+        toast({
+          title: "Download Started",
+          description: `${utility} download has started. Download tracking temporarily unavailable.`,
+          duration: 5000,
+        });
+        return Promise.resolve();
+      }
+
+      if (!response.ok) {
+        throw new Error(data.details || "Failed to increment download count");
+      }
+
       if (data.success) {
+        // Ensure count is a valid number before updating state
+        const newCount = typeof data.count === 'number' ? data.count : 0;
         setDownloadCounts((prev) => ({
           ...prev,
-          [utility]: data.count,
+          [utility]: newCount,
         }));
 
         toast({
@@ -171,8 +144,7 @@ export default function Home() {
       console.error("Failed to increment download count:", error);
       toast({
         title: "Download Started",
-        description:
-          "Download tracking failed, but your download should start shortly.",
+        description: "Download tracking failed, but your download should start shortly.",
         duration: 5000,
       });
       return Promise.resolve();
