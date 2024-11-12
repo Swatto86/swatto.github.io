@@ -93,7 +93,7 @@ export function MainNav() {
 
         {isOpen && (
           <nav className="fixed inset-0 z-[60] flex items-center bg-background">
-            <div className="flex w-full flex-col items-center space-y-4 p-8 pointer-events-auto">
+            <div className="flex w-full flex-col items-center space-y-4 p-8">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
@@ -111,8 +111,8 @@ export function MainNav() {
                 </Link>
               ))}
 
-              <div className="pt-4 z-[70]">
-                <ThemePicker />
+              <div className="pt-4">
+                <ThemePicker isMobile={true} />
               </div>
             </div>
           </nav>
