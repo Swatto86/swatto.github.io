@@ -24,13 +24,12 @@ interface DownloadCounts {
   SwatLauncher: number;
   SwatLogSweep: number;
   ChecksumCheck: number;
-  SimpleGit: number;
 }
 
 type UtilityName = keyof DownloadCounts;
 
 const isValidUtility = (utility: string): utility is UtilityName => {
-  return ['PSTInsight', 'SwatLauncher', 'SwatLogSweep', 'ChecksumCheck', 'SimpleGit'].includes(utility);
+  return ['PSTInsight', 'SwatLauncher', 'SwatLogSweep', 'ChecksumCheck'].includes(utility);
 };
 
 export default function Home() {
@@ -40,7 +39,6 @@ export default function Home() {
     SwatLauncher: 0,
     SwatLogSweep: 0,
     ChecksumCheck: 0,
-    SimpleGit: 0,
   });
 
   useEffect(() => {
@@ -50,8 +48,7 @@ export default function Home() {
           "PSTInsight",
           "SwatLauncher",
           "SwatLogSweep",
-          "ChecksumCheck",
-          "SimpleGit"
+          "ChecksumCheck"
         ];
 
         const counts = await Promise.all(
@@ -176,12 +173,6 @@ export default function Home() {
     { src: "/images/swatlogsweep/search.png", alt: "search" },
   ];
 
-  const simpleGitScreenshots = [
-    { src: "/images/simplegit/main.png", alt: "Main Interface" },
-    { src: "/images/simplegit/diff.png", alt: "Visual Diff Viewer" },
-    { src: "/images/simplegit/branches.png", alt: "Branch Management" },
-  ];
-
   const discussionReasons = [
     "Submit bugs you have found with the utilities",
     "Get support from me directly",
@@ -193,60 +184,6 @@ export default function Home() {
     <div className="min-h-screen">
       <div className="max-w-4xl mx-auto px-4 space-y-20 pb-8">
         <HeroSection />
-
-        {/* Simple-Git Section */}
-        <section id="simplegit" className="utility-section">
-          <UtilityCard
-            title="Simple-Git"
-            version="1.0.0"
-            description="Modern, Lightweight Git Client"
-            gradient="from-indigo-400 to-cyan-600"
-            downloadCount={downloadCounts.SimpleGit}
-            sha256="7890613a84083ceed00bb0259ef91526da52e7bf756b82af2aa26dcb64b08dfe"
-            downloadLink="/static/downloads/SimpleGit/SimpleGit.exe"
-            onDownload={() => handleDownload("SimpleGit")}
-          >
-            <p className="text-muted-foreground text-center">
-              A modern, lightweight Git client built with Tauri, React, and
-              TypeScript. Featuring a clean interface, native performance, and
-              full Git operations support.
-            </p>
-
-            <ScreenshotViewer
-              screenshots={simpleGitScreenshots}
-              utility="SimpleGit"
-            />
-
-            <ChangelogSection
-              items={[
-                {
-                  version: "1.0.0 (Current)",
-                  changes: [
-                    "Initial release with core Git operations",
-                    "GitHub OAuth integration",
-                    "Visual diff viewer",
-                    "Multiple theme support",
-                    "Cross-platform support",
-                  ],
-                },
-              ]}
-              gradient="from-indigo-500/10 to-cyan-500/10"
-            />
-
-            <FeaturesSection
-              features={[
-                "Fast and lightweight - built with Rust",
-                "Cross-platform support (Windows, macOS, Linux)",
-                "Modern UI with React and TypeScript",
-                "Secure GitHub OAuth integration",
-                "Full Git operations support",
-                "Visual diff viewer",
-                "Multiple theme options",
-              ]}
-              gradient="from-indigo-500/10 to-cyan-500/10"
-            />
-          </UtilityCard>
-        </section>
 
         {/* ChecksumCheck Section */}
         <section id="checksumcheck" className="utility-section">
