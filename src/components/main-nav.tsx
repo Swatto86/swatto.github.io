@@ -111,7 +111,7 @@ export function MainNav() {
                 </Link>
               ))}
 
-              <div className="pt-4">
+              <div className="pt-4 z-[70]">
                 <ThemePicker />
               </div>
             </div>

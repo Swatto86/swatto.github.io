@@ -52,11 +52,13 @@ const ThemePicker: React.FC = () => {
           variant="ghost"
           size="icon"
           className={cn(
-            "w-10 h-10 touch-manipulation",
+            "w-10 h-10",
             theme === "colourful" && "!text-[hsl(60,100%,70%)]",
-            "hover:bg-accent active:scale-95 transition-transform"
+            "hover:bg-accent active:scale-95 transition-transform",
+            "touch-action-none"
           )}
-          style={{ touchAction: "manipulation" }}
+          style={{ touchAction: "none" }}
+          aria-label="Toggle theme"
         >
           <ThemeIcon theme={theme} />
           <span className="sr-only">Toggle theme</span>
@@ -66,16 +68,18 @@ const ThemePicker: React.FC = () => {
         align="end"
         className={cn(
           "min-w-[150px]",
-          theme === "colourful" && "text-[hsl(60,100%,70%)]"
+          theme === "colourful" && "text-[hsl(60,100%,70%)]",
+          "touch-action-none"
         )}
-        style={{ touchAction: "manipulation" }}
+        style={{ touchAction: "none" }}
+        sideOffset={8}
         onInteractOutside={() => setOpen(false)}
       >
         {themeItems.map(({ value, label, icon: Icon }) => (
           <DropdownMenuItem
             key={value}
             onSelect={() => handleSelection(value)}
-            style={{ touchAction: "manipulation" }}
+            style={{ touchAction: "none" }}
           >
             <Icon className="h-4 w-4" />
             <span>{label}</span>
