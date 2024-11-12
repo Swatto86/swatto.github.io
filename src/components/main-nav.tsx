@@ -9,7 +9,6 @@ import ThemePicker from "@/components/theme-picker";
 import { useTheme } from "next-themes";
 
 const navItems = [
-  { title: "Simple-Git", href: "#simplegit" },
   { title: "ChecksumCheck", href: "#checksumcheck" },
   { title: "PSTInsight", href: "#pstinsight" },
   { title: "SwatLauncher", href: "#swatlauncher" },
