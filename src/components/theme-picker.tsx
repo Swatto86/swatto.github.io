@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Monitor, Sun, Sparkles } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
@@ -32,7 +32,7 @@ const ThemeIcon: React.FC<ThemeIconProps> = ({ theme, className }) => {
 
 const ThemePicker: React.FC = () => {
   const { theme, setTheme } = useTheme();
-  const isColourful = theme === "colourful";
+  const [open, setOpen] = useState(false);
 
   const themeItems = [
     { value: "colourful", label: "Colourful", icon: Sparkles },
@@ -40,17 +40,23 @@ const ThemePicker: React.FC = () => {
     { value: "light", label: "Light", icon: Sun },
   ] as const;
 
+  const handleSelection = (value: string) => {
+    setTheme(value);
+    setOpen(false);
+  };
+
   return (
-    <DropdownMenu>
+    <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
           size="icon"
           className={cn(
-            "w-10 h-10",
-            isColourful && "!text-[hsl(60,100%,70%)]",
-            "hover:bg-accent"
+            "w-10 h-10 touch-manipulation",
+            theme === "colourful" && "!text-[hsl(60,100%,70%)]",
+            "hover:bg-accent active:scale-95 transition-transform"
           )}
+          style={{ touchAction: "manipulation" }}
         >
           <ThemeIcon theme={theme} />
           <span className="sr-only">Toggle theme</span>
@@ -58,19 +64,18 @@ const ThemePicker: React.FC = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
-        className={cn(isColourful && "text-[hsl(60,100%,70%)]")}
+        className={cn(
+          "min-w-[150px]",
+          theme === "colourful" && "text-[hsl(60,100%,70%)]"
+        )}
+        style={{ touchAction: "manipulation" }}
+        onInteractOutside={() => setOpen(false)}
       >
         {themeItems.map(({ value, label, icon: Icon }) => (
           <DropdownMenuItem
             key={value}
-            onClick={() => setTheme(value)}
-            className={cn(
-              "flex items-center gap-2 cursor-pointer",
-              isColourful &&
-                "text-[hsl(60,100%,70%)] hover:text-[hsl(60,100%,80%)]",
-              value === theme && "bg-accent",
-              "transition-colors duration-200"
-            )}
+            onSelect={() => handleSelection(value)}
+            style={{ touchAction: "manipulation" }}
           >
             <Icon className="h-4 w-4" />
             <span>{label}</span>
