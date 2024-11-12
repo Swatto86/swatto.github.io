@@ -72,7 +72,7 @@ export function MainNav() {
           </div>
 
           <div className="mt-auto pt-4 flex justify-center">
-            <ThemePicker isMobile={false} />
+            <ThemePicker />
           </div>
         </div>
       </nav>
@@ -112,7 +112,7 @@ export function MainNav() {
               ))}
 
               <div className="pt-4">
-                <ThemePicker isMobile={true} />
+                <ThemePicker />
               </div>
             </div>
           </nav>
