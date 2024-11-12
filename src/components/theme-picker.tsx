@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Monitor, Sun, Sparkles } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
@@ -40,24 +40,29 @@ const ThemePicker: React.FC = () => {
     { value: "light", label: "Light", icon: Sun },
   ] as const;
 
-  const handleSelection = (value: string) => {
+  const handleSelection = useCallback((value: string) => {
     setTheme(value);
     setOpen(false);
-  };
+  }, [setTheme]);
+
+  const handleTriggerClick = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setOpen((prev) => !prev);
+  }, []);
 
   return (
-    <DropdownMenu open={open} onOpenChange={setOpen}>
+    <DropdownMenu open={open} onOpenChange={setOpen} modal>
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
           size="icon"
           className={cn(
-            "w-10 h-10",
+            "w-10 h-10 select-none",
             theme === "colourful" && "!text-[hsl(60,100%,70%)]",
-            "hover:bg-accent active:scale-95 transition-transform",
-            "touch-action-none"
+            "hover:bg-accent active:scale-95 transition-transform"
           )}
-          style={{ touchAction: "none" }}
+          onClick={handleTriggerClick}
           aria-label="Toggle theme"
         >
           <ThemeIcon theme={theme} />
@@ -67,21 +72,22 @@ const ThemePicker: React.FC = () => {
       <DropdownMenuContent
         align="end"
         className={cn(
-          "min-w-[150px]",
-          theme === "colourful" && "text-[hsl(60,100%,70%)]",
-          "touch-action-none"
+          "min-w-[150px] select-none",
+          theme === "colourful" && "text-[hsl(60,100%,70%)]"
         )}
-        style={{ touchAction: "none" }}
         sideOffset={8}
-        onInteractOutside={() => setOpen(false)}
+        onCloseAutoFocus={(e) => e.preventDefault()}
       >
         {themeItems.map(({ value, label, icon: Icon }) => (
           <DropdownMenuItem
             key={value}
-            onSelect={() => handleSelection(value)}
-            style={{ touchAction: "none" }}
+            onSelect={(e) => {
+              e.preventDefault();
+              handleSelection(value);
+            }}
+            className="cursor-pointer"
           >
-            <Icon className="h-4 w-4" />
+            <Icon className="h-4 w-4 mr-2" />
             <span>{label}</span>
           </DropdownMenuItem>
         ))}
