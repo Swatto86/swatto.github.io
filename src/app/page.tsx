@@ -21,7 +21,7 @@ import { cn } from "@/lib/utils";
 
 interface DownloadCounts {
   PSTInsight: number;
-  SwatLauncher: number;
+  ConnectX: number;
   SwatLogSweep: number;
   ChecksumCheck: number;
 }
@@ -29,14 +29,14 @@ interface DownloadCounts {
 type UtilityName = keyof DownloadCounts;
 
 const isValidUtility = (utility: string): utility is UtilityName => {
-  return ['PSTInsight', 'SwatLauncher', 'SwatLogSweep', 'ChecksumCheck'].includes(utility);
+  return ['PSTInsight', 'ConnectX', 'SwatLogSweep', 'ChecksumCheck'].includes(utility);
 };
 
 export default function Home() {
   const { toast } = useToast();
   const [downloadCounts, setDownloadCounts] = useState<DownloadCounts>({
     PSTInsight: 0,
-    SwatLauncher: 0,
+    ConnectX: 0,
     SwatLogSweep: 0,
     ChecksumCheck: 0,
   });
@@ -46,7 +46,7 @@ export default function Home() {
       try {
         const utilities: UtilityName[] = [
           "PSTInsight",
-          "SwatLauncher",
+          "ConnectX",
           "SwatLogSweep",
           "ChecksumCheck"
         ];
@@ -162,10 +162,10 @@ export default function Home() {
     { src: "/images/pstinsight/search.png", alt: "results" },
   ];
 
-  const swatLauncherScreenshots = [
-    { src: "/images/swatlauncher/main.png", alt: "main" },
-    { src: "/images/swatlauncher/manage_hosts.png", alt: "manage" },
-    { src: "/images/swatlauncher/rdp_creds.png", alt: "rdp" },
+  const ConnectXScreenshots = [
+    { src: "/images/connectx/main.png", alt: "main" },
+    { src: "/images/connectx/manage_hosts.png", alt: "manage" },
+    { src: "/images/connectx/rdp_creds.png", alt: "rdp" },
   ];
 
   const swatLogSweepScreenshots = [
@@ -184,6 +184,54 @@ export default function Home() {
     <div className="min-h-screen">
       <div className="max-w-4xl mx-auto px-4 space-y-20 pb-8">
         <HeroSection />
+
+        {/* ConnectX Section */}
+        <section id="connectx" className="utility-section">
+          <UtilityCard
+            title="ConnectX"
+            version="1.0.0"
+            description="Remote Desktop Connection Manager"
+            gradient="from-purple-400 to-pink-600"
+            downloadCount={downloadCounts.ConnectX}
+            sha256="0335ab2028d1db17f16a0473c3534b92199959246a6b870d128d524b572171b4"
+            downloadLink="/static/downloads/ConnectX/ConnectX.exe"
+            onDownload={() => handleDownload("ConnectX")}
+          >
+            <p className="text-muted-foreground text-center">
+              A Windows application designed for system administrators to
+              simplify connecting to multiple RDP hosts. It enables you to save
+              and search a list of hosts and associated descriptions for easy
+              RDP connection.
+            </p>
+
+            <ScreenshotViewer
+              screenshots={ConnectXScreenshots}
+              utility="ConnectX"
+            />
+
+            <ChangelogSection
+              items={[
+                {
+                  version: "Version 1.0.0",
+                  changes: ["Initial release of ConnectX"],
+                },
+              ]}
+              gradient="from-purple-500/10 to-pink-500/10"
+            />
+
+            <FeaturesSection
+              features={[
+                "Secure credential management using Windows Credential Manager",
+                "Active Directory domain scanning for server discovery",
+                "Easy hostname and description management",
+                "Quick search functionality",
+                "Double-click RDP connection launch",
+                "System tray integration",
+              ]}
+              gradient="from-purple-500/10 to-pink-500/10"
+            />
+          </UtilityCard>
+        </section>
 
         {/* ChecksumCheck Section */}
         <section id="checksumcheck" className="utility-section">
@@ -345,78 +393,6 @@ export default function Home() {
                 </a>
               </div>
             </div>
-          </UtilityCard>
-        </section>
-
-        {/* SwatLauncher Section */}
-        <section id="swatlauncher" className="utility-section">
-          <UtilityCard
-            title="SwatLauncher"
-            version="1.2.0"
-            description="Remote Desktop Connection Manager"
-            gradient="from-purple-400 to-pink-600"
-            downloadCount={downloadCounts.SwatLauncher}
-            sha256="0335ab2028d1db17f16a0473c3534b92199959246a6b870d128d524b572171b4"
-            downloadLink="/static/downloads/SwatLauncher/SwatLauncher.exe"
-            onDownload={() => handleDownload("SwatLauncher")}
-          >
-            <p className="text-muted-foreground text-center">
-              A Windows application designed for system administrators to
-              simplify connecting to multiple RDP hosts. It enables you to save
-              and search a list of hosts and associated descriptions for easy
-              RDP connection.
-            </p>
-
-            <ScreenshotViewer
-              screenshots={swatLauncherScreenshots}
-              utility="SwatLauncher"
-            />
-
-            <ChangelogSection
-              items={[
-                {
-                  version: "Version 1.2.0 (Current)",
-                  changes: [
-                    "Added ability to add/modify credentials for individual hosts where required",
-                  ],
-                },
-                {
-                  version: "Version 1.1.0",
-                  changes: [
-                    "Removed window animations",
-                    "Added 1 second timer to shift-key press to prevent accidental deletions",
-                    "Various bug fixes and performance improvements",
-                  ],
-                },
-                {
-                  version: "Version 1.0.0",
-                  changes: ["Initial release of SwatLauncher"],
-                },
-              ]}
-              gradient="from-purple-500/10 to-pink-500/10"
-            />
-
-            <FeaturesSection
-              features={[
-                "Secure credential management using Windows Credential Manager",
-                "Active Directory domain scanning for server discovery",
-                "Easy hostname and description management",
-                "Quick search functionality",
-                "Double-click RDP connection launch",
-                "System tray integration",
-              ]}
-              gradient="from-purple-500/10 to-pink-500/10"
-            />
-
-            <FeaturesSection
-              features={[
-                "Hold shift for 1 second on the Credential Input window to delete stored credentials",
-                "Hold shift for 1 second on the Manage Hosts window to delete the CSV file",
-                "Minimize/Close to system tray and right-click the icon to exit",
-              ]}
-              gradient="from-purple-500/10 to-pink-500/10"
-              title="Useful Tips"
-            />
           </UtilityCard>
         </section>
 

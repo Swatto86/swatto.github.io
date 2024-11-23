@@ -5,7 +5,7 @@ import { z } from "zod";
 // Validation schema for utility names
 const utilitySchema = z.enum([
   "PSTInsight",
-  "SwatLauncher",
+  "ConnectX",
   "SwatLogSweep",
   "ChecksumCheck",
   "SimpleGit",

@@ -8,7 +8,7 @@ export async function GET() {
     '',  // home page
     '#checksumcheck',
     '#pstinsight',
-    '#swatlauncher',
+    '#connectx',
     '#swatlogsweep',
     '#github-discussions'
   ];

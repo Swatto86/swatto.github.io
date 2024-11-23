@@ -4,6 +4,10 @@ A Next.js-powered website showcasing various Windows utilities for system admini
 
 ## 🚀 Featured Utilities
 
+### ConnectX
+
+Remote Desktop Connection Manager designed for system administrators to simplify connecting to multiple RDP hosts.
+
 ### ChecksumCheck
 
 Fast and Simple File Checksum Verification Tool built in Rust.
@@ -11,10 +15,6 @@ Fast and Simple File Checksum Verification Tool built in Rust.
 ### PSTInsight
 
 PST File Viewer and Export Utility that allows viewing, searching, and exporting emails from PST files without requiring Outlook installation.
-
-### SwatLauncher
-
-Remote Desktop Connection Manager designed for system administrators to simplify connecting to multiple RDP hosts.
 
 ### SwatLogSweep
 

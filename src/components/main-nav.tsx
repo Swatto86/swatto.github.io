@@ -9,9 +9,9 @@ import ThemePicker from "@/components/theme-picker";
 import { useTheme } from "next-themes";
 
 const navItems = [
+  { title: "ConnectX", href: "#connectx" },
   { title: "ChecksumCheck", href: "#checksumcheck" },
   { title: "PSTInsight", href: "#pstinsight" },
-  { title: "SwatLauncher", href: "#swatlauncher" },
   { title: "SwatLogSweep", href: "#swatlogsweep" },
   { title: "Discussions", href: "#github-discussions" },
 ];
