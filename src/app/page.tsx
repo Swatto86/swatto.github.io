@@ -193,7 +193,7 @@ export default function Home() {
             description="Remote Desktop Connection Manager"
             gradient="from-purple-400 to-pink-600"
             downloadCount={downloadCounts.ConnectX}
-            sha256="1f30264933877938f02db4417dc54355fd628e7c9b414cce3194b2c7ce865ba8"
+            sha256="02796a204473d68387c5d2f948747dfbfcbec295610a4bbff5f8baa2a14c75f6"
             downloadLink="/static/downloads/ConnectX/ConnectX.exe"
             onDownload={() => handleDownload("ConnectX")}
           >
