@@ -507,9 +507,7 @@ export default function Home() {
           </Card>
         </section>
 
-        {/* Footer */}
-        <footer className="py-6 text-center text-sm text-muted-foreground border-t animate-fade-up">
-          {/* Security Note */}
+        {/* Security Note */}
         <div
           className="rounded-lg border bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 text-center 
                 transform transition-all duration-300 hover:scale-[1.01] animate-fade-up"
@@ -531,25 +529,27 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Certification Note */}
-        <div className="text-center space-y-4 animate-fade-up">
-          <p className="text-muted-foreground">
-            I&apos;m considering obtaining a code signing certificate in the
-            future to shrink-wrap some trust into the utilities I provide. Your
-            feedback and usage of the tools will help inform this decision!
-          </p>
+        {/* Footer */}
+        <footer className="py-6 text-center text-sm text-muted-foreground border-t animate-fade-up">
+          {/* Certification Note */}
+          <div className="text-center space-y-4 animate-fade-up mb-6">
+            <p className="text-muted-foreground">
+              I&apos;m considering obtaining a code signing certificate in the
+              future to shrink-wrap some trust into the utilities I provide. Your
+              feedback and usage of the tools will help inform this decision!
+            </p>
 
-          {/* Contact */}
-          <div className="group">
-            <a
-              href="mailto:feedback@swatto.co.uk"
-              className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
-            >
-              feedback@swatto.co.uk
-              <ExternalLink className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            {/* Contact */}
+            <div className="group">
+              <a
+                href="mailto:feedback@swatto.co.uk"
+                className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
+              >
+                feedback@swatto.co.uk
+                <ExternalLink className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
           </div>
-        </div>
           <p>© {new Date().getFullYear()} Swatto. All rights reserved.</p>
         </footer>
       </div>
