@@ -7,6 +7,7 @@ import { UtilityCard } from "@/components/sections/utility-card";
 import { ChangelogSection } from "@/components/sections/changelog-section";
 import { FeaturesSection } from "@/components/sections/features-section";
 import { ScreenshotViewer } from "@/components/sections/screenshot-viewer";
+import { AcknowledgementSection } from "@/components/sections/acknowledgement-section";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -369,34 +370,20 @@ export default function Home() {
               gradient="from-blue-500/10 to-purple-500/10"
             />
 
-            <div className="rounded-lg border bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-6">
-              <h3 className="mb-4 text-lg font-semibold text-center">
-                Acknowledgments
-              </h3>
-              <p className="text-muted-foreground mb-4 text-center">
-                PSTInsight 2.0.0 utilizes two excellent open-source projects:
-              </p>
-              <div className="space-y-2 flex flex-col items-center">
-                <a
-                  href="https://github.com/iluvadev/XstReader"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-blue-400 hover:text-blue-300 transition-colors group"
-                >
-                  <ExternalLink className="mr-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  XstReader
-                </a>
-                <a
-                  href="https://github.com/Sicos1977/MsgKit"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-blue-400 hover:text-blue-300 transition-colors group"
-                >
-                  <ExternalLink className="mr-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  MsgKit
-                </a>
-              </div>
-            </div>
+            <AcknowledgementSection
+              items={[
+                {
+                  name: "XstReader",
+                  url: "https://github.com/iluvadev/XstReader"
+                },
+                {
+                  name: "MsgKit",
+                  url: "https://github.com/Sicos1977/MsgKit"
+                }
+              ]}
+              description="PSTInsight 2.0.0 utilizes two excellent open-source projects:"
+              gradient="from-blue-500/10 to-purple-500/10"
+            />
           </UtilityCard>
         </section>
 
@@ -520,7 +507,9 @@ export default function Home() {
           </Card>
         </section>
 
-        {/* Security Note */}
+        {/* Footer */}
+        <footer className="py-6 text-center text-sm text-muted-foreground border-t animate-fade-up">
+          {/* Security Note */}
         <div
           className="rounded-lg border bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 text-center 
                 transform transition-all duration-300 hover:scale-[1.01] animate-fade-up"
@@ -561,9 +550,6 @@ export default function Home() {
             </a>
           </div>
         </div>
-
-        {/* Footer */}
-        <footer className="py-6 text-center text-sm text-muted-foreground border-t animate-fade-up">
           <p>© {new Date().getFullYear()} Swatto. All rights reserved.</p>
         </footer>
       </div>
