@@ -209,17 +209,8 @@ export default function Home() {
               utility="ConnectX"
             />
 
-            <ChangelogSection
-              items={[
-                {
-                  version: "Version 1.0.0",
-                  changes: ["Initial release of ConnectX"],
-                },
-              ]}
-              gradient="from-purple-500/10 to-pink-500/10"
-            />
-
             <FeaturesSection
+              title="Remote Connection Features"
               features={[
                 "Secure credential management using Windows Credential Manager",
                 "Active Directory domain scanning for server discovery",
@@ -230,6 +221,16 @@ export default function Home() {
               ]}
               gradient="from-purple-500/10 to-pink-500/10"
             />
+
+            <ChangelogSection
+              items={[
+                {
+                  version: "Version 1.0.0",
+                  changes: ["Initial release of ConnectX"],
+                },
+              ]}
+              gradient="from-purple-500/10 to-pink-500/10"
+            />
           </UtilityCard>
         </section>
 
@@ -237,7 +238,7 @@ export default function Home() {
         <section id="checksumcheck" className="utility-section">
           <UtilityCard
             title="ChecksumCheck"
-            version="1.2.0" // Changed from 0.1.0
+            version="1.2.0"
             description="Fast and Simple File Checksum Verification Tool"
             gradient="from-red-500 to-gray-800"
             downloadCount={downloadCounts.ChecksumCheck}
@@ -251,7 +252,13 @@ export default function Home() {
               MD5, SHA-1, SHA-256, and SHA-512 with an intuitive interface.
             </p>
 
+            <ScreenshotViewer
+              screenshots={ChecksumCheckScreenshots}
+              utility="ChecksumCheck"
+            />
+
             <FeaturesSection
+              title="Verification Capabilities"
               features={[
                 "Multiple hash algorithm support (MD5, SHA-1, SHA-256, SHA-512)",
                 "Drag and drop file support",
@@ -262,11 +269,6 @@ export default function Home() {
                 "Visual feedback for hash verification",
               ]}
               gradient="from-red-500/20 to-gray-800/20"
-            />
-
-            <ScreenshotViewer
-              screenshots={ChecksumCheckScreenshots}
-              utility="ChecksumCheck"
             />
 
             <ChangelogSection
@@ -293,6 +295,7 @@ export default function Home() {
             />
           </UtilityCard>
         </section>
+
         {/* PSTInsight Section */}
         <section id="pstinsight" className="utility-section">
           <UtilityCard
@@ -315,6 +318,20 @@ export default function Home() {
             <ScreenshotViewer
               screenshots={pstInsightScreenshots}
               utility="PSTInsight"
+            />
+
+            <FeaturesSection
+              title="Email Management Tools"
+              features={[
+                "Application Memory: Remembers last loaded PST files",
+                "Multiple PST File Support with drag-and-drop loading",
+                "Intuitive folder navigation with tree view",
+                "Advanced search functionality with real-time filtering",
+                "Selective email export with checkbox selection",
+                "Built-in attachment management",
+                "HTML-formatted email preview",
+              ]}
+              gradient="from-blue-500/10 to-purple-500/10"
             />
 
             <ChangelogSection
@@ -348,19 +365,6 @@ export default function Home() {
                     "Improved overall performance and stability",
                   ],
                 },
-              ]}
-              gradient="from-blue-500/10 to-purple-500/10"
-            />
-
-            <FeaturesSection
-              features={[
-                "Application Memory: Remembers last loaded PST files",
-                "Multiple PST File Support with drag-and-drop loading",
-                "Intuitive folder navigation with tree view",
-                "Advanced search functionality with real-time filtering",
-                "Selective email export with checkbox selection",
-                "Built-in attachment management",
-                "HTML-formatted email preview",
               ]}
               gradient="from-blue-500/10 to-purple-500/10"
             />
@@ -420,6 +424,19 @@ export default function Home() {
               utility="SwatLogSweep"
             />
 
+            <FeaturesSection
+              title="Log Search Capabilities"
+              features={[
+                "Comprehensive log search across all Windows event logs",
+                "Event ID search capability",
+                "Clear results presentation",
+                "Export to CSV functionality",
+                "Run As Administrator for full event log access",
+                "Select an event to highlight keyword matches in the description",
+              ]}
+              gradient="from-green-500/10 to-blue-500/10"
+            />
+
             <ChangelogSection
               items={[
                 {
@@ -444,25 +461,6 @@ export default function Home() {
                 },
               ]}
               gradient="from-green-500/10 to-blue-500/10"
-            />
-
-            <FeaturesSection
-              features={[
-                "Comprehensive log search across all Windows event logs",
-                "Event ID search capability",
-                "Clear results presentation",
-                "Export to CSV functionality",
-              ]}
-              gradient="from-green-500/10 to-blue-500/10"
-            />
-
-            <FeaturesSection
-              features={[
-                "Run As Administrator for full event log access",
-                "Select an event to highlight keyword matches in the description",
-              ]}
-              gradient="from-green-500/10 to-blue-500/10"
-              title="Useful Tips"
             />
           </UtilityCard>
         </section>
