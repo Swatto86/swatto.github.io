@@ -48,7 +48,7 @@ export const UtilityCard: FC<UtilityCardProps> = ({
       // Show download started toast
       toast({
         title: "Download Started",
-        description: `${title} download has started. Thank you for using our tools!`,
+        description: `${title} download has started. Thank you for using my tools!`,
         duration: 5000,
       });
 
