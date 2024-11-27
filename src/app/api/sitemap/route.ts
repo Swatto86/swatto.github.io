@@ -9,7 +9,7 @@ export async function GET() {
     '#checksumcheck',
     '#pstinsight',
     '#connectx',
-    '#swatlogsweep',
+    '#eventsleuth',
     '#github-discussions'
   ];
 

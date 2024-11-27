@@ -23,14 +23,14 @@ import { cn } from "@/lib/utils";
 interface DownloadCounts {
   PSTInsight: number;
   ConnectX: number;
-  SwatLogSweep: number;
   ChecksumCheck: number;
+  EventSleuth: number;
 }
 
 type UtilityName = keyof DownloadCounts;
 
 const isValidUtility = (utility: string): utility is UtilityName => {
-  return ['PSTInsight', 'ConnectX', 'SwatLogSweep', 'ChecksumCheck'].includes(utility);
+  return ['PSTInsight', 'ConnectX', 'ChecksumCheck', 'EventSleuth'].includes(utility);
 };
 
 export default function Home() {
@@ -38,17 +38,17 @@ export default function Home() {
   const [downloadCounts, setDownloadCounts] = useState<DownloadCounts>({
     PSTInsight: 0,
     ConnectX: 0,
-    SwatLogSweep: 0,
     ChecksumCheck: 0,
+    EventSleuth: 0,
   });
 
   useEffect(() => {
     const fetchCounts = async () => {
       try {
         const utilities: UtilityName[] = [
+          "EventSleuth",
           "PSTInsight",
           "ConnectX",
-          "SwatLogSweep",
           "ChecksumCheck"
         ];
 
@@ -174,6 +174,12 @@ export default function Home() {
     { src: "/images/swatlogsweep/search.png", alt: "search" },
   ];
 
+  const eventSleuthScreenshots = [
+    { src: "/images/eventsleuth/main.png", alt: "main" },
+    { src: "/images/eventsleuth/search.png", alt: "results" },
+    { src: "/images/eventsleuth/themes.png", alt: "themes" },
+  ];
+
   const discussionReasons = [
     "Submit bugs you have found with the utilities",
     "Get support from me directly",
@@ -185,6 +191,62 @@ export default function Home() {
     <div className="min-h-screen">
       <div className="max-w-4xl mx-auto px-4 space-y-20 pb-8">
         <HeroSection />
+
+        {/* EventSleuth Section */}
+        <section id="eventsleuth" className="utility-section">
+          <UtilityCard
+            title="EventSleuth"
+            version="1.0.0"
+            description="Advanced Windows Event Log Analyzer"
+            gradient="from-red-500 to-orange-500"
+            downloadCount={downloadCounts.EventSleuth}
+            sha256="e462f27f42ef03d20f16708423dadb1288c65fc8211860bbc103c82840fe6383"
+            downloadLink="/static/downloads/EventSleuth/EventSleuth.exe"
+            onDownload={() => handleDownload("EventSleuth")}
+          >
+            <p className="text-muted-foreground text-center">
+              A powerful Windows event log analyzer built with Tauri and React, providing a modern, 
+              user-friendly interface for searching and analyzing Windows event logs with advanced 
+              filtering capabilities and multiple theme options.
+            </p>
+
+            <ScreenshotViewer
+              screenshots={eventSleuthScreenshots}
+              utility="EventSleuth"
+            />
+
+            <FeaturesSection
+              title="Analysis Features"
+              features={[
+                "Advanced full-text search with keyword highlighting",
+                "Multiple theme options including Dark, Light, and specialty themes",
+                "Date range and event type filtering",
+                "Source and Event ID filtering capabilities",
+                "Export results to CSV format",
+                "System tray integration",
+                "Cross-window state persistence",
+                "Native Windows performance with Rust backend"
+              ]}
+              gradient="from-red-500/10 to-orange-500/10"
+            />
+
+            <ChangelogSection
+              items={[
+                {
+                  version: "Version 1.0.0 (Current)",
+                  changes: [
+                    "Initial release of EventSleuth",
+                    "Advanced search functionality",
+                    "Multiple theme support",
+                    "CSV export capability",
+                    "System tray integration"
+                  ],
+                },
+              ]}
+              gradient="from-red-500/10 to-orange-500/10"
+            />
+          </UtilityCard>
+        </section>
 
         {/* ConnectX Section */}
         <section id="connectx" className="utility-section">
@@ -383,71 +445,6 @@ export default function Home() {
               ]}
               description="PSTInsight 2.0.0 utilizes two excellent open-source projects:"
               gradient="from-blue-500/10 to-purple-500/10"
-            />
-          </UtilityCard>
-        </section>
-
-        {/* SwatLogSweep Section */}
-        <section id="swatlogsweep" className="utility-section">
-          <UtilityCard
-            title="SwatLogSweep"
-            version="1.2.0"
-            description="Event Log Search Utility"
-            gradient="from-green-400 to-blue-600"
-            downloadCount={downloadCounts.SwatLogSweep}
-            sha256="5b96acb06d484ee365b815e3f02e68ae94a649c38d587a9eaf4b7f3d29f7cac1"
-            downloadLink="/static/downloads/SwatLogSweep/SwatLogSweep.exe"
-            onDownload={() => handleDownload("SwatLogSweep")}
-          >
-            <p className="text-muted-foreground text-center">
-              A Windows application designed for efficient searching of Windows
-              event logs. It provides a user-friendly interface to search the
-              entire event log for specific keywords and presents the results in
-              an easy-to-read format.
-            </p>
-
-            <ScreenshotViewer
-              screenshots={swatLogSweepScreenshots}
-              utility="SwatLogSweep"
-            />
-
-            <FeaturesSection
-              title="Log Search Capabilities"
-              features={[
-                "Comprehensive log search across all Windows event logs",
-                "Event ID search capability",
-                "Clear results presentation",
-                "Export to CSV functionality",
-                "Run As Administrator for full event log access",
-                "Select an event to highlight keyword matches in the description",
-              ]}
-              gradient="from-green-500/10 to-blue-500/10"
-            />
-
-            <ChangelogSection
-              items={[
-                {
-                  version: "Version 1.2.0 (Current)",
-                  changes: [
-                    "Added export to CSV functionality",
-                    "Improved searching algorithm",
-                  ],
-                },
-                {
-                  version: "Version 1.1.0",
-                  changes: [
-                    "Adjusted application layout",
-                    "Added sorting capabilities to the ListView headers",
-                    "Detection of Admin and Standard User run modes",
-                    "Added Event ID searching",
-                  ],
-                },
-                {
-                  version: "Version 1.0.0",
-                  changes: ["Initial release of SwatLogSweep"],
-                },
-              ]}
-              gradient="from-green-500/10 to-blue-500/10"
             />
           </UtilityCard>
         </section>

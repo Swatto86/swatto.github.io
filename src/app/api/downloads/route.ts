@@ -6,9 +6,8 @@ import { z } from "zod";
 const utilitySchema = z.enum([
   "PSTInsight",
   "ConnectX",
-  "SwatLogSweep",
   "ChecksumCheck",
-  "SimpleGit",
+  "EventSleuth",
 ]);
 type UtilityName = z.infer<typeof utilitySchema>;
 
