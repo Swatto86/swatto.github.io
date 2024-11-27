@@ -200,7 +200,7 @@ export default function Home() {
             description="Advanced Windows Event Log Analyzer"
             gradient="from-red-500 to-orange-500"
             downloadCount={downloadCounts.EventSleuth}
-            sha256="e462f27f42ef03d20f16708423dadb1288c65fc8211860bbc103c82840fe6383"
+            sha256="7f883ac7b6329563bc30509a67740e65d5d1250f2ff962726ced45b01154d141"
             downloadLink="/static/downloads/EventSleuth/EventSleuth.exe"
             onDownload={() => handleDownload("EventSleuth")}
           >
@@ -256,7 +256,7 @@ export default function Home() {
             description="Remote Desktop Connection Manager"
             gradient="from-purple-400 to-pink-600"
             downloadCount={downloadCounts.ConnectX}
-            sha256="02796a204473d68387c5d2f948747dfbfcbec295610a4bbff5f8baa2a14c75f6"
+            sha256="a415f3da5bb8765be2d7ce21f1ca7f21d4ee84ea41ec6d9114eab6b7038243cf"
             downloadLink="/static/downloads/ConnectX/ConnectX.exe"
             onDownload={() => handleDownload("ConnectX")}
           >
@@ -305,7 +305,7 @@ export default function Home() {
             description="Fast and Simple File Checksum Verification Tool"
             gradient="from-red-500 to-gray-800"
             downloadCount={downloadCounts.ChecksumCheck}
-            sha256="6c8ab8ac4c5339eb67227e54ef2a8da321cbaf5c036e7e7f4604d722fa45fe1ac"
+            sha256="36bcc48d4f27feb072e2c38afb62b2a2aa8fd814569add19eda47b21bc05bede"
             downloadLink="/static/downloads/ChecksumCheck/ChecksumCheck.exe"
             onDownload={() => handleDownload("ChecksumCheck")}
           >
