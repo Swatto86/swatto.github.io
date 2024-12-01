@@ -1,7 +1,3 @@
-declare module 'react' {
-  export * from 'react';
-}
-
 declare module 'next/link' {
   import { LinkProps } from 'next/dist/client/link';
   export default function Link(props: LinkProps): JSX.Element;
