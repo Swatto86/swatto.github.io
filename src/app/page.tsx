@@ -305,7 +305,7 @@ export default function Home() {
             description="Fast and Simple File Checksum Verification Tool"
             gradient="from-red-500 to-gray-800"
             downloadCount={downloadCounts.ChecksumCheck}
-            sha256="36bcc48d4f27feb072e2c38afb62b2a2aa8fd814569add19eda47b21bc05bede"
+            sha256="4ef457c24a8e9d52e27574a36a0f872d17d11c28182c07311a41e4cd31782b96"
             downloadLink="/static/downloads/ChecksumCheck/ChecksumCheck.exe"
             onDownload={() => handleDownload("ChecksumCheck")}
           >
