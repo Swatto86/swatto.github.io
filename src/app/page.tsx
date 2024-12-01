@@ -43,119 +43,53 @@ export default function Home() {
   });
 
   useEffect(() => {
-    const fetchCounts = async () => {
+    const fetchDownloadCounts = async () => {
       try {
-        const utilities: UtilityName[] = [
-          "EventSleuth",
-          "PSTInsight",
-          "ConnectX",
-          "ChecksumCheck"
-        ];
-
-        const counts = await Promise.all(
-          utilities.map(async (utility) => {
-            try {
-              const response = await fetch(`/api/downloads?utility=${utility}`);
-              const data = await response.json();
-              
-              // Handle KV environment variable errors gracefully
-              if (data.error?.includes('@vercel/kv')) {
-                console.warn(`KV storage not configured for ${utility}, using fallback count`);
-                return { utility, count: 0 };
-              }
-
-              if (!response.ok) {
-                throw new Error(data.details || 'Failed to fetch download count');
-              }
-
-              // Ensure count is a valid number
-              const count = typeof data.count === 'number' ? data.count : 0;
-              return { utility, count };
-            } catch (error) {
-              console.error(`Error processing ${utility}:`, error);
-              return { utility, count: 0 };
-            }
-          })
-        );
-
-        const newCounts = counts.reduce(
-          (acc, { utility, count }) => ({
-            ...acc,
-            [utility]: count,
-          }),
-          {} as DownloadCounts
-        );
+        const response = await fetch('/api/downloads');
+        const data = await response.json();
+        const newCounts: Partial<DownloadCounts> = {};
+        
+        Object.entries(data).forEach(([key, value]) => {
+          if (isValidUtility(key)) {
+            newCounts[key] = typeof value === 'number' ? value : 0;
+          }
+        });
 
         setDownloadCounts(prev => ({
           ...prev,
           ...newCounts
         }));
-
       } catch (error) {
-        console.error("Failed to fetch download counts:", error);
+        console.error('Error fetching download counts:', error);
       }
     };
 
-    fetchCounts();
+    fetchDownloadCounts();
   }, []);
 
   const handleDownload = async (utility: UtilityName) => {
-    if (!isValidUtility(utility)) {
-      console.error(`Invalid utility name: ${utility}`);
-      return;
-    }
-
     try {
-      const response = await fetch("/api/downloads", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ utility }),
+      const response = await fetch(`/api/downloads/${utility}`, {
+        method: 'POST',
       });
-
       const data = await response.json();
-
-      // Handle KV environment variable errors gracefully
-      if (data.error?.includes('@vercel/kv')) {
-        toast({
-          title: "Download Started",
-          description: `${utility} download has started. Download tracking temporarily unavailable.`,
-          duration: 5000,
-        });
-        return Promise.resolve();
-      }
-
-      if (!response.ok) {
-        throw new Error(data.details || "Failed to increment download count");
-      }
-
       if (data.success) {
         const newCount = typeof data.count === 'number' ? data.count : 0;
-        setDownloadCounts((prev) => ({
+        setDownloadCounts((prev: DownloadCounts) => ({
           ...prev,
           [utility]: newCount,
         }));
-
-        toast({
-          title: "Download Started",
-          description: `${utility} download has started. Thank you for using my tools!`,
-          duration: 5000,
-        });
       }
     } catch (error) {
-      console.error("Failed to increment download count:", error);
-      toast({
-        title: "Download Started",
-        description: "Download tracking failed, but your download should start shortly.",
-        duration: 5000,
-      });
+      console.error('Error updating download count:', error);
     }
   };
 
   const ChecksumCheckScreenshots = [
-    { src: "/images/checksumcheck/main.png", alt: "main" },
-    { src: "/images/checksumcheck/checksum_results.png", alt: "results" },
+    { src: "/images/checksumcheck/main-dark.png", alt: "main-dark" },
+    { src: "/images/checksumcheck/checksum_results-dark.png", alt: "results-dark" },
+    { src: "/images/checksumcheck/main-light.png", alt: "main-light" },
+    { src: "/images/checksumcheck/checksum_results-light.png", alt: "results-light" },
   ];
 
   const pstInsightScreenshots = [
@@ -301,11 +235,11 @@ export default function Home() {
         <section id="checksumcheck" className="utility-section">
           <UtilityCard
             title="ChecksumCheck"
-            version="1.2.0"
+            version="1.3.0"
             description="Fast and Simple File Checksum Verification Tool"
             gradient="from-red-500 to-gray-800"
             downloadCount={downloadCounts.ChecksumCheck}
-            sha256="4ef457c24a8e9d52e27574a36a0f872d17d11c28182c07311a41e4cd31782b96"
+            sha256="ed69929a5b255406213a3773768f7ed3c6f1d896c3431292a2419760389542d2"
             downloadLink="/static/downloads/ChecksumCheck/ChecksumCheck.exe"
             onDownload={() => handleDownload("ChecksumCheck")}
           >
@@ -324,9 +258,11 @@ export default function Home() {
               title="Verification Capabilities"
               features={[
                 "Multiple hash algorithm support (MD5, SHA-1, SHA-256, SHA-512)",
+                "Dark and Light theme modes",
+                "System tray integration",
                 "Drag and drop file support",
                 "Native file picker integration",
-                "Fast hash calculation powered by Rust",
+                "Fast hash calculation powered by Rust and Tauri 2.0",
                 "Simple and intuitive interface",
                 "Copy hash results to clipboard",
                 "Visual feedback for hash verification",
@@ -337,20 +273,18 @@ export default function Home() {
             <ChangelogSection
               items={[
                 {
-                  version: "1.2.0 (Current)",
+                  version: "1.3.0 (Current)",
                   changes: [
-                    "Fixed white screen issue",
-                    "No installation required",
+                    "Re-written in Tauri 2.0",
+                    "Added Dark/Light theme mode",
+                    "Added System Tray functionality",
                   ],
                 },
                 {
-                  version: "1.1.0",
+                  version: "1.2.0",
                   changes: [
-                    "Support for MD5, SHA-1, SHA-256, and SHA-512 algorithms",
-                    "Drag and drop file support",
-                    "Native file picker integration",
-                    "Hash verification functionality",
-                    "Copy to clipboard feature",
+                    "Fixed white screen issue",
+                    "No installation required",
                   ],
                 },
               ]}
