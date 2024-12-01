@@ -43,45 +43,113 @@ export default function Home() {
   });
 
   useEffect(() => {
-    const fetchDownloadCounts = async () => {
+    const fetchCounts = async () => {
       try {
-        const response = await fetch('/api/downloads');
-        const data = await response.json();
-        const newCounts: Partial<DownloadCounts> = {};
-        
-        Object.entries(data).forEach(([key, value]) => {
-          if (isValidUtility(key)) {
-            newCounts[key] = typeof value === 'number' ? value : 0;
-          }
-        });
+        const utilities: UtilityName[] = [
+          "EventSleuth",
+          "PSTInsight",
+          "ConnectX",
+          "ChecksumCheck"
+        ];
+
+        const counts = await Promise.all(
+          utilities.map(async (utility) => {
+            try {
+              const response = await fetch(`/api/downloads?utility=${utility}`);
+              const data = await response.json();
+              
+              // Handle KV environment variable errors gracefully
+              if (data.error?.includes('@vercel/kv')) {
+                console.warn(`KV storage not configured for ${utility}, using fallback count`);
+                return { utility, count: 0 };
+              }
+
+              if (!response.ok) {
+                throw new Error(data.details || 'Failed to fetch download count');
+              }
+
+              // Ensure count is a valid number
+              const count = typeof data.count === 'number' ? data.count : 0;
+              return { utility, count };
+            } catch (error) {
+              console.error(`Error processing ${utility}:`, error);
+              return { utility, count: 0 };
+            }
+          })
+        );
+
+        const newCounts = counts.reduce(
+          (acc, { utility, count }) => ({
+            ...acc,
+            [utility]: count,
+          }),
+          {} as DownloadCounts
+        );
 
         setDownloadCounts(prev => ({
           ...prev,
           ...newCounts
         }));
+
       } catch (error) {
-        console.error('Error fetching download counts:', error);
+        console.error("Failed to fetch download counts:", error);
       }
     };
 
-    fetchDownloadCounts();
+    fetchCounts();
   }, []);
 
   const handleDownload = async (utility: UtilityName) => {
+    if (!isValidUtility(utility)) {
+      console.error(`Invalid utility name: ${utility}`);
+      return;
+    }
+
     try {
-      const response = await fetch(`/api/downloads/${utility}`, {
-        method: 'POST',
+      const response = await fetch("/api/downloads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ utility }),
       });
+
       const data = await response.json();
+
+      // Handle KV environment variable errors gracefully
+      if (data.error?.includes('@vercel/kv')) {
+        toast({
+          title: "Download Started",
+          description: `${utility} download has started. Download tracking temporarily unavailable.`,
+          duration: 5000,
+        });
+        return Promise.resolve();
+      }
+
+      if (!response.ok) {
+        throw new Error(data.details || "Failed to increment download count");
+      }
+
       if (data.success) {
         const newCount = typeof data.count === 'number' ? data.count : 0;
-        setDownloadCounts((prev: DownloadCounts) => ({
+        setDownloadCounts((prev) => ({
           ...prev,
           [utility]: newCount,
         }));
+
+        toast({
+          title: "Download Started",
+          description: `${utility} download has started. Thank you for using my tools!`,
+          duration: 5000,
+        });
       }
     } catch (error) {
-      console.error('Error updating download count:', error);
+      console.error("Failed to increment download count:", error);
+      toast({
+        title: "Download Started",
+        description: "Download tracking failed, but your download should start shortly.",
+        duration: 5000,
+      });
     }
   };
 
