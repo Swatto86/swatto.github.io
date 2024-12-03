@@ -8,6 +8,7 @@ const utilitySchema = z.enum([
   "ConnectX",
   "ChecksumCheck",
   "EventSleuth",
+  "BitBurn",
 ]);
 type UtilityName = z.infer<typeof utilitySchema>;
 
