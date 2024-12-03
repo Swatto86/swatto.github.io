@@ -25,12 +25,13 @@ interface DownloadCounts {
   ConnectX: number;
   ChecksumCheck: number;
   EventSleuth: number;
+  BitBurn: number;
 }
 
 type UtilityName = keyof DownloadCounts;
 
 const isValidUtility = (utility: string): utility is UtilityName => {
-  return ['PSTInsight', 'ConnectX', 'ChecksumCheck', 'EventSleuth'].includes(utility);
+  return ['PSTInsight', 'ConnectX', 'ChecksumCheck', 'EventSleuth', 'BitBurn'].includes(utility);
 };
 
 export default function Home() {
@@ -40,6 +41,7 @@ export default function Home() {
     ConnectX: 0,
     ChecksumCheck: 0,
     EventSleuth: 0,
+    BitBurn: 0,
   });
 
   useEffect(() => {
@@ -49,7 +51,8 @@ export default function Home() {
           "EventSleuth",
           "PSTInsight",
           "ConnectX",
-          "ChecksumCheck"
+          "ChecksumCheck",
+          "BitBurn"
         ];
 
         const counts = await Promise.all(
@@ -171,11 +174,6 @@ export default function Home() {
     { src: "/images/connectx/rdp_creds.png", alt: "rdp" },
   ];
 
-  const swatLogSweepScreenshots = [
-    { src: "/images/swatlogsweep/main.png", alt: "main" },
-    { src: "/images/swatlogsweep/search.png", alt: "search" },
-  ];
-
   const eventSleuthScreenshots = [
     { src: "/images/eventsleuth/main.png", alt: "main" },
     { src: "/images/eventsleuth/search.png", alt: "results" },
@@ -189,10 +187,71 @@ export default function Home() {
     "Engage with other users",
   ];
 
+  const bitBurnScreenshots = [
+    { src: "/images/bitburn/main-dark.png", alt: "main-dark" },
+    { src: "/images/bitburn/main-light.png", alt: "main-light" },
+  ];
+
   return (
     <div className="min-h-screen">
       <div className="max-w-4xl mx-auto px-4 space-y-20 pb-8">
         <HeroSection />
+
+        {/* BitBurn Section */}
+        <section id="bitburn" className="utility-section">
+          <UtilityCard
+            title="BitBurn"
+            version="1.0.0"
+            description="Secure Data Erasure Tool"
+            gradient="from-blue-500 to-orange-500"
+            downloadCount={downloadCounts.BitBurn}
+            sha256="c86903f9e9bb2e3cccebafca1e51c61e8b4680ea5a68675e7a5c1158980f781a"
+            downloadLink="/static/downloads/BitBurn/BitBurn.exe"
+            onDownload={() => handleDownload("BitBurn")}
+          >
+            <p className="text-muted-foreground text-center">
+              A powerful and user-friendly data erasure tool built with Tauri and React. BitBurn securely overwrites files and folders
+              using military-grade deletion methods, ensuring your sensitive data cannot be recovered.
+            </p>
+
+            <ScreenshotViewer
+              screenshots={bitBurnScreenshots}
+              utility="BitBurn"
+            />
+
+            <FeaturesSection
+              title="Key Features"
+              features={[
+                "Multiple secure deletion algorithms including DoD 5220.22-M",
+                "Progress tracking with detailed statistics",
+                "Drag and drop file/folder support",
+                "System tray integration",
+                "Verification of deletion process",
+                "Native performance with Rust backend",
+                "Modern, intuitive user interface",
+                "Dark and light theme support"
+              ]}
+              gradient="from-blue-500/10 to-orange-500/10"
+            />
+
+            <ChangelogSection
+              items={[
+                {
+                  version: "Version 1.0.0 (Current)",
+                  changes: [
+                    "Initial release of BitBurn",
+                    "Multiple secure deletion algorithms",
+                    "Progress tracking and statistics",
+                    "Drag and drop support",
+                    "System tray integration",
+                    "Dark/light theme support"
+                  ],
+                },
+              ]}
+              gradient="from-blue-500/10 to-orange-500/10"
+            />
+          </UtilityCard>
+        </section>
 
         {/* EventSleuth Section */}
         <section id="eventsleuth" className="utility-section">
