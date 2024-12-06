@@ -9,6 +9,7 @@ import ThemePicker from "@/components/theme-picker";
 import { useTheme } from "next-themes";
 
 const navItems = [
+  { title: "BitBurn", href: "#bitburn" },
   { title: "EventSleuth", href: "#eventsleuth" },
   { title: "ConnectX", href: "#connectx" },
   { title: "ChecksumCheck", href: "#checksumcheck" },
