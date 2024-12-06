@@ -313,11 +313,11 @@ export default function Home() {
         <section id="connectx" className="utility-section">
           <UtilityCard
             title="ConnectX"
-            version="1.0.0"
+            version="1.1.0"
             description="Remote Desktop Connection Manager"
             gradient="from-purple-400 to-pink-600"
             downloadCount={downloadCounts.ConnectX}
-            sha256="a415f3da5bb8765be2d7ce21f1ca7f21d4ee84ea41ec6d9114eab6b7038243cf"
+            sha256="70f23c5cf61c0fe1699b15fb57f772e5c8182dc937f55b46ccc15d0ace6ea4ec"
             downloadLink="/static/downloads/ConnectX/ConnectX.exe"
             onDownload={() => handleDownload("ConnectX")}
           >
@@ -348,6 +348,10 @@ export default function Home() {
 
             <ChangelogSection
               items={[
+                {
+                  version: "Version 1.1.0",
+                  changes: ["Added search functionality to the manage hosts window"]
+                },
                 {
                   version: "Version 1.0.0",
                   changes: ["Initial release of ConnectX"],
