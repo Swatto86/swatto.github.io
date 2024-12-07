@@ -195,22 +195,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-12 gap-4">
-          {/* Left Navigation */}
-          <div className="col-span-2 sticky top-4 self-start h-screen overflow-y-auto pt-4">
-            <nav className="space-y-2">
-              <a href="#bitburn" className="block text-sm hover:text-primary">BitBurn</a>
-              <a href="#eventsleuth" className="block text-sm hover:text-primary">EventSleuth</a>
-              <a href="#connectx" className="block text-sm hover:text-primary">ConnectX</a>
-              <a href="#checksumcheck" className="block text-sm hover:text-primary">ChecksumCheck</a>
-              <a href="#pstinsight" className="block text-sm hover:text-primary">PSTInsight</a>
-              <a href="#github-discussions" className="block text-sm hover:text-primary">Discussions</a>
-            </nav>
-          </div>
-
+      <div className="container mx-auto">
+        <div className="grid grid-cols-12">
           {/* Main Content */}
-          <div className="col-span-7 space-y-20 pb-8">
+          <div className="col-span-9 col-start-2 px-4 space-y-20 pb-8">
             <HeroSection />
 
             {/* BitBurn Section */}
@@ -633,7 +621,7 @@ export default function Home() {
           </div>
 
           {/* Right News Feed */}
-          <div className="col-span-3 sticky top-4 self-start h-screen overflow-y-auto pt-4">
+          <div className="col-span-2 sticky top-4 self-start h-screen overflow-y-auto pt-4">
             <NewsFeed />
           </div>
         </div>
