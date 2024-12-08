@@ -47,9 +47,9 @@ export function NewsFeed() {
 
   return (
     <Card className={cn(
-      "rounded-none h-full w-full bg-background"
+      "rounded-none h-full w-full bg-background border-none shadow-none"
     )}>
-      <CardHeader>
+      <CardHeader className="px-0">
         <CardTitle className="flex items-center justify-center">
           <span className={cn(
             "text-center font-bold text-lg bg-gradient-to-r bg-clip-text text-transparent",
@@ -64,7 +64,7 @@ export function NewsFeed() {
           </span>
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-4 px-0">
         {loading ? (
           <p className="text-center text-muted-foreground">Loading news...</p>
         ) : news.length === 0 ? (
