@@ -47,10 +47,10 @@ export function NewsFeed() {
 
   return (
     <Card className={cn(
-      "border-none rounded-none h-full lg:w-64 w-full",
+      "rounded-none h-full w-full",
       {
-        'bg-[#1a0f2e]': currentTheme === 'dark' || currentTheme === 'colourful',
-        'bg-gray-100': currentTheme === 'light'
+        'bg-background': currentTheme === 'dark' || currentTheme === 'colourful',
+        'bg-background': currentTheme === 'light'
       }
     )}>
       <CardHeader>
