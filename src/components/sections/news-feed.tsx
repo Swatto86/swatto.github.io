@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 interface NewsItem {
   title: string;
@@ -11,6 +13,7 @@ interface NewsItem {
 export function NewsFeed() {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -29,10 +32,20 @@ export function NewsFeed() {
   }, []);
 
   return (
-    <Card className="bg-[#1a0f2e] border-none rounded-none h-full lg:w-64 w-full">
+    <Card className={cn(
+      "border-none rounded-none h-full lg:w-64 w-full",
+      theme === 'dark' && "bg-[#1a0f2e]",
+      theme === 'light' && "bg-gray-100",
+      theme === 'colourful' && "bg-[#1a0f2e]"
+    )}>
       <CardHeader>
         <CardTitle className="flex items-center justify-center">
-          <span className="bg-gradient-to-r from-[#4FB8FF] to-[#FFE81F] bg-clip-text text-transparent text-center">
+          <span className={cn(
+            "bg-gradient-to-r bg-clip-text text-transparent text-center font-bold",
+            theme === 'dark' && "from-[#4FB8FF] to-[#FFE81F]",
+            theme === 'light' && "from-blue-600 to-orange-600",
+            theme === 'colourful' && "from-[#4FB8FF] to-[#FFE81F]"
+          )}>
             Latest Security News
           </span>
         </CardTitle>
@@ -55,8 +68,17 @@ export function NewsFeed() {
                 <div className="flex items-start space-x-2 p-2 rounded-lg hover:bg-white/5 transition-colors">
                   <ExternalLink className="h-4 w-4 mt-1 flex-shrink-0 transition-transform group-hover:translate-x-1" />
                   <div>
-                    <p className="text-sm font-medium text-[#FFE81F] group-hover:text-[#4FB8FF] transition-colors">{item.title}</p>
-                    <p className="text-xs text-muted-foreground">{new Date(item.pubDate).toLocaleDateString()}</p>
+                    <p className={cn(
+                      "text-sm font-medium transition-colors",
+                      theme === 'dark' && "text-[#FFE81F] group-hover:text-[#4FB8FF]",
+                      theme === 'light' && "text-blue-600 group-hover:text-orange-600",
+                      theme === 'colourful' && "text-[#FFE81F] group-hover:text-[#4FB8FF]"
+                    )}>
+                      {item.title}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {new Date(item.pubDate).toLocaleDateString()}
+                    </p>
                   </div>
                 </div>
               </a>

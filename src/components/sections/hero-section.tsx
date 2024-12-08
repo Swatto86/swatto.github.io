@@ -17,9 +17,20 @@ export const HeroSection: FC = () => {
     >
       <h1 className={cn(
         "text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl",
-        theme === 'colourful' ? 'text-[hsl(60,100%,70%)]' : 'text-foreground'
+        "relative",
+        theme === 'colourful' 
+          ? 'text-[hsl(60,100%,70%)]' 
+          : cn(
+              "bg-gradient-to-r bg-clip-text text-transparent",
+              theme === 'dark' 
+                ? "from-white via-blue-200 to-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+                : "from-blue-600 via-purple-600 to-orange-600 drop-shadow-[0_0_15px_rgba(0,0,0,0.2)]"
+            )
       )}>
-        Swatto&apos;s Useful Utilities
+        <span className="relative">
+          Swatto&apos;s Useful Utilities
+          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+        </span>
       </h1>
       
       <p className={cn(
