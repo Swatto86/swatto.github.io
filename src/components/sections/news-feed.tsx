@@ -49,12 +49,12 @@ export function NewsFeed() {
       <CardHeader>
         <CardTitle className="flex items-center justify-center">
           <span className={cn(
-            "text-center font-bold text-lg",
+            "text-center font-bold text-lg bg-gradient-to-r bg-clip-text",
             {
               'text-[#FFE81F]': !mounted,
-              'bg-gradient-to-r from-[#4FB8FF] to-[#FFE81F] text-transparent bg-clip-text': 
+              'from-[#4FB8FF] via-[#FFE81F] to-[#4FB8FF] text-transparent': 
                 (currentTheme === 'dark' || currentTheme === 'colourful') && mounted,
-              'bg-gradient-to-r from-blue-600 to-orange-600 text-transparent bg-clip-text':
+              'from-blue-600 via-purple-600 to-orange-600 text-transparent':
                 currentTheme === 'light' && mounted
             }
           )}>

@@ -24,20 +24,30 @@ export const HeroSection: FC = () => {
     >
       <h1 className={cn(
         "text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl relative",
+        "bg-gradient-to-r bg-clip-text text-transparent",
         {
-          'text-[hsl(60,100%,70%)]': currentTheme === 'colourful',
-          'text-white bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text': currentTheme === 'dark',
-          'text-blue-600 bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 bg-clip-text': currentTheme === 'light'
+          'from-[#4FB8FF] via-[#FFE81F] to-[#4FB8FF]': currentTheme === 'colourful',
+          'from-white via-blue-200 to-white': currentTheme === 'dark',
+          'from-blue-600 via-purple-600 to-orange-600': currentTheme === 'light'
         }
       )}>
-        Swatto&apos;s Useful Utilities
-        <span 
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer pointer-events-none" 
-          style={{ 
-            maskImage: 'linear-gradient(to right, transparent, white, transparent)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent, white, transparent)'
-          }} 
-        />
+        <span className="relative inline-block">
+          Swatto&apos;s Useful Utilities
+          <span 
+            className={cn(
+              "absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer pointer-events-none",
+              {
+                'opacity-50': currentTheme === 'light',
+                'opacity-30': currentTheme === 'dark',
+                'opacity-40': currentTheme === 'colourful'
+              }
+            )}
+            style={{ 
+              maskImage: 'linear-gradient(to right, transparent, white, transparent)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent, white, transparent)'
+            }} 
+          />
+        </span>
       </h1>
       
       <p className={cn(
