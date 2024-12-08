@@ -47,11 +47,7 @@ export function NewsFeed() {
 
   return (
     <Card className={cn(
-      "rounded-none h-full w-full",
-      {
-        'bg-background': currentTheme === 'dark' || currentTheme === 'colourful',
-        'bg-background': currentTheme === 'light'
-      }
+      "rounded-none h-full w-full bg-background"
     )}>
       <CardHeader>
         <CardTitle className="flex items-center justify-center">
