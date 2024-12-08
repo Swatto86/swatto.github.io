@@ -1,12 +1,19 @@
 "use client";
 
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 export const HeroSection: FC = () => {
-  const { theme } = useTheme();
+  const { theme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const currentTheme = mounted ? (theme === 'system' ? systemTheme : theme) : 'dark';
 
   return (
     <motion.section 
@@ -16,23 +23,26 @@ export const HeroSection: FC = () => {
       className="pt-20 space-y-6 text-center"
     >
       <h1 className={cn(
-        "text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl",
-        theme === 'colourful' 
-          ? 'text-[hsl(60,100%,70%)]' 
-          : theme === 'dark'
-            ? 'bg-gradient-to-r from-white via-blue-200 to-white text-transparent bg-clip-text drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]'
-            : 'bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 text-transparent bg-clip-text drop-shadow-[0_0_15px_rgba(0,0,0,0.2)]'
+        "text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl relative",
+        {
+          'text-[hsl(60,100%,70%)]': currentTheme === 'colourful',
+          'text-white bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text': currentTheme === 'dark',
+          'text-blue-600 bg-gradient-to-r from-blue-600 via-purple-600 to-orange-600 bg-clip-text': currentTheme === 'light'
+        }
       )}>
-        <span className="relative inline-block">
-          Swatto&apos;s Useful Utilities
-          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" 
-                style={{ maskImage: 'linear-gradient(to right, transparent, white, transparent)' }} />
-        </span>
+        Swatto&apos;s Useful Utilities
+        <span 
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer pointer-events-none" 
+          style={{ 
+            maskImage: 'linear-gradient(to right, transparent, white, transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, white, transparent)'
+          }} 
+        />
       </h1>
       
       <p className={cn(
         "mx-auto max-w-[700px] md:text-xl",
-        theme === 'colourful' ? 'text-[hsl(60,100%,70%)]' : 'text-muted-foreground'
+        currentTheme === 'colourful' ? 'text-[hsl(60,100%,70%)]' : 'text-muted-foreground'
       )}>
         Enhancing your productivity with custom-built tools
       </p>

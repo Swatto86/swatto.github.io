@@ -13,7 +13,12 @@ interface NewsItem {
 export function NewsFeed() {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const { theme } = useTheme();
+  const { theme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -31,20 +36,27 @@ export function NewsFeed() {
     fetchNews();
   }, []);
 
+  const currentTheme = mounted ? (theme === 'system' ? systemTheme : theme) : 'dark';
+
   return (
     <Card className={cn(
       "border-none rounded-none h-full lg:w-64 w-full",
-      theme === 'dark' && "bg-[#1a0f2e]",
-      theme === 'light' && "bg-gray-100",
-      theme === 'colourful' && "bg-[#1a0f2e]"
+      {
+        'bg-[#1a0f2e]': currentTheme === 'dark' || currentTheme === 'colourful',
+        'bg-gray-100': currentTheme === 'light'
+      }
     )}>
       <CardHeader>
         <CardTitle className="flex items-center justify-center">
           <span className={cn(
             "text-center font-bold text-lg",
-            theme === 'dark' && "bg-gradient-to-r from-[#4FB8FF] to-[#FFE81F] text-transparent bg-clip-text",
-            theme === 'light' && "bg-gradient-to-r from-blue-600 to-orange-600 text-transparent bg-clip-text",
-            theme === 'colourful' && "bg-gradient-to-r from-[#4FB8FF] to-[#FFE81F] text-transparent bg-clip-text"
+            {
+              'text-[#FFE81F]': !mounted,
+              'bg-gradient-to-r from-[#4FB8FF] to-[#FFE81F] text-transparent bg-clip-text': 
+                (currentTheme === 'dark' || currentTheme === 'colourful') && mounted,
+              'bg-gradient-to-r from-blue-600 to-orange-600 text-transparent bg-clip-text':
+                currentTheme === 'light' && mounted
+            }
           )}>
             Latest Security News
           </span>
@@ -70,9 +82,12 @@ export function NewsFeed() {
                   <div>
                     <p className={cn(
                       "text-sm font-medium transition-colors",
-                      theme === 'dark' && "text-[#FFE81F] group-hover:text-[#4FB8FF]",
-                      theme === 'light' && "text-blue-600 group-hover:text-orange-600",
-                      theme === 'colourful' && "text-[#FFE81F] group-hover:text-[#4FB8FF]"
+                      {
+                        'text-[#FFE81F] group-hover:text-[#4FB8FF]': 
+                          currentTheme === 'dark' || currentTheme === 'colourful',
+                        'text-blue-600 group-hover:text-orange-600':
+                          currentTheme === 'light'
+                      }
                     )}>
                       {item.title}
                     </p>
