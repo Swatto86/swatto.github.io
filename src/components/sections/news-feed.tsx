@@ -41,10 +41,10 @@ export function NewsFeed() {
       <CardHeader>
         <CardTitle className="flex items-center justify-center">
           <span className={cn(
-            "bg-gradient-to-r bg-clip-text text-transparent text-center font-bold",
-            theme === 'dark' && "from-[#4FB8FF] to-[#FFE81F]",
-            theme === 'light' && "from-blue-600 to-orange-600",
-            theme === 'colourful' && "from-[#4FB8FF] to-[#FFE81F]"
+            "text-center font-bold text-lg",
+            theme === 'dark' && "bg-gradient-to-r from-[#4FB8FF] to-[#FFE81F] text-transparent bg-clip-text",
+            theme === 'light' && "bg-gradient-to-r from-blue-600 to-orange-600 text-transparent bg-clip-text",
+            theme === 'colourful' && "bg-gradient-to-r from-[#4FB8FF] to-[#FFE81F] text-transparent bg-clip-text"
           )}>
             Latest Security News
           </span>
