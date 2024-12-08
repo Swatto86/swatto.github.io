@@ -4,6 +4,13 @@ import { ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 
+// Shared gradient themes
+const gradientThemes = {
+  dark: 'from-purple-400 via-pink-500 to-red-500',
+  light: 'from-blue-500 via-teal-500 to-emerald-500',
+  colourful: 'from-[#FFE81F] via-[#4FB8FF] to-[#FFE81F]'
+};
+
 interface NewsItem {
   title: string;
   link: string;
@@ -51,11 +58,10 @@ export function NewsFeed() {
           <span className={cn(
             "text-center font-bold text-lg bg-gradient-to-r bg-clip-text",
             {
-              'text-[#FFE81F]': !mounted,
-              'from-[#4FB8FF] via-[#FFE81F] to-[#4FB8FF] text-transparent': 
-                (currentTheme === 'dark' || currentTheme === 'colourful') && mounted,
-              'from-blue-600 via-purple-600 to-orange-600 text-transparent':
-                currentTheme === 'light' && mounted
+              'text-foreground': !mounted,
+              [gradientThemes.dark]: currentTheme === 'dark' && mounted,
+              [gradientThemes.light]: currentTheme === 'light' && mounted,
+              [gradientThemes.colourful]: currentTheme === 'colourful' && mounted,
             }
           )}>
             Latest Security News

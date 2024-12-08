@@ -5,6 +5,13 @@ import { useTheme } from 'next-themes';
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
+// Shared gradient themes
+const gradientThemes = {
+  dark: 'from-purple-400 via-pink-500 to-red-500',
+  light: 'from-blue-500 via-teal-500 to-emerald-500',
+  colourful: 'from-[#FFE81F] via-[#4FB8FF] to-[#FFE81F]'
+};
+
 export const HeroSection: FC = () => {
   const { theme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -23,31 +30,16 @@ export const HeroSection: FC = () => {
       className="pt-20 space-y-6 text-center"
     >
       <h1 className={cn(
-        "text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl relative",
+        "text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl",
         "bg-gradient-to-r bg-clip-text text-transparent",
         {
-          'from-[#4FB8FF] via-[#FFE81F] to-[#4FB8FF]': currentTheme === 'colourful',
-          'from-white via-blue-200 to-white': currentTheme === 'dark',
-          'from-blue-600 via-purple-600 to-orange-600': currentTheme === 'light'
+          'text-foreground': !mounted,
+          [gradientThemes.dark]: currentTheme === 'dark' && mounted,
+          [gradientThemes.light]: currentTheme === 'light' && mounted,
+          [gradientThemes.colourful]: currentTheme === 'colourful' && mounted,
         }
       )}>
-        <span className="relative inline-block">
-          Swatto&apos;s Useful Utilities
-          <span 
-            className={cn(
-              "absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer pointer-events-none",
-              {
-                'opacity-50': currentTheme === 'light',
-                'opacity-30': currentTheme === 'dark',
-                'opacity-40': currentTheme === 'colourful'
-              }
-            )}
-            style={{ 
-              maskImage: 'linear-gradient(to right, transparent, white, transparent)',
-              WebkitMaskImage: 'linear-gradient(to right, transparent, white, transparent)'
-            }} 
-          />
-        </span>
+        Swatto&apos;s Useful Utilities
       </h1>
       
       <p className={cn(
