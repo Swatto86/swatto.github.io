@@ -197,7 +197,7 @@ export default function Home() {
     <div className="min-h-screen">
       <div className="grid grid-cols-24">
         {/* Main Content */}
-        <div className="col-span-24 lg:col-span-20 px-4 space-y-20 pb-8">
+        <div className="col-span-24 lg:col-span-16 lg:col-start-5 px-4 space-y-20 pb-8">
           <HeroSection />
 
           {/* BitBurn Section */}
@@ -620,7 +620,7 @@ export default function Home() {
         </div>
 
         {/* Right News Feed */}
-        <aside className="col-span-24 lg:col-span-4 lg:fixed lg:right-0 lg:top-0 w-full lg:w-64 h-auto lg:h-[100vh] overflow-y-auto">
+        <aside className="col-span-24 lg:col-span-4 lg:fixed lg:right-0 lg:top-0 lg:h-screen lg:w-64 w-full overflow-y-auto">
           <NewsFeed />
         </aside>
       </div>
