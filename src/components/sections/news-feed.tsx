@@ -29,10 +29,10 @@ export function NewsFeed() {
   }, []);
 
   return (
-    <Card className="bg-[#1a0f2e] border-none rounded-none h-full">
+    <Card className="bg-[#1a0f2e] border-none rounded-none h-full lg:w-64 w-full">
       <CardHeader>
         <CardTitle className="flex items-center justify-center">
-          <span className="text-[#4FB8FF]">
+          <span className="bg-gradient-to-r from-[#4FB8FF] to-[#FFE81F] bg-clip-text text-transparent text-center">
             Latest Security News
           </span>
         </CardTitle>
