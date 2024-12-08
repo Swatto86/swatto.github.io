@@ -56,7 +56,7 @@ export function NewsFeed() {
       <CardHeader>
         <CardTitle className="flex items-center justify-center">
           <span className={cn(
-            "text-center font-bold text-lg bg-gradient-to-r bg-clip-text",
+            "text-center font-bold text-lg bg-gradient-to-r bg-clip-text text-transparent",
             {
               'text-foreground': !mounted,
               [gradientThemes.dark]: currentTheme === 'dark' && mounted,
