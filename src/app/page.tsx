@@ -262,7 +262,7 @@ export default function Home() {
               title="EventSleuth"
               version="1.0.0"
               description="Advanced Windows Event Log Analyzer"
-              gradient="from-red-500 to-orange-500"
+              gradient="from-purple-400 via-pink-500 to-red-500"
               downloadCount={downloadCounts.EventSleuth}
               sha256="7f883ac7b6329563bc30509a67740e65d5d1250f2ff962726ced45b01154d141"
               downloadLink="/static/downloads/EventSleuth/EventSleuth.exe"
@@ -291,7 +291,7 @@ export default function Home() {
                   "Cross-window state persistence",
                   "Native Windows performance with Rust backend"
                 ]}
-                gradient="from-red-500/10 to-orange-500/10"
+                gradient="from-purple-400/10 via-pink-500/10 to-red-500/10"
               />
 
               <ChangelogSection
@@ -307,7 +307,7 @@ export default function Home() {
                     ],
                   },
                 ]}
-                gradient="from-red-500/10 to-orange-500/10"
+                gradient="from-purple-400/10 via-pink-500/10 to-red-500/10"
               />
             </UtilityCard>
           </section>
