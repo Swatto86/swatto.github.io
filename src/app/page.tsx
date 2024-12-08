@@ -195,7 +195,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <div className="grid grid-cols-24">
+      <div className="grid grid-cols-24 relative">
         {/* Main Content */}
         <div className="col-span-24 lg:col-span-20 lg:col-start-2 px-4 space-y-20 pb-8">
           <HeroSection />
@@ -620,7 +620,7 @@ export default function Home() {
         </div>
 
         {/* Right News Feed */}
-        <div className="lg:fixed lg:right-0 lg:top-0 lg:h-screen w-full lg:w-64 col-span-24 lg:col-span-4 lg:overflow-y-auto">
+        <div className="col-span-24 lg:col-span-4 lg:sticky lg:top-0 lg:right-0 lg:max-h-screen lg:overflow-y-auto w-full lg:w-64">
           <NewsFeed />
         </div>
       </div>
