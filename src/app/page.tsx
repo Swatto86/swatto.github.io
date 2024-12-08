@@ -195,9 +195,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <div className="grid grid-cols-24 relative">
+      <div className="grid grid-cols-24">
         {/* Main Content */}
-        <div className="col-span-24 lg:col-span-20 lg:col-start-2 px-4 space-y-20 pb-8">
+        <div className="col-span-24 lg:col-span-20 px-4 space-y-20 pb-8">
           <HeroSection />
 
           {/* BitBurn Section */}
@@ -620,9 +620,9 @@ export default function Home() {
         </div>
 
         {/* Right News Feed */}
-        <div className="col-span-24 lg:col-span-4 lg:sticky lg:top-0 lg:right-0 lg:max-h-screen lg:overflow-y-auto w-full lg:w-64">
+        <aside className="col-span-24 lg:col-span-4 lg:fixed lg:right-0 lg:top-0 w-full lg:w-64 h-auto lg:h-[100vh] overflow-y-auto">
           <NewsFeed />
-        </div>
+        </aside>
       </div>
     </div>
   );
