@@ -264,7 +264,7 @@ export default function Home() {
               description="Advanced Windows Event Log Analyzer"
               gradient="from-purple-400 via-pink-500 to-red-500"
               downloadCount={downloadCounts.EventSleuth}
-              sha256="7f883ac7b6329563bc30509a67740e65d5d1250f2ff962726ced45b01154d141"
+              sha256="c9accd54ed543c19de089b4ea95bd9f8133a33722e539583c33734c4684c2b4f"
               downloadLink="/static/downloads/EventSleuth/EventSleuth.exe"
               onDownload={() => handleDownload("EventSleuth")}
             >
