@@ -1,0 +1,315 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 346.8 77.2% 49.8%;
+    --radius: 0.75rem;
+  }
+
+  [data-theme="dark"] {
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 75% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 75%;
+    --accent: 0 0% 8%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 75% 50%;
+  }
+
+  [data-theme="colourful"] {
+    --background: 280 80% 8%;
+    --foreground: 60 100% 70%;
+    --card: 280 80% 8%;
+    --card-foreground: 120 100% 70%;
+    --popover: 320 90% 15%;
+    --popover-foreground: 180 100% 70%;
+    --primary: 0 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 50% 20%;
+    --secondary-foreground: 30 100% 70%;
+    --muted: 260 30% 20%;
+    --muted-foreground: 90 70% 70%;
+    --accent: 200 50% 20%;
+    --accent-foreground: 150 100% 70%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 0 100% 90%;
+    --border: 320 50% 30%;
+    --input: 280 30% 20%;
+    --ring: 0 100% 60%;
+  }
+
+  [data-theme="black"] {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 90%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 0 100% 90%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 100%;
+  }
+
+  [data-theme="red"] {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 90%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 0 100% 90%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 100%;
+  }
+}
+
+/* Animation utilities from utilities.css */
+@layer utilities {
+  .delay-0 {
+    animation-delay: 0ms;
+  }
+  .delay-1 {
+    animation-delay: 100ms;
+  }
+  .delay-2 {
+    animation-delay: 200ms;
+  }
+  .delay-3 {
+    animation-delay: 300ms;
+  }
+  .delay-4 {
+    animation-delay: 400ms;
+  }
+  .delay-5 {
+    animation-delay: 500ms;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+}
+
+/* Keyframe animations */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accordion animations from tailwind config */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
+
+/* Update or add this section */
+[data-theme="dark"] body {
+  background: linear-gradient(
+    -45deg,
+    hsl(0, 0%, 0%),
+    hsl(0, 0%, 8%),
+    hsl(0, 0%, 12%),
+    hsl(0, 0%, 8%),
+    hsl(0, 0%, 0%)
+  );
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  min-height: 100vh;
+}
+
+/* Light theme */
+[data-theme="light"] body {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Colourful theme - enhanced contrast and vibrancy */
+[data-theme="colourful"] body {
+  background: linear-gradient(
+    -45deg,
+    hsl(280, 80%, 8%),
+    hsl(320, 90%, 15%),
+    hsl(260, 85%, 18%),
+    hsl(300, 90%, 15%),
+    hsl(280, 80%, 8%)
+  );
+  background-size: 300% 300%;
+  animation: gradient 8s ease infinite;
+  min-height: 100vh;
+}
+
+/* Animation for the colourful gradient */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+[data-theme="black"] body {
+  background: linear-gradient(
+    -45deg,
+    #000000,
+    #1a1a1a,
+    #2d2d2d,
+    #1a1a1a,
+    #000000
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  min-height: 100vh;
+}
+
+[data-theme="red"] body {
+  background: linear-gradient(
+    -45deg,
+    #8b0000,
+    #ff0000,
+    #dc143c,
+    #8b0000,
+    #660000
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  min-height: 100vh;
+}
+
+/* Add this to ensure main content is transparent */
+main {
+  background: transparent;
+}
+
+/* And/or add this to ensure containers are transparent */
+.container {
+  background: transparent;
+}
+
+/* Reset all background colors */
+body > div,
+main,
+.container,
+[data-theme] main,
+[data-theme] .container {
+  background-color: transparent !important;
+}
+
+/* Ensure the body gradient is visible */
+body {
+  isolation: isolate;
+  z-index: 0;
+}
+
+/* Update main content styles */
+main {
+  position: relative;
+  z-index: 1;
+}
